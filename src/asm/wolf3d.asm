@@ -12,18 +12,17 @@
 	include "src/asm/vdu_sound.asm" ; also has macros
 	include "src/asm/images.asm"
 	include "src/asm/fonts_bmp.asm"
-	include "src/asm/maps.asm"
-	include "src/asm/render.asm"
-	include "src/asm/polys.asm"
+	; include "src/asm/maps.asm"
+	; include "src/asm/render.asm"
 	include "src/asm/font_itc_honda.asm"
 	include "src/asm/font_retro_computer.asm"
 	include "src/asm/ui.asm"
 	include "src/asm/ui_img.asm"
 	include "src/asm/ui_img_bj.asm"
-	include "src/asm/sprites.asm"
+	; include "src/asm/sprites.asm"
 	include "src/asm/vdu.asm"
     include "src/asm/functions.asm"
-	include "src/asm/player.asm"
+	; include "src/asm/player.asm"
 	include "src/asm/maths.asm"
 	include "src/asm/img_load.asm"
 	include "src/asm/sfx.asm"
@@ -124,27 +123,19 @@ init:
 ; initialize image load routine
 	call img_load_init
 
-; load panels
-	ld bc,cube_num_panels
+; load tiles
+	ld bc,cube_num_tiles
 	ld hl,cube_buffer_id_lut
 	ld (cur_buffer_id_lut),hl
-	ld hl,cube_load_panels_table
+	ld hl,cube_load_tiles_table
 	ld (cur_load_jump_table),hl
 	call img_load_main
 
 ; load sprites
-	ld bc,sprite_num_panels
+	ld bc,sprite_num_tiles
 	ld hl,sprite_buffer_id_lut
 	ld (cur_buffer_id_lut),hl
-	ld hl,sprite_load_panels_table
-	ld (cur_load_jump_table),hl
-	call img_load_main
-
-; load distance walls
-	ld bc,dws_num_panels
-	ld hl,dws_buffer_id_lut
-	ld (cur_buffer_id_lut),hl
-	ld hl,dws_load_panels_table
+	ld hl,sprite_load_tiles_table
 	ld (cur_load_jump_table),hl
 	call img_load_main
 
@@ -204,53 +195,46 @@ main_loop_tmr: ds 6
 framerate: equ 30
 
 new_game:
-; initialize map variables and load map file
-	ld hl,room_flags
-	xor a
-	ld b,10
-@room_flags_loop:
-	ld (hl),a
-	inc hl
-	djnz @room_flags_loop
-; map_init:
-	ld (cur_floor),a
-	ld (cur_room),a
-; load room file
-	call map_load
-; initialize sprite data
-	call map_init_sprites
-; initialize player position
-	call plyr_init
+; ; initialize map variables and load map file
+; 	ld hl,room_flags
+; 	xor a
+; 	ld b,10
+; @room_flags_loop:
+; 	ld (hl),a
+; 	inc hl
+; 	djnz @room_flags_loop
+; ; map_init:
+; 	ld (cur_floor),a
+; 	ld (cur_room),a
+; ; load room file
+; 	call map_load
+; ; initialize sprite data
+; 	call map_init_sprites
+; ; initialize player position
+; 	call plyr_init
 
 	ret
 
 main:
 	call new_game
 
-; main:
-; ; set map variables and load initial map file
-; 	call map_init
-; ; initialize player position
-; 	call plyr_init
-
-
 main_loop:
 ; update global timestamp
     call timestamp_tick
 
-; move enemies
-	call sprites_see_plyr ; 220-285  prt ticks
+; ; move enemies
+; 	call sprites_see_plyr ; 220-285  prt ticks
 
-; get player input and update sprite position
-	; 0-1 prt ticks
-	call plyr_input ; ix points to cell defs/status, a is target cell current obj_id
+; ; get player input and update sprite position
+; 	; 0-1 prt ticks
+; 	call plyr_input ; ix points to cell defs/status, a is target cell current obj_id
 
-; render the updated scene
-	call render_scene ; 6-12 prt ticks
-; full loop 12-16 prt ticks
+; ; render the updated scene
+; 	call render_scene ; 6-12 prt ticks
+; ; full loop 12-16 prt ticks
 
-; flip the screen
-	call vdu_flip
+; ; flip the screen
+; 	call vdu_flip
 
 @wait:
 	ld iy,main_loop_tmr
@@ -276,7 +260,7 @@ main_loop:
 main_end:
 	; call do_outro
 
-        call vdu_clear_all_buffers
+    call vdu_clear_all_buffers
 	call vdu_disable_channels
 
 ; restore screen to something normalish
