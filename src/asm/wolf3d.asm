@@ -8,25 +8,25 @@
     .db 00h         
     .db 01h
 
-	include "src/asm/mos_api.asm" ; wants to be first include b/c it has macros
-	include "src/asm/vdu_sound.asm" ; also has macros
-	include "src/asm/images.asm"
-	include "src/asm/fonts_bmp.asm"
-	; include "src/asm/maps.asm"
-	; include "src/asm/render.asm"
-	include "src/asm/font_itc_honda.asm"
-	include "src/asm/font_retro_computer.asm"
-	include "src/asm/ui.asm"
-	include "src/asm/ui_img.asm"
-	include "src/asm/ui_img_bj.asm"
-	; include "src/asm/sprites.asm"
-	include "src/asm/vdu.asm"
-    include "src/asm/functions.asm"
-	; include "src/asm/player.asm"
-	include "src/asm/maths.asm"
-	include "src/asm/img_load.asm"
-	include "src/asm/sfx.asm"
-	include "src/asm/timer.asm"
+	include "src/asm/mos_api.inc" ; wants to be first include b/c it has macros
+	include "src/asm/vdu_sound.inc" ; also has macros
+	include "src/asm/images.inc"
+	include "src/asm/fonts_bmp.inc"
+	; include "src/asm/maps.inc"
+	; include "src/asm/render.inc"
+	include "src/asm/font_itc_honda.inc"
+	include "src/asm/font_retro_computer.inc"
+	include "src/asm/ui.inc"
+	include "src/asm/ui_img.inc"
+	include "src/asm/ui_img_bj.inc"
+	; include "src/asm/sprites.inc"
+	include "src/asm/vdu.inc"
+    include "src/asm/functions.inc"
+	; include "src/asm/player.inc"
+	include "src/asm/maths.inc"
+	include "src/asm/img_load.inc"
+	include "src/asm/sfx.inc"
+	include "src/asm/timer.inc"
 
 
 start:              
@@ -269,5 +269,5 @@ main_end:
 	call cursor_on
 	ret
 
-; files.asm must go here so that filedata doesn't stomp on program data
-	include "src/asm/files.asm"
+; files.inc must go here so that filedata doesn't stomp on program data
+	include "src/asm/files.inc"

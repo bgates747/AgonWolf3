@@ -22,7 +22,7 @@ def get_tiles_data(db_path, render_type):
     conn.close()
     return rows
 
-# This script is responsible for creating the tiles.asm file which is used by the assembly code to load the tiles into VDP buffers.
+# This script is responsible for creating the tiles.inc file which is used by the assembly code to load the tiles into VDP buffers.
 def make_asm_img_load(tiles_inc_path, render_type, src_img_dir, unique_rows):
     with open(tiles_inc_path, 'a') as asm_writer: # append to the file
         asm_writer.write(f"\n; {render_type} buffer ids:\n")
@@ -90,6 +90,6 @@ def make_asm_images_inc(db_path, tiles_inc_path):
 
 if __name__ == "__main__":
     db_path = 'build/data/build.db'
-    tiles_inc_path = "src/asm/images.asm"
+    tiles_inc_path = "src/asm/images.inc"
     
     make_asm_images_inc(db_path, tiles_inc_path)

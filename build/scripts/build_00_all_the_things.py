@@ -45,7 +45,7 @@ def do_all_the_things(db_path, map_dim_x, map_dim_y, tgt_dir, floor_nums):
     if do_92_asm_load_tiles:
         print(f"build_92_asm_load_tiles: Making image load assembler file")
         from build_92_asm_load_tiles import make_asm_images_inc
-        panels_inc_path = f"src/asm/images.asm"
+        panels_inc_path = f"src/asm/images.inc"
         make_asm_images_inc(db_path, panels_inc_path)
 
 # build_91a_asm_font.py
@@ -59,7 +59,7 @@ def do_all_the_things(db_path, map_dim_x, map_dim_y, tgt_dir, floor_nums):
     if do_91b_asm_ui:
         print(f"build_91b_asm_ui: Making UI assembler file")
         from build_91b_asm_ui import make_tbl_91b_UI, make_rgba2_files, make_asm_ui
-        ui_inc_path = "src/asm/ui_img.asm"
+        ui_inc_path = "src/asm/ui_img.inc"
         src_png_dir = "src/assets/images/ui"
         tgt_cmp_rgba2_dir = "tgt/ui"
         start_buffer_id = 0x0300
@@ -79,14 +79,14 @@ def do_all_the_things(db_path, map_dim_x, map_dim_y, tgt_dir, floor_nums):
     if do_91d_asm_ui_bj:
         print(f"build_91d_asm_ui_bj: Making BJ UI assembler file")
         from build_91d_asm_ui_bj import asm_ui_bj
-        ui_inc_path = "src/asm/ui_img_bj.asm"
+        ui_inc_path = "src/asm/ui_img_bj.inc"
         src_png_dir = "src/assets/images/ui/bj"
         tgt_rgba2_dir = "tgt/ui/bj"
         start_buffer_id = 0x0400
         asm_ui_bj(db_path, ui_inc_path, src_png_dir, tgt_rgba2_dir, start_buffer_id)
 
 # build_98_asm_sfx.py
-    sfx_inc_path = 'src/asm/sfx.asm'
+    sfx_inc_path = 'src/asm/sfx.inc'
     sfx_tgt_dir = 'sfx'
     if do_98_asm_sfx:
         print(f"build_98_asm_sfx: Making sfx assembler file")

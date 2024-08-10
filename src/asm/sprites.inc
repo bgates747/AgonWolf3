@@ -1,6 +1,6 @@
 ; ###### SPRITE TABLE FIELD INDICES ######
 sprite_id:              equ 00 ; 1 byte  - unique spriteId, zero-based
-sprite_obj:             equ 01 ; 1 byte  - type of sprite as defined in polys.asm, 255 is dead
+sprite_obj:             equ 01 ; 1 byte  - type of sprite as defined in polys.inc, 255 is dead
 sprite_health:          equ 02 ; 1 byte  - health points, signed binary, zero or negative is dead
 sprite_triggers_mask:   equ 03 ; 1 byte  - bitmask for tracking which sprite behaviors have been triggered
 sprite_x:               equ 04 ; 1 byte  - map x position

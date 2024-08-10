@@ -143,7 +143,7 @@ prt_set:
 
 ; ===============================================
 ; PRT Timer Interrupt Handling
-; https://github.com/tomm/agon-cpu-emulator/blob/main/sdcard/regression_suite/timerirq.asm
+; https://github.com/tomm/agon-cpu-emulator/blob/main/sdcard/regression_suite/timerirq.inc
 ; -----------------------------------------------
 prt_irq_init:
     ; set up interrupt vector table 2
@@ -352,7 +352,7 @@ stopwatch_started: ds 3 ; buffer to hold stopwatch start time
 ; ------------------
 ; delay routine
 ; Author: Richard Turrnidge
-; https://github.com/richardturnnidge/lessons/blob/main/slowdown.asm
+; https://github.com/richardturnnidge/lessons/blob/main/slowdown.inc
 ; routine waits a fixed time,then returns
 ; arrive with A =  the delay byte. One bit to be set only.
 ; eg. ld A,00000100b

@@ -432,7 +432,7 @@ vdu_set_gfx_viewport:
 @end:   db 0x00	  ; padding
 
 ; VDU 25, mode, x; y;: PLOT command
-; Implemented in vdu_plot.asm
+; Implemented in vdu_plot.inc
 
 ; VDU 26: Reset graphics and text viewports **
 vdu_reset_txt_gfx_view:
@@ -655,7 +655,7 @@ vdu_decompress_buffer_different:
 @sourceBufferId: dw 0x0000
 @end: 	db 0x00 ; padding
 
-; #### from vdp.asm ####
+; #### from vdp.inc ####
 
 ; https://github.com/breakintoprogram/agon-docs/wiki/VDP
 ; VDU 23, 7: Scrolling
@@ -700,7 +700,7 @@ vdu_vblank:		PUSH 	IX			; Wait for VBLANK interrupt
 			POP	IX
 			RET
 
-; #### from vdu_bmp.asm ####
+; #### from vdu_bmp.inc ####
 ; =========================================================================
 ; Bitmaps
 ; -------------------------------------------------------------------------
@@ -860,7 +860,7 @@ vdu_buff_screen_paste_tiles:
 ; -------------------------------------------------------------------------
 ; VDU 23, 27, &40, hotX, hotY: Setup a mouse cursor with a hot spot at hotX, hotY
 
-; #### from vdu_plot.asm ####
+; #### from vdu_plot.inc ####
 ; https://agonconsole8.github.io/agon-docs/VDP---PLOT-Commands.html
 ; PLOT code 	(Decimal) 	Effect
 ; &00-&07 	0-7 	Solid line, includes both ends
@@ -1092,7 +1092,7 @@ vdu_plot_cf:
 @y1:    dw 0x0000
 @end:   db 0x00 ; padding
 
-; #### from vdu_sprites.asm ####
+; #### from vdu_sprites.inc ####
 ; ; https://github.com/AgonConsole8/agon-docs/blob/main/VDP---Bitmaps-API.md
 ; the VDP can support up to 256 sprites. They must be defined 
 ; contiguously, and so the first sprite is sprite 0. 
@@ -1459,7 +1459,7 @@ vdu_sprite_add_buff:
 @end:      db 0x00 ; padding
 
 
-; #### from sfx.asm ####
+; #### from sfx.inc ####
 sfx_last_channel: db 0x00 ; 8-bit value between 0 and 31
 
 ; ; play a sound effect on the next available channel at full volume for its full duration

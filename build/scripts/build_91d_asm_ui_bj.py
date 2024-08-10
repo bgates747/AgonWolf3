@@ -126,7 +126,7 @@ def asm_ui_bj(db_path, ui_inc_path, src_png_dir, tgt_rgba2_dir, start_buffer_id)
 
 if __name__ == "__main__":
     db_path = 'build/data/build.db'
-    ui_inc_path = "src/asm/ui_img_bj.asm"
+    ui_inc_path = "src/asm/ui_img_bj.inc"
     src_png_dir = "src/assets/images/ui/bj"
     tgt_rgba2_dir = "tgt/ui/bj"
     start_buffer_id = 0x0400

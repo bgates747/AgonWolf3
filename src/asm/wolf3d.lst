@@ -23,8 +23,8 @@ PC     Output      Line
 040043 00          0008       .db 00h
 040044 01          0009       .db 01h
 040045             0010   
-040045             0011   	include "src/asm/mos_api.asm" ; wants to be first include b/c it has macros
-040045             0001*  ; https://github.com/envenomator/Agon/blob/master/ez80asm%20examples%20(annotated)/mos_api.asm
+040045             0011   	include "src/asm/mos_api.inc" ; wants to be first include b/c it has macros
+040045             0001*  ; https://github.com/envenomator/Agon/blob/master/ez80asm%20examples%20(annotated)/mos_api.inc
 040045             0002*  ; Title:	AGON MOS - API for user projects
 040045             0003*  ; Author:	Dean Belfield
 040045             0004*  ;			Adapted for agon-ez80asm by Jeroen Venema
@@ -186,7 +186,7 @@ PC     Output      Line
 040045             0160*  fa_open_append:		EQU	30h
 040045             0161*  
 040045             0162*  ; System variable indexes for api_sysvars
-040045             0163*  ; Index into _sysvars in globals.asm
+040045             0163*  ; Index into _sysvars in globals.inc
 040045             0164*  ;
 040045             0165*  sysvar_time:			EQU	00h	; 4: Clock timer in centiseconds (incremented by 2 every VBLANK)
 040045             0166*  sysvar_vpd_pflags:		EQU	04h	; 1: Flags to indicate completion of VDP commands
@@ -278,7 +278,7 @@ PC     Output      Line
 040045             0252*  			LD	A, function
 040045             0253*  			RST.LIL	08h
 040045             0254*  	ENDMACRO
-040045             0012   	include "src/asm/vdu_sound.asm" ; also has macros
+040045             0012   	include "src/asm/vdu_sound.inc" ; also has macros
 040045 00          0001*  last_channel: db 0
 040046             0002*  max_channels: equ 6
 040046             0003*  
@@ -593,7 +593,7 @@ PC     Output      Line
 0401CF 00 00       0308*  @frequency:  dw 0x00 ; no effect unless buffer has been set to tuneable sample
 0401D1 00 00       0309*  @duration:   dw 0x0000 ; milliseconds
 0401D3 00          0310*  @end:        db 0x00 ; padding
-0401D4             0013   	include "src/asm/images.asm"
+0401D4             0013   	include "src/asm/images.inc"
 0401D4             0001*  ; This file is created by build_92_asm_load_tiles.py, do not edit it!
 0401D4             0002*  
 0401D4             0003*  ; cube buffer ids:
@@ -1305,7 +1305,7 @@ PC     Output      Line
        73 2F 36 30 
        2E 72 67 62 
        61 38 00    
-040975             0014   	include "src/asm/fonts_bmp.asm"
+040975             0014   	include "src/asm/fonts_bmp.inc"
 040975             0001*  ; plots a bitmap character to the screen
 040975             0002*  ; inputs: a; ascii character to plot
 040975             0003*  ;      bc,de = x,y screen coordinates in pixels
@@ -1369,9 +1369,9 @@ PC     Output      Line
 0409B3 D1          0061*      pop de ; restore our y-coordinate
 0409B4 E1          0062*      pop hl ; restore the pointer
 0409B5 C3 A4 09 04 0063*      jp @next_char ; loop
-0409B9             0015   	; include "src/asm/maps.asm"
-0409B9             0016   	; include "src/asm/render.asm"
-0409B9             0017   	include "src/asm/font_itc_honda.asm"
+0409B9             0015   	; include "src/asm/maps.inc"
+0409B9             0016   	; include "src/asm/render.inc"
+0409B9             0017   	include "src/asm/font_itc_honda.inc"
 0409B9             0001*  ; Bitmap indices:
 0409B9             0002*  BUF_0544: equ 0x0220 ; 32
 0409B9             0003*  ; Missing character 33 !
@@ -2833,7 +2833,7 @@ PC     Output      Line
        31 32 32 2E 
        72 67 62 61 
        32 00       
-041A9C             0018   	include "src/asm/font_retro_computer.asm"
+041A9C             0018   	include "src/asm/font_retro_computer.inc"
 041A9C             0001*  ; Bitmap indices:
 041A9C             0002*  BUF_0288: equ 0x0120 ; 32
 041A9C             0003*  BUF_0289: equ 0x0121 ; 33 !
@@ -3831,9 +3831,9 @@ PC     Output      Line
        2F 30 39 30 
        2E 72 67 62 
        61 32 00    
-042547             0019   	include "src/asm/ui.asm"
+042547             0019   	include "src/asm/ui.inc"
 042547             0001*  ; ui routines will go here
-042547             0020   	include "src/asm/ui_img.asm"
+042547             0020   	include "src/asm/ui_img.inc"
 042547             0001*  ; Bitmap indices:
 042547             0002*  BUF_UI_BJ_025: equ 0x0300
 042547             0003*  BUF_UI_BJ_050: equ 0x0301
@@ -4068,7 +4068,7 @@ PC     Output      Line
        70 6C 61 73 
        68 2E 72 67 
        62 61 32 00 
-0427F9             0021   	include "src/asm/ui_img_bj.asm"
+0427F9             0021   	include "src/asm/ui_img_bj.inc"
 0427F9             0001*  ; Bitmap indices:
 0427F9             0002*  BUF_UI_BJ_GATLING_00: equ 0x0400
 0427F9             0003*  BUF_UI_BJ_GATLING_01: equ 0x0401
@@ -4516,8 +4516,8 @@ PC     Output      Line
        30 34 2E 72 
        67 62 61 32 
        00          
-042D3B             0022   	; include "src/asm/sprites.asm"
-042D3B             0023   	include "src/asm/vdu.asm"
+042D3B             0022   	; include "src/asm/sprites.inc"
+042D3B             0023   	include "src/asm/vdu.inc"
 042D3B             0001*  ; The following is a high-level list of the VDU sequences that are supported:
 042D3B             0002*  ; VDU 0: Null (no operation)
 042D3B             0003*  ; VDU 1: Send next character to “printer” (if “printer” is enabled) §§
@@ -4956,7 +4956,7 @@ PC     Output      Line
 042E85 00          0432*  @end:   db 0x00	  ; padding
 042E86             0433*  
 042E86             0434*  ; VDU 25, mode, x; y;: PLOT command
-042E86             0435*  ; Implemented in vdu_plot.asm
+042E86             0435*  ; Implemented in vdu_plot.inc
 042E86             0436*  
 042E86             0437*  ; VDU 26: Reset graphics and text viewports **
 042E86             0438*  vdu_reset_txt_gfx_view:
@@ -5188,7 +5188,7 @@ PC     Output      Line
 042FBC 00 00       0655*  @sourceBufferId: dw 0x0000
 042FBE 00          0656*  @end: 	db 0x00 ; padding
 042FBF             0657*  
-042FBF             0658*  ; #### from vdp.asm ####
+042FBF             0658*  ; #### from vdp.inc ####
 042FBF             0659*  
 042FBF             0660*  ; https://github.com/breakintoprogram/agon-docs/wiki/VDP
 042FBF             0661*  ; VDU 23, 7: Scrolling
@@ -5235,7 +5235,7 @@ PC     Output      Line
 043002 DD E1       0700*  			POP	IX
 043004 C9          0701*  			RET
 043005             0702*  
-043005             0703*  ; #### from vdu_bmp.asm ####
+043005             0703*  ; #### from vdu_bmp.inc ####
 043005             0704*  ; =========================================================================
 043005             0705*  ; Bitmaps
 043005             0706*  ; -------------------------------------------------------------------------
@@ -5399,7 +5399,7 @@ PC     Output      Line
 0430B4             0860*  ; -------------------------------------------------------------------------
 0430B4             0861*  ; VDU 23, 27, &40, hotX, hotY: Setup a mouse cursor with a hot spot at hotX, hotY
 0430B4             0862*  
-0430B4             0863*  ; #### from vdu_plot.asm ####
+0430B4             0863*  ; #### from vdu_plot.inc ####
 0430B4             0864*  ; https://agonconsole8.github.io/agon-docs/VDP---PLOT-Commands.html
 0430B4             0865*  ; PLOT code 	(Decimal) 	Effect
 0430B4             0866*  ; &00-&07 	0-7 	Solid line, includes both ends
@@ -5645,7 +5645,7 @@ PC     Output      Line
 043172 00 00       1092*  @y1:    dw 0x0000
 043174 00          1093*  @end:   db 0x00 ; padding
 043175             1094*  
-043175             1095*  ; #### from vdu_sprites.asm ####
+043175             1095*  ; #### from vdu_sprites.inc ####
 043175             1096*  ; ; https://github.com/AgonConsole8/agon-docs/blob/main/VDP---Bitmaps-API.md
 043175             1097*  ; the VDP can support up to 256 sprites. They must be defined
 043175             1098*  ; contiguously, and so the first sprite is sprite 0.
@@ -6020,7 +6020,7 @@ PC     Output      Line
 0432D6 00          1459*  @end:      db 0x00 ; padding
 0432D7             1460*  
 0432D7             1461*  
-0432D7             1462*  ; #### from sfx.asm ####
+0432D7             1462*  ; #### from sfx.inc ####
 0432D7 00          1463*  sfx_last_channel: db 0x00 ; 8-bit value between 0 and 31
 0432D8             1464*  
 0432D8             1465*  ; ; play a sound effect on the next available channel at full volume for its full duration
@@ -6177,7 +6177,7 @@ PC     Output      Line
 0433A7 FF FF       1611*        dw -1 ; clear all buffers
 0433A9 02          1612*        db 2  ; command 2: clear a buffer
 0433AA             1613*  @end:
-0433AA             0024       include "src/asm/functions.asm"
+0433AA             0024       include "src/asm/functions.inc"
 0433AA             0001*  ; https://github.com/envenomator/Agon/blob/master/ez80asm%20examples%20(annotated)/functions.s
 0433AA             0002*  ; Print a zero-terminated string
 0433AA             0003*  ; HL: Pointer to string
@@ -6803,8 +6803,8 @@ PC     Output      Line
 0437A5 F1          0581*      pop af
 0437A6             0582*  ; all done
 0437A6 C9          0583*      ret
-0437A7             0025   	; include "src/asm/player.asm"
-0437A7             0026   	include "src/asm/maths.asm"
+0437A7             0025   	; include "src/asm/player.inc"
+0437A7             0026   	include "src/asm/maths.inc"
 0437A7 00 00 00 00 0001*  add_bcd_arg1: db #00,#00,#00,#00
 0437AB 00 00 00 00 0002*  add_bcd_arg2: db #00,#00,#00,#00
 0437AF             0003*  
@@ -6889,7 +6889,7 @@ PC     Output      Line
 0437E7 C1          0082*      pop bc
 0437E8 C9          0083*      ret
 0437E9 50          0084*  r_seed: defb $50
-0437EA             0027   	include "src/asm/img_load.asm"
+0437EA             0027   	include "src/asm/img_load.inc"
 0437EA 00 00 00    0001*  cur_file_idx: dl 0
 0437ED 00 00 00    0002*  cur_filename: dl 0
 0437F0 00 00 00    0003*  cur_buffer_id: dl 0
@@ -7092,7 +7092,7 @@ PC     Output      Line
 04397D C1          0192*  	pop bc
 04397E 3E 00       0193*  	ld a,0 ; the magic number for rgba8888
 043980 C3 18 2F 04 0194*  	jp vdu_bmp_create ; will return to caller from there
-043984             0028   	include "src/asm/sfx.asm"
+043984             0028   	include "src/asm/sfx.inc"
 043984             0001*  ; This file is created by build_98_asm_sfx.py, do not edit it!
 043984             0002*  
 043984             0003*  SFX_num_buffers: equ 22
@@ -7702,7 +7702,7 @@ PC     Output      Line
 043FAA 21 15 05 00 0501*  	ld hl,BUF_WILHELM
 043FAE 01 FD 04 00 0502*  	ld bc,1277
 043FB2 C3 46 00 04 0503*  	jp vdu_play_sfx
-043FB6             0029   	include "src/asm/timer.asm"
+043FB6             0029   	include "src/asm/timer.inc"
 043FB6             0001*  ; Table 32. Timer Control Registers
 043FB6             0002*  ; this constant is the base address of the timer control registers
 043FB6             0003*  ; each timer takes three bytes:
@@ -7856,7 +7856,7 @@ PC     Output      Line
 04404A             0143*  
 04404A             0144*  ; ===============================================
 04404A             0145*  ; PRT Timer Interrupt Handling
-04404A             0146*  ; https://github.com/tomm/agon-cpu-emulator/blob/main/sdcard/regression_suite/timerirq.asm
+04404A             0146*  ; https://github.com/tomm/agon-cpu-emulator/blob/main/sdcard/regression_suite/timerirq.inc
 04404A             0147*  ; -----------------------------------------------
 04404A             0148*  prt_irq_init:
 04404A             0149*      ; set up interrupt vector table 2
@@ -8080,7 +8080,7 @@ PC     Output      Line
 04417C             0352*  ; ------------------
 04417C             0353*  ; delay routine
 04417C             0354*  ; Author: Richard Turrnidge
-04417C             0355*  ; https://github.com/richardturnnidge/lessons/blob/main/slowdown.asm
+04417C             0355*  ; https://github.com/richardturnnidge/lessons/blob/main/slowdown.inc
 04417C             0356*  ; routine waits a fixed time,then returns
 04417C             0357*  ; arrive with A =  the delay byte. One bit to be set only.
 04417C             0358*  ; eg. ld A,00000100b
@@ -8394,8 +8394,8 @@ PC     Output      Line
 04438A CD D8 2F 04 0269   	call cursor_on
 04438E C9          0270   	ret
 04438F             0271   
-04438F             0272   ; files.asm must go here so that filedata doesn't stomp on program data
-04438F             0273   	include "src/asm/files.asm"
+04438F             0272   ; files.inc must go here so that filedata doesn't stomp on program data
+04438F             0273   	include "src/asm/files.inc"
 04438F             0001*  ; WARNING: this routine must be the last one loaded in the main program so that filedata doesn't stomp on any program code
 04438F             0002*  ; inputs: hl = bufferId, ix = file size
 04438F             0003*  vdu_load_buffer_from_file:
