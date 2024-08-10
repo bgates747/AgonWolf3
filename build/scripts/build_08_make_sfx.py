@@ -50,7 +50,7 @@ def make_sfx(db_path, src_dir, tgt_dir):
         ]
 
         # Execute the command
-        subprocess.run(command, check=False)
+        subprocess.run(command, check=False, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         size = os.path.getsize(tgt_path)
         duration = size // 16.384

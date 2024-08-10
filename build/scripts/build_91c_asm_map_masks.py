@@ -12,29 +12,6 @@ def hash_file(file_path):
             sha256_hash.update(byte_block)
     return sha256_hash.hexdigest()
 
-def get_map_masks(db_path, floor_num, room_id):
-    # This function generates the map masks for the map render routines
-    conn = sqlite3.connect(db_path)
-    conn.row_factory = sqlite3.Row
-    cursor = conn.cursor()
-    cursor.execute(f"""
-        SELECT p.floor_num, p.room_id, p.cell_id, p.orientation, 
-        sum(case when p.to_poly_id between 0 and 7 then power(2,r.to_poly_id) else 0 end) as mask_0,
-        sum(case when p.to_poly_id between 8 and 15 then power(2,r.to_poly_id-8) else 0 end) as mask_1,
-        sum(case when p.to_poly_id between 16 and 23 then power(2,r.to_poly_id-16) else 0 end) as mask_2,
-        sum(case when p.to_poly_id between 24 and 31 then power(2,r.to_poly_id-24) else 0 end) as mask_3,
-        sum(case when p.to_poly_id between 32 and 39 then power(2,r.to_poly_id-32) else 0 end) as mask_4,
-        sum(case when p.to_poly_id between 40 and 47 then power(2,r.to_poly_id-40) else 0 end) as mask_5
-        FROM qry_07_potential_panels as p
-        LEFT JOIN tbl_07_render_panels as r 
-        ON p.floor_num = r.floor_num and p.room_id = r.room_id and p.cell_id = r.cell_id and p.orientation = r.orientation and p.to_poly_id = r.to_poly_id
-        WHERE p.floor_num = {floor_num} AND p.room_id = {room_id}
-        GROUP BY p.floor_num, p.room_id, p.cell_id, p.orientation
-        ORDER BY p.floor_num, p.room_id, p.cell_id, p.orientation;""")
-    map_views = cursor.fetchall()
-    conn.close()
-    return map_views
-
 def get_map_cells(db_path, floor_num, room_id):
     # This function generates the map masks for the map render routines
     conn = sqlite3.connect(db_path)
@@ -94,7 +71,6 @@ def asm_make_map_masks(db_path, floor_nums, maps_tgt_dir):
     for floor_num in floor_nums:
         for room_id in range(10):
             map_cells = get_map_cells(db_path, floor_num, room_id)
-            map_views = get_map_masks(db_path, floor_num, room_id)
             sprite_ids = get_sprite_ids(db_path, floor_num, room_id)
 
             if not map_cells:
@@ -152,15 +128,6 @@ def asm_make_map_masks(db_path, floor_nums, maps_tgt_dir):
                 asm_file.write(f'\n\t.org 0xB7E400 ; cell_status + 256*4\n\n')
                 asm_file.write(f'; mind the little-endianess in the bit order here!\n')
                 asm_file.write(f'cell_views:\n')
-
-                # Iterate over map views
-                for map_mask in map_views:
-                    masks = [int(map_mask[f"mask_{i}"]) for i in range(6)]
-                    # Write to assembly file with adjusted order
-                    asm_file.write(f'\tdl 0x{masks[2]:02X}{masks[1]:02X}{masks[0]:02X},0x{masks[5]:02X}{masks[4]:02X}{masks[3]:02X} ; Cell {map_mask["cell_id"]}, Orientation {map_mask["orientation"]}\n')
-
-                    # Write to binary file (do not reverse here, as masks are already in little-endian order)
-                    bin_file.write(bytes(masks))
 
                 # Write sprite table base and limit to the asm file
                 asm_file.write(f'\n')

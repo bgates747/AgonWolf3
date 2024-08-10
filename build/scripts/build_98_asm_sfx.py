@@ -1,6 +1,6 @@
 import sqlite3
 
-def make_asm_sfx(db_path, sfx_inc_path, tgt_dir, next_buffer_id):
+def make_asm_sfx(db_path, sfx_inc_path, tgt_dir, start_buffer_id):
     # Connect to the database
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row  # Set row_factory to access columns by names
@@ -26,7 +26,7 @@ def make_asm_sfx(db_path, sfx_inc_path, tgt_dir, next_buffer_id):
         for row in rows:
             sfx_id = row['sfx_id']
             base_filename = row['filename'].split('.')[0].upper()
-            buf_id = next_buffer_id + sfx_id
+            buf_id = start_buffer_id + sfx_id
             buf_label = f"BUF_{base_filename}"
             f.write(f"{buf_label}: equ 0x{buf_id:04X}\n")
 
@@ -102,6 +102,5 @@ if __name__ == "__main__":
     db_path = 'build/data/build.db'
     tgt_dir = 'sfx'
     sfx_inc_path = f"src/asm/sfx.asm"
-    next_buffer_id = 0x3000
-    # next_buffer_id = 64256 
-    make_asm_sfx(db_path, sfx_inc_path, tgt_dir, next_buffer_id)
+    start_buffer_id = 0x0500
+    make_asm_sfx(db_path, sfx_inc_path, tgt_dir, start_buffer_id)

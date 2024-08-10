@@ -380,7 +380,7 @@ def main(font_name, abbr_name, lines_of_text, line_starts, character_height, buf
     make_space_char(db_path,font_name, font_rgba2_dir,space_width)
     make_asm_font(db_path,font_inc_path,buffer_id_counter,space_width,font_name,abbr_name)
 
-def maken_zee_fonts(next_buffer_id):
+def maken_zee_fonts(start_buffer_id):
     scale_method = Image.NEAREST
 
     font_name = 'retro_computer'
@@ -391,7 +391,7 @@ def maken_zee_fonts(next_buffer_id):
     ]
     line_starts = [10, 53]
     character_height = 31
-    buffer_id_counter = next_buffer_id
+    buffer_id_counter = start_buffer_id
     space_width = 6
 
     main(font_name, abbr_name, lines_of_text, line_starts, character_height, buffer_id_counter, space_width, scale_method)
@@ -411,6 +411,6 @@ def maken_zee_fonts(next_buffer_id):
     main(font_name, abbr_name, lines_of_text, line_starts, character_height, buffer_id_counter, space_width, scale_method)
 
 if __name__ == "__main__":
-    next_buffer_id = 0x1000
-    maken_zee_fonts(next_buffer_id)
+    start_buffer_id = 0x0100
+    maken_zee_fonts(start_buffer_id)
 

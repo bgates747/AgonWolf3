@@ -119,17 +119,17 @@ def make_rgba2_files(db_path, src_png_dir, tgt_rgba2_dir):
         img_to_rgba2(src_img, tgt_file)
     conn.close()
 
-def asm_ui_bj(db_path, ui_inc_path, src_png_dir, tgt_rgba2_dir, next_buffer_id):
+def asm_ui_bj(db_path, ui_inc_path, src_png_dir, tgt_rgba2_dir, start_buffer_id):
     make_tbl_91c_UI_BJ(db_path, src_png_dir)
     make_rgba2_files(db_path, src_png_dir, tgt_rgba2_dir)
-    make_asm_ui(db_path, ui_inc_path, next_buffer_id)
+    make_asm_ui(db_path, ui_inc_path, start_buffer_id)
 
 if __name__ == "__main__":
     db_path = 'build/data/build.db'
     ui_inc_path = "src/asm/ui_img_bj.asm"
     src_png_dir = "src/assets/images/ui/bj"
     tgt_rgba2_dir = "tgt/ui/bj"
-    next_buffer_id = 0x2100
+    start_buffer_id = 0x0400
     make_tbl_91c_UI_BJ(db_path, src_png_dir)
     make_rgba2_files(db_path, src_png_dir, tgt_rgba2_dir)
-    make_asm_ui(db_path, ui_inc_path, next_buffer_id)
+    make_asm_ui(db_path, ui_inc_path, start_buffer_id)
