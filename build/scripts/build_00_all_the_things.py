@@ -17,12 +17,13 @@ def do_all_the_things(db_path, map_dim_x, map_dim_y, tgt_dir, floor_nums):
     # build_02_fetch_tiles.py
     src_tiles_path = 'src/mapmaker/tiles.txt'
     mapmaker_tiles_dir = 'src/mapmaker'
-    uvs_tgt_dir = 'build/panels/uv'
+    src_tiles_path = f'{mapmaker_tiles_dir}/tiles.txt'
     thumbs_tgt_dir = 'build/panels/thumbs'
+    upload_dir = 'tgt/tiles'
     if do_02_fetch_tiles:
         print(f"build_02_fetch_tiles: Fetching tiles")
         from build_02_fetch_tiles import fetch_tiles
-        fetch_tiles(db_path, src_tiles_path, mapmaker_tiles_dir, uvs_tgt_dir, thumbs_tgt_dir)
+        fetch_tiles(db_path, src_tiles_path, mapmaker_tiles_dir, thumbs_tgt_dir, upload_dir)
 
 # build_06b_map_import_mapmaker
     map_src_dir = f'src/mapmaker'
