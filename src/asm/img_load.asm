@@ -165,9 +165,9 @@ tmp_draw_all_the_things:
     call vdu_plot_bmp
 	ret
 
-; load an uncompressed rgba2222 image file to a buffer
+; load an rgba2222 image file to a buffer
 ; inputs: bc,de image width,height ; hl = bufferId ; ix = file size
-vdu_load_img:
+vdu_load_img_2:
 ; back up image dimension parameters
 	push bc
 	push de
@@ -179,21 +179,16 @@ vdu_load_img:
 	ld a,1 ; the magic number for rgba2222
 	jp vdu_bmp_create ; will return to caller from there
 
-; load a compressed rgba2222 image file to a buffer
+; load an rgba8888 image file to a buffer
 ; inputs: bc,de image width,height ; hl = bufferId ; ix = file size
-vdu_load_img_cmp:
+vdu_load_img_8:
 ; back up image dimension parameters
 	push bc
 	push de
-; back up the buffer id
-	push hl
 ; load the image
 	call vdu_load_buffer_from_file
-; decompress the buffer
-	pop hl ; bufferId
-	call vdu_decompress_buffer
 ; now make it a bitmap
-	pop de ; image height
-	pop bc ; image width
-	ld a,1 ; the magic number for rgba2222
+	pop de
+	pop bc
+	ld a,0 ; the magic number for rgba8888
 	jp vdu_bmp_create ; will return to caller from there

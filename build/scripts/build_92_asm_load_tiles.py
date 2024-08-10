@@ -63,7 +63,7 @@ def make_asm_img_load(tiles_inc_path, render_type, src_img_dir, unique_rows):
             asm_writer.write(f"\tld bc,{dim_x}\n")
             asm_writer.write(f"\tld de,{dim_y}\n")
             asm_writer.write(f"\tld ix,{dim_x*dim_y*4}\n") # 4 bytes per pixel in rgba8 format
-            asm_writer.write("\tcall vdu_load_img\n")
+            asm_writer.write("\tcall vdu_load_img_8\n")
             asm_writer.write("\tret\n")
 
         asm_writer.write("\n; File name lookups:\n")

@@ -56,7 +56,7 @@ ld_10:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_11:
@@ -70,7 +70,7 @@ ld_11:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_12:
@@ -84,7 +84,7 @@ ld_12:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_13:
@@ -98,7 +98,7 @@ ld_13:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_14:
@@ -112,7 +112,7 @@ ld_14:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_15:
@@ -126,7 +126,7 @@ ld_15:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_16:
@@ -140,7 +140,7 @@ ld_16:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_17:
@@ -154,7 +154,7 @@ ld_17:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_57:
@@ -168,7 +168,7 @@ ld_57:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_58:
@@ -182,7 +182,7 @@ ld_58:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_59:
@@ -196,7 +196,7 @@ ld_59:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ; File name lookups:
@@ -295,7 +295,7 @@ ld_20:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_21:
@@ -309,7 +309,7 @@ ld_21:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_22:
@@ -323,7 +323,7 @@ ld_22:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_23:
@@ -337,7 +337,7 @@ ld_23:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_24:
@@ -351,7 +351,7 @@ ld_24:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_40:
@@ -365,7 +365,7 @@ ld_40:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_41:
@@ -379,7 +379,7 @@ ld_41:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_42:
@@ -393,7 +393,7 @@ ld_42:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_43:
@@ -407,7 +407,7 @@ ld_43:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_44:
@@ -421,7 +421,7 @@ ld_44:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_45:
@@ -435,7 +435,7 @@ ld_45:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_46:
@@ -449,7 +449,7 @@ ld_46:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_47:
@@ -463,7 +463,7 @@ ld_47:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_48:
@@ -477,7 +477,7 @@ ld_48:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_49:
@@ -491,7 +491,7 @@ ld_49:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_50:
@@ -505,7 +505,7 @@ ld_50:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_51:
@@ -519,7 +519,7 @@ ld_51:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_52:
@@ -533,7 +533,7 @@ ld_52:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_56:
@@ -547,7 +547,7 @@ ld_56:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ld_60:
@@ -561,7 +561,7 @@ ld_60:
 	ld bc,16
 	ld de,16
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_8
 	ret
 
 ; File name lookups:

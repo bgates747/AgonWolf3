@@ -23,7 +23,7 @@ load_ui_images:
 	ld bc,32
 	ld de,32
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_2
 	LD A, '.'
 	RST.LIL 10h
 
@@ -36,7 +36,7 @@ load_ui_images:
 	ld bc,32
 	ld de,32
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_2
 	LD A, '.'
 	RST.LIL 10h
 
@@ -49,7 +49,7 @@ load_ui_images:
 	ld bc,32
 	ld de,32
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_2
 	LD A, '.'
 	RST.LIL 10h
 
@@ -62,7 +62,7 @@ load_ui_images:
 	ld bc,32
 	ld de,32
 	ld ix,1024
-	call vdu_load_img
+	call vdu_load_img_2
 	LD A, '.'
 	RST.LIL 10h
 
@@ -75,7 +75,7 @@ load_ui_images:
 	ld bc,120
 	ld de,120
 	ld ix,14400
-	call vdu_load_img
+	call vdu_load_img_2
 	LD A, '.'
 	RST.LIL 10h
 
@@ -88,7 +88,7 @@ load_ui_images:
 	ld bc,320
 	ld de,80
 	ld ix,25600
-	call vdu_load_img
+	call vdu_load_img_2
 	LD A, '.'
 	RST.LIL 10h
 
@@ -101,7 +101,7 @@ load_ui_images:
 	ld bc,40
 	ld de,20
 	ld ix,800
-	call vdu_load_img
+	call vdu_load_img_2
 	LD A, '.'
 	RST.LIL 10h
 
@@ -114,7 +114,7 @@ load_ui_images:
 	ld bc,40
 	ld de,20
 	ld ix,800
-	call vdu_load_img
+	call vdu_load_img_2
 	LD A, '.'
 	RST.LIL 10h
 
@@ -127,7 +127,7 @@ load_ui_images:
 	ld bc,40
 	ld de,20
 	ld ix,800
-	call vdu_load_img
+	call vdu_load_img_2
 	LD A, '.'
 	RST.LIL 10h
 
@@ -140,7 +140,7 @@ load_ui_images:
 	ld bc,40
 	ld de,20
 	ld ix,800
-	call vdu_load_img
+	call vdu_load_img_2
 	LD A, '.'
 	RST.LIL 10h
 
@@ -153,7 +153,7 @@ load_ui_images:
 	ld bc,320
 	ld de,160
 	ld ix,51200
-	call vdu_load_img
+	call vdu_load_img_2
 	LD A, '.'
 	RST.LIL 10h
 
