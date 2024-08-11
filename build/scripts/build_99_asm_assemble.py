@@ -8,7 +8,7 @@ def do_assembly(src_file, tgt_dir, tgt_filename=None):
     if tgt_filename:
         tgt_filename = os.path.join(tgt_dir, os.path.basename(tgt_filename))
     else:
-        tgt_filename = os.path.basename(src_file).replace('.inc', '.bin')
+        tgt_filename = os.path.basename(src_file).replace('.asm', '.bin')
         tgt_filename = os.path.join(tgt_dir, tgt_filename)
 
     # Assembler command and arguments
