@@ -644,7 +644,7 @@ PC     Output      Line
 040216             0048*  ld_10:
 040216 21 E4 03 04 0049*  	ld hl,F10
 04021A 22 ED 37 04 0050*  	ld (cur_filename),hl
-04021E 11 DC 43 04 0051*  	ld de,filedata
+04021E 11 F5 43 04 0051*  	ld de,filedata
 040222 01 00 00 01 0052*  	ld bc,65536
 040226 3E 01       0053*  	ld a,mos_load
 040228 5B CF       0054*  	RST.LIL 08h
@@ -659,7 +659,7 @@ PC     Output      Line
 040240             0062*  ld_11:
 040240 21 F3 03 04 0063*  	ld hl,F11
 040244 22 ED 37 04 0064*  	ld (cur_filename),hl
-040248 11 DC 43 04 0065*  	ld de,filedata
+040248 11 F5 43 04 0065*  	ld de,filedata
 04024C 01 00 00 01 0066*  	ld bc,65536
 040250 3E 01       0067*  	ld a,mos_load
 040252 5B CF       0068*  	RST.LIL 08h
@@ -674,7 +674,7 @@ PC     Output      Line
 04026A             0076*  ld_12:
 04026A 21 02 04 04 0077*  	ld hl,F12
 04026E 22 ED 37 04 0078*  	ld (cur_filename),hl
-040272 11 DC 43 04 0079*  	ld de,filedata
+040272 11 F5 43 04 0079*  	ld de,filedata
 040276 01 00 00 01 0080*  	ld bc,65536
 04027A 3E 01       0081*  	ld a,mos_load
 04027C 5B CF       0082*  	RST.LIL 08h
@@ -689,7 +689,7 @@ PC     Output      Line
 040294             0090*  ld_13:
 040294 21 11 04 04 0091*  	ld hl,F13
 040298 22 ED 37 04 0092*  	ld (cur_filename),hl
-04029C 11 DC 43 04 0093*  	ld de,filedata
+04029C 11 F5 43 04 0093*  	ld de,filedata
 0402A0 01 00 00 01 0094*  	ld bc,65536
 0402A4 3E 01       0095*  	ld a,mos_load
 0402A6 5B CF       0096*  	RST.LIL 08h
@@ -704,7 +704,7 @@ PC     Output      Line
 0402BE             0104*  ld_14:
 0402BE 21 20 04 04 0105*  	ld hl,F14
 0402C2 22 ED 37 04 0106*  	ld (cur_filename),hl
-0402C6 11 DC 43 04 0107*  	ld de,filedata
+0402C6 11 F5 43 04 0107*  	ld de,filedata
 0402CA 01 00 00 01 0108*  	ld bc,65536
 0402CE 3E 01       0109*  	ld a,mos_load
 0402D0 5B CF       0110*  	RST.LIL 08h
@@ -719,7 +719,7 @@ PC     Output      Line
 0402E8             0118*  ld_15:
 0402E8 21 2F 04 04 0119*  	ld hl,F15
 0402EC 22 ED 37 04 0120*  	ld (cur_filename),hl
-0402F0 11 DC 43 04 0121*  	ld de,filedata
+0402F0 11 F5 43 04 0121*  	ld de,filedata
 0402F4 01 00 00 01 0122*  	ld bc,65536
 0402F8 3E 01       0123*  	ld a,mos_load
 0402FA 5B CF       0124*  	RST.LIL 08h
@@ -734,7 +734,7 @@ PC     Output      Line
 040312             0132*  ld_16:
 040312 21 3E 04 04 0133*  	ld hl,F16
 040316 22 ED 37 04 0134*  	ld (cur_filename),hl
-04031A 11 DC 43 04 0135*  	ld de,filedata
+04031A 11 F5 43 04 0135*  	ld de,filedata
 04031E 01 00 00 01 0136*  	ld bc,65536
 040322 3E 01       0137*  	ld a,mos_load
 040324 5B CF       0138*  	RST.LIL 08h
@@ -749,7 +749,7 @@ PC     Output      Line
 04033C             0146*  ld_17:
 04033C 21 4D 04 04 0147*  	ld hl,F17
 040340 22 ED 37 04 0148*  	ld (cur_filename),hl
-040344 11 DC 43 04 0149*  	ld de,filedata
+040344 11 F5 43 04 0149*  	ld de,filedata
 040348 01 00 00 01 0150*  	ld bc,65536
 04034C 3E 01       0151*  	ld a,mos_load
 04034E 5B CF       0152*  	RST.LIL 08h
@@ -764,7 +764,7 @@ PC     Output      Line
 040366             0160*  ld_57:
 040366 21 5C 04 04 0161*  	ld hl,F57
 04036A 22 ED 37 04 0162*  	ld (cur_filename),hl
-04036E 11 DC 43 04 0163*  	ld de,filedata
+04036E 11 F5 43 04 0163*  	ld de,filedata
 040372 01 00 00 01 0164*  	ld bc,65536
 040376 3E 01       0165*  	ld a,mos_load
 040378 5B CF       0166*  	RST.LIL 08h
@@ -779,7 +779,7 @@ PC     Output      Line
 040390             0174*  ld_58:
 040390 21 6B 04 04 0175*  	ld hl,F58
 040394 22 ED 37 04 0176*  	ld (cur_filename),hl
-040398 11 DC 43 04 0177*  	ld de,filedata
+040398 11 F5 43 04 0177*  	ld de,filedata
 04039C 01 00 00 01 0178*  	ld bc,65536
 0403A0 3E 01       0179*  	ld a,mos_load
 0403A2 5B CF       0180*  	RST.LIL 08h
@@ -794,7 +794,7 @@ PC     Output      Line
 0403BA             0188*  ld_59:
 0403BA 21 7A 04 04 0189*  	ld hl,F59
 0403BE 22 ED 37 04 0190*  	ld (cur_filename),hl
-0403C2 11 DC 43 04 0191*  	ld de,filedata
+0403C2 11 F5 43 04 0191*  	ld de,filedata
 0403C6 01 00 00 01 0192*  	ld bc,65536
 0403CA 3E 01       0193*  	ld a,mos_load
 0403CC 5B CF       0194*  	RST.LIL 08h
@@ -927,7 +927,7 @@ PC     Output      Line
 040501             0287*  ld_20:
 040501 21 49 08 04 0288*  	ld hl,F20
 040505 22 ED 37 04 0289*  	ld (cur_filename),hl
-040509 11 DC 43 04 0290*  	ld de,filedata
+040509 11 F5 43 04 0290*  	ld de,filedata
 04050D 01 00 00 01 0291*  	ld bc,65536
 040511 3E 01       0292*  	ld a,mos_load
 040513 5B CF       0293*  	RST.LIL 08h
@@ -942,7 +942,7 @@ PC     Output      Line
 04052B             0301*  ld_21:
 04052B 21 58 08 04 0302*  	ld hl,F21
 04052F 22 ED 37 04 0303*  	ld (cur_filename),hl
-040533 11 DC 43 04 0304*  	ld de,filedata
+040533 11 F5 43 04 0304*  	ld de,filedata
 040537 01 00 00 01 0305*  	ld bc,65536
 04053B 3E 01       0306*  	ld a,mos_load
 04053D 5B CF       0307*  	RST.LIL 08h
@@ -957,7 +957,7 @@ PC     Output      Line
 040555             0315*  ld_22:
 040555 21 67 08 04 0316*  	ld hl,F22
 040559 22 ED 37 04 0317*  	ld (cur_filename),hl
-04055D 11 DC 43 04 0318*  	ld de,filedata
+04055D 11 F5 43 04 0318*  	ld de,filedata
 040561 01 00 00 01 0319*  	ld bc,65536
 040565 3E 01       0320*  	ld a,mos_load
 040567 5B CF       0321*  	RST.LIL 08h
@@ -972,7 +972,7 @@ PC     Output      Line
 04057F             0329*  ld_23:
 04057F 21 76 08 04 0330*  	ld hl,F23
 040583 22 ED 37 04 0331*  	ld (cur_filename),hl
-040587 11 DC 43 04 0332*  	ld de,filedata
+040587 11 F5 43 04 0332*  	ld de,filedata
 04058B 01 00 00 01 0333*  	ld bc,65536
 04058F 3E 01       0334*  	ld a,mos_load
 040591 5B CF       0335*  	RST.LIL 08h
@@ -987,7 +987,7 @@ PC     Output      Line
 0405A9             0343*  ld_24:
 0405A9 21 85 08 04 0344*  	ld hl,F24
 0405AD 22 ED 37 04 0345*  	ld (cur_filename),hl
-0405B1 11 DC 43 04 0346*  	ld de,filedata
+0405B1 11 F5 43 04 0346*  	ld de,filedata
 0405B5 01 00 00 01 0347*  	ld bc,65536
 0405B9 3E 01       0348*  	ld a,mos_load
 0405BB 5B CF       0349*  	RST.LIL 08h
@@ -1002,7 +1002,7 @@ PC     Output      Line
 0405D3             0357*  ld_40:
 0405D3 21 94 08 04 0358*  	ld hl,F40
 0405D7 22 ED 37 04 0359*  	ld (cur_filename),hl
-0405DB 11 DC 43 04 0360*  	ld de,filedata
+0405DB 11 F5 43 04 0360*  	ld de,filedata
 0405DF 01 00 00 01 0361*  	ld bc,65536
 0405E3 3E 01       0362*  	ld a,mos_load
 0405E5 5B CF       0363*  	RST.LIL 08h
@@ -1017,7 +1017,7 @@ PC     Output      Line
 0405FD             0371*  ld_41:
 0405FD 21 A3 08 04 0372*  	ld hl,F41
 040601 22 ED 37 04 0373*  	ld (cur_filename),hl
-040605 11 DC 43 04 0374*  	ld de,filedata
+040605 11 F5 43 04 0374*  	ld de,filedata
 040609 01 00 00 01 0375*  	ld bc,65536
 04060D 3E 01       0376*  	ld a,mos_load
 04060F 5B CF       0377*  	RST.LIL 08h
@@ -1032,7 +1032,7 @@ PC     Output      Line
 040627             0385*  ld_42:
 040627 21 B2 08 04 0386*  	ld hl,F42
 04062B 22 ED 37 04 0387*  	ld (cur_filename),hl
-04062F 11 DC 43 04 0388*  	ld de,filedata
+04062F 11 F5 43 04 0388*  	ld de,filedata
 040633 01 00 00 01 0389*  	ld bc,65536
 040637 3E 01       0390*  	ld a,mos_load
 040639 5B CF       0391*  	RST.LIL 08h
@@ -1047,7 +1047,7 @@ PC     Output      Line
 040651             0399*  ld_43:
 040651 21 C1 08 04 0400*  	ld hl,F43
 040655 22 ED 37 04 0401*  	ld (cur_filename),hl
-040659 11 DC 43 04 0402*  	ld de,filedata
+040659 11 F5 43 04 0402*  	ld de,filedata
 04065D 01 00 00 01 0403*  	ld bc,65536
 040661 3E 01       0404*  	ld a,mos_load
 040663 5B CF       0405*  	RST.LIL 08h
@@ -1062,7 +1062,7 @@ PC     Output      Line
 04067B             0413*  ld_44:
 04067B 21 D0 08 04 0414*  	ld hl,F44
 04067F 22 ED 37 04 0415*  	ld (cur_filename),hl
-040683 11 DC 43 04 0416*  	ld de,filedata
+040683 11 F5 43 04 0416*  	ld de,filedata
 040687 01 00 00 01 0417*  	ld bc,65536
 04068B 3E 01       0418*  	ld a,mos_load
 04068D 5B CF       0419*  	RST.LIL 08h
@@ -1077,7 +1077,7 @@ PC     Output      Line
 0406A5             0427*  ld_45:
 0406A5 21 DF 08 04 0428*  	ld hl,F45
 0406A9 22 ED 37 04 0429*  	ld (cur_filename),hl
-0406AD 11 DC 43 04 0430*  	ld de,filedata
+0406AD 11 F5 43 04 0430*  	ld de,filedata
 0406B1 01 00 00 01 0431*  	ld bc,65536
 0406B5 3E 01       0432*  	ld a,mos_load
 0406B7 5B CF       0433*  	RST.LIL 08h
@@ -1092,7 +1092,7 @@ PC     Output      Line
 0406CF             0441*  ld_46:
 0406CF 21 EE 08 04 0442*  	ld hl,F46
 0406D3 22 ED 37 04 0443*  	ld (cur_filename),hl
-0406D7 11 DC 43 04 0444*  	ld de,filedata
+0406D7 11 F5 43 04 0444*  	ld de,filedata
 0406DB 01 00 00 01 0445*  	ld bc,65536
 0406DF 3E 01       0446*  	ld a,mos_load
 0406E1 5B CF       0447*  	RST.LIL 08h
@@ -1107,7 +1107,7 @@ PC     Output      Line
 0406F9             0455*  ld_47:
 0406F9 21 FD 08 04 0456*  	ld hl,F47
 0406FD 22 ED 37 04 0457*  	ld (cur_filename),hl
-040701 11 DC 43 04 0458*  	ld de,filedata
+040701 11 F5 43 04 0458*  	ld de,filedata
 040705 01 00 00 01 0459*  	ld bc,65536
 040709 3E 01       0460*  	ld a,mos_load
 04070B 5B CF       0461*  	RST.LIL 08h
@@ -1122,7 +1122,7 @@ PC     Output      Line
 040723             0469*  ld_48:
 040723 21 0C 09 04 0470*  	ld hl,F48
 040727 22 ED 37 04 0471*  	ld (cur_filename),hl
-04072B 11 DC 43 04 0472*  	ld de,filedata
+04072B 11 F5 43 04 0472*  	ld de,filedata
 04072F 01 00 00 01 0473*  	ld bc,65536
 040733 3E 01       0474*  	ld a,mos_load
 040735 5B CF       0475*  	RST.LIL 08h
@@ -1137,7 +1137,7 @@ PC     Output      Line
 04074D             0483*  ld_49:
 04074D 21 1B 09 04 0484*  	ld hl,F49
 040751 22 ED 37 04 0485*  	ld (cur_filename),hl
-040755 11 DC 43 04 0486*  	ld de,filedata
+040755 11 F5 43 04 0486*  	ld de,filedata
 040759 01 00 00 01 0487*  	ld bc,65536
 04075D 3E 01       0488*  	ld a,mos_load
 04075F 5B CF       0489*  	RST.LIL 08h
@@ -1152,7 +1152,7 @@ PC     Output      Line
 040777             0497*  ld_50:
 040777 21 2A 09 04 0498*  	ld hl,F50
 04077B 22 ED 37 04 0499*  	ld (cur_filename),hl
-04077F 11 DC 43 04 0500*  	ld de,filedata
+04077F 11 F5 43 04 0500*  	ld de,filedata
 040783 01 00 00 01 0501*  	ld bc,65536
 040787 3E 01       0502*  	ld a,mos_load
 040789 5B CF       0503*  	RST.LIL 08h
@@ -1167,7 +1167,7 @@ PC     Output      Line
 0407A1             0511*  ld_51:
 0407A1 21 39 09 04 0512*  	ld hl,F51
 0407A5 22 ED 37 04 0513*  	ld (cur_filename),hl
-0407A9 11 DC 43 04 0514*  	ld de,filedata
+0407A9 11 F5 43 04 0514*  	ld de,filedata
 0407AD 01 00 00 01 0515*  	ld bc,65536
 0407B1 3E 01       0516*  	ld a,mos_load
 0407B3 5B CF       0517*  	RST.LIL 08h
@@ -1182,7 +1182,7 @@ PC     Output      Line
 0407CB             0525*  ld_52:
 0407CB 21 48 09 04 0526*  	ld hl,F52
 0407CF 22 ED 37 04 0527*  	ld (cur_filename),hl
-0407D3 11 DC 43 04 0528*  	ld de,filedata
+0407D3 11 F5 43 04 0528*  	ld de,filedata
 0407D7 01 00 00 01 0529*  	ld bc,65536
 0407DB 3E 01       0530*  	ld a,mos_load
 0407DD 5B CF       0531*  	RST.LIL 08h
@@ -1197,7 +1197,7 @@ PC     Output      Line
 0407F5             0539*  ld_56:
 0407F5 21 57 09 04 0540*  	ld hl,F56
 0407F9 22 ED 37 04 0541*  	ld (cur_filename),hl
-0407FD 11 DC 43 04 0542*  	ld de,filedata
+0407FD 11 F5 43 04 0542*  	ld de,filedata
 040801 01 00 00 01 0543*  	ld bc,65536
 040805 3E 01       0544*  	ld a,mos_load
 040807 5B CF       0545*  	RST.LIL 08h
@@ -1212,7 +1212,7 @@ PC     Output      Line
 04081F             0553*  ld_60:
 04081F 21 66 09 04 0554*  	ld hl,F60
 040823 22 ED 37 04 0555*  	ld (cur_filename),hl
-040827 11 DC 43 04 0556*  	ld de,filedata
+040827 11 F5 43 04 0556*  	ld de,filedata
 04082B 01 00 00 01 0557*  	ld bc,65536
 04082F 3E 01       0558*  	ld a,mos_load
 040831 5B CF       0559*  	RST.LIL 08h
@@ -1653,7 +1653,7 @@ PC     Output      Line
 040BDB             0188*  load_font_itc_honda:
 040BDB             0189*  
 040BDB 21 1C 15 04 0190*  	ld hl,Fhonda032
-040BDF 11 DC 43 04 0191*  	ld de,filedata
+040BDF 11 F5 43 04 0191*  	ld de,filedata
 040BE3 01 00 00 01 0192*  	ld bc,65536
 040BE7 3E 01       0193*  	ld a,mos_load
 040BE9 5B CF       0194*  	RST.LIL 08h
@@ -1678,7 +1678,7 @@ PC     Output      Line
 040C00             0212*  ; Missing character 45
 040C00             0213*  
 040C00 21 32 15 04 0214*  	ld hl,Fhonda046
-040C04 11 DC 43 04 0215*  	ld de,filedata
+040C04 11 F5 43 04 0215*  	ld de,filedata
 040C08 01 00 00 01 0216*  	ld bc,65536
 040C0C 3E 01       0217*  	ld a,mos_load
 040C0E 5B CF       0218*  	RST.LIL 08h
@@ -1691,7 +1691,7 @@ PC     Output      Line
 040C25             0224*  ; Missing character 47
 040C25             0225*  
 040C25 21 48 15 04 0226*  	ld hl,Fhonda048
-040C29 11 DC 43 04 0227*  	ld de,filedata
+040C29 11 F5 43 04 0227*  	ld de,filedata
 040C2D 01 00 00 01 0228*  	ld bc,65536
 040C31 3E 01       0229*  	ld a,mos_load
 040C33 5B CF       0230*  	RST.LIL 08h
@@ -1703,7 +1703,7 @@ PC     Output      Line
 040C46 CD 68 39 04 0235*  	call vdu_load_img_2
 040C4A             0236*  
 040C4A 21 5E 15 04 0237*  	ld hl,Fhonda049
-040C4E 11 DC 43 04 0238*  	ld de,filedata
+040C4E 11 F5 43 04 0238*  	ld de,filedata
 040C52 01 00 00 01 0239*  	ld bc,65536
 040C56 3E 01       0240*  	ld a,mos_load
 040C58 5B CF       0241*  	RST.LIL 08h
@@ -1715,7 +1715,7 @@ PC     Output      Line
 040C6B CD 68 39 04 0246*  	call vdu_load_img_2
 040C6F             0247*  
 040C6F 21 74 15 04 0248*  	ld hl,Fhonda050
-040C73 11 DC 43 04 0249*  	ld de,filedata
+040C73 11 F5 43 04 0249*  	ld de,filedata
 040C77 01 00 00 01 0250*  	ld bc,65536
 040C7B 3E 01       0251*  	ld a,mos_load
 040C7D 5B CF       0252*  	RST.LIL 08h
@@ -1727,7 +1727,7 @@ PC     Output      Line
 040C90 CD 68 39 04 0257*  	call vdu_load_img_2
 040C94             0258*  
 040C94 21 8A 15 04 0259*  	ld hl,Fhonda051
-040C98 11 DC 43 04 0260*  	ld de,filedata
+040C98 11 F5 43 04 0260*  	ld de,filedata
 040C9C 01 00 00 01 0261*  	ld bc,65536
 040CA0 3E 01       0262*  	ld a,mos_load
 040CA2 5B CF       0263*  	RST.LIL 08h
@@ -1739,7 +1739,7 @@ PC     Output      Line
 040CB5 CD 68 39 04 0268*  	call vdu_load_img_2
 040CB9             0269*  
 040CB9 21 A0 15 04 0270*  	ld hl,Fhonda052
-040CBD 11 DC 43 04 0271*  	ld de,filedata
+040CBD 11 F5 43 04 0271*  	ld de,filedata
 040CC1 01 00 00 01 0272*  	ld bc,65536
 040CC5 3E 01       0273*  	ld a,mos_load
 040CC7 5B CF       0274*  	RST.LIL 08h
@@ -1751,7 +1751,7 @@ PC     Output      Line
 040CDA CD 68 39 04 0279*  	call vdu_load_img_2
 040CDE             0280*  
 040CDE 21 B6 15 04 0281*  	ld hl,Fhonda053
-040CE2 11 DC 43 04 0282*  	ld de,filedata
+040CE2 11 F5 43 04 0282*  	ld de,filedata
 040CE6 01 00 00 01 0283*  	ld bc,65536
 040CEA 3E 01       0284*  	ld a,mos_load
 040CEC 5B CF       0285*  	RST.LIL 08h
@@ -1763,7 +1763,7 @@ PC     Output      Line
 040CFF CD 68 39 04 0290*  	call vdu_load_img_2
 040D03             0291*  
 040D03 21 CC 15 04 0292*  	ld hl,Fhonda054
-040D07 11 DC 43 04 0293*  	ld de,filedata
+040D07 11 F5 43 04 0293*  	ld de,filedata
 040D0B 01 00 00 01 0294*  	ld bc,65536
 040D0F 3E 01       0295*  	ld a,mos_load
 040D11 5B CF       0296*  	RST.LIL 08h
@@ -1775,7 +1775,7 @@ PC     Output      Line
 040D24 CD 68 39 04 0301*  	call vdu_load_img_2
 040D28             0302*  
 040D28 21 E2 15 04 0303*  	ld hl,Fhonda055
-040D2C 11 DC 43 04 0304*  	ld de,filedata
+040D2C 11 F5 43 04 0304*  	ld de,filedata
 040D30 01 00 00 01 0305*  	ld bc,65536
 040D34 3E 01       0306*  	ld a,mos_load
 040D36 5B CF       0307*  	RST.LIL 08h
@@ -1787,7 +1787,7 @@ PC     Output      Line
 040D49 CD 68 39 04 0312*  	call vdu_load_img_2
 040D4D             0313*  
 040D4D 21 F8 15 04 0314*  	ld hl,Fhonda056
-040D51 11 DC 43 04 0315*  	ld de,filedata
+040D51 11 F5 43 04 0315*  	ld de,filedata
 040D55 01 00 00 01 0316*  	ld bc,65536
 040D59 3E 01       0317*  	ld a,mos_load
 040D5B 5B CF       0318*  	RST.LIL 08h
@@ -1799,7 +1799,7 @@ PC     Output      Line
 040D6E CD 68 39 04 0323*  	call vdu_load_img_2
 040D72             0324*  
 040D72 21 0E 16 04 0325*  	ld hl,Fhonda057
-040D76 11 DC 43 04 0326*  	ld de,filedata
+040D76 11 F5 43 04 0326*  	ld de,filedata
 040D7A 01 00 00 01 0327*  	ld bc,65536
 040D7E 3E 01       0328*  	ld a,mos_load
 040D80 5B CF       0329*  	RST.LIL 08h
@@ -1818,7 +1818,7 @@ PC     Output      Line
 040D97             0341*  ; Missing character 64
 040D97             0342*  
 040D97 21 24 16 04 0343*  	ld hl,Fhonda065
-040D9B 11 DC 43 04 0344*  	ld de,filedata
+040D9B 11 F5 43 04 0344*  	ld de,filedata
 040D9F 01 00 00 01 0345*  	ld bc,65536
 040DA3 3E 01       0346*  	ld a,mos_load
 040DA5 5B CF       0347*  	RST.LIL 08h
@@ -1830,7 +1830,7 @@ PC     Output      Line
 040DB8 CD 68 39 04 0352*  	call vdu_load_img_2
 040DBC             0353*  
 040DBC 21 3A 16 04 0354*  	ld hl,Fhonda066
-040DC0 11 DC 43 04 0355*  	ld de,filedata
+040DC0 11 F5 43 04 0355*  	ld de,filedata
 040DC4 01 00 00 01 0356*  	ld bc,65536
 040DC8 3E 01       0357*  	ld a,mos_load
 040DCA 5B CF       0358*  	RST.LIL 08h
@@ -1842,7 +1842,7 @@ PC     Output      Line
 040DDD CD 68 39 04 0363*  	call vdu_load_img_2
 040DE1             0364*  
 040DE1 21 50 16 04 0365*  	ld hl,Fhonda067
-040DE5 11 DC 43 04 0366*  	ld de,filedata
+040DE5 11 F5 43 04 0366*  	ld de,filedata
 040DE9 01 00 00 01 0367*  	ld bc,65536
 040DED 3E 01       0368*  	ld a,mos_load
 040DEF 5B CF       0369*  	RST.LIL 08h
@@ -1854,7 +1854,7 @@ PC     Output      Line
 040E02 CD 68 39 04 0374*  	call vdu_load_img_2
 040E06             0375*  
 040E06 21 66 16 04 0376*  	ld hl,Fhonda068
-040E0A 11 DC 43 04 0377*  	ld de,filedata
+040E0A 11 F5 43 04 0377*  	ld de,filedata
 040E0E 01 00 00 01 0378*  	ld bc,65536
 040E12 3E 01       0379*  	ld a,mos_load
 040E14 5B CF       0380*  	RST.LIL 08h
@@ -1866,7 +1866,7 @@ PC     Output      Line
 040E27 CD 68 39 04 0385*  	call vdu_load_img_2
 040E2B             0386*  
 040E2B 21 7C 16 04 0387*  	ld hl,Fhonda069
-040E2F 11 DC 43 04 0388*  	ld de,filedata
+040E2F 11 F5 43 04 0388*  	ld de,filedata
 040E33 01 00 00 01 0389*  	ld bc,65536
 040E37 3E 01       0390*  	ld a,mos_load
 040E39 5B CF       0391*  	RST.LIL 08h
@@ -1878,7 +1878,7 @@ PC     Output      Line
 040E4C CD 68 39 04 0396*  	call vdu_load_img_2
 040E50             0397*  
 040E50 21 92 16 04 0398*  	ld hl,Fhonda070
-040E54 11 DC 43 04 0399*  	ld de,filedata
+040E54 11 F5 43 04 0399*  	ld de,filedata
 040E58 01 00 00 01 0400*  	ld bc,65536
 040E5C 3E 01       0401*  	ld a,mos_load
 040E5E 5B CF       0402*  	RST.LIL 08h
@@ -1890,7 +1890,7 @@ PC     Output      Line
 040E71 CD 68 39 04 0407*  	call vdu_load_img_2
 040E75             0408*  
 040E75 21 A8 16 04 0409*  	ld hl,Fhonda071
-040E79 11 DC 43 04 0410*  	ld de,filedata
+040E79 11 F5 43 04 0410*  	ld de,filedata
 040E7D 01 00 00 01 0411*  	ld bc,65536
 040E81 3E 01       0412*  	ld a,mos_load
 040E83 5B CF       0413*  	RST.LIL 08h
@@ -1902,7 +1902,7 @@ PC     Output      Line
 040E96 CD 68 39 04 0418*  	call vdu_load_img_2
 040E9A             0419*  
 040E9A 21 BE 16 04 0420*  	ld hl,Fhonda072
-040E9E 11 DC 43 04 0421*  	ld de,filedata
+040E9E 11 F5 43 04 0421*  	ld de,filedata
 040EA2 01 00 00 01 0422*  	ld bc,65536
 040EA6 3E 01       0423*  	ld a,mos_load
 040EA8 5B CF       0424*  	RST.LIL 08h
@@ -1914,7 +1914,7 @@ PC     Output      Line
 040EBB CD 68 39 04 0429*  	call vdu_load_img_2
 040EBF             0430*  
 040EBF 21 D4 16 04 0431*  	ld hl,Fhonda073
-040EC3 11 DC 43 04 0432*  	ld de,filedata
+040EC3 11 F5 43 04 0432*  	ld de,filedata
 040EC7 01 00 00 01 0433*  	ld bc,65536
 040ECB 3E 01       0434*  	ld a,mos_load
 040ECD 5B CF       0435*  	RST.LIL 08h
@@ -1926,7 +1926,7 @@ PC     Output      Line
 040EE0 CD 68 39 04 0440*  	call vdu_load_img_2
 040EE4             0441*  
 040EE4 21 EA 16 04 0442*  	ld hl,Fhonda074
-040EE8 11 DC 43 04 0443*  	ld de,filedata
+040EE8 11 F5 43 04 0443*  	ld de,filedata
 040EEC 01 00 00 01 0444*  	ld bc,65536
 040EF0 3E 01       0445*  	ld a,mos_load
 040EF2 5B CF       0446*  	RST.LIL 08h
@@ -1938,7 +1938,7 @@ PC     Output      Line
 040F05 CD 68 39 04 0451*  	call vdu_load_img_2
 040F09             0452*  
 040F09 21 00 17 04 0453*  	ld hl,Fhonda075
-040F0D 11 DC 43 04 0454*  	ld de,filedata
+040F0D 11 F5 43 04 0454*  	ld de,filedata
 040F11 01 00 00 01 0455*  	ld bc,65536
 040F15 3E 01       0456*  	ld a,mos_load
 040F17 5B CF       0457*  	RST.LIL 08h
@@ -1950,7 +1950,7 @@ PC     Output      Line
 040F2A CD 68 39 04 0462*  	call vdu_load_img_2
 040F2E             0463*  
 040F2E 21 16 17 04 0464*  	ld hl,Fhonda076
-040F32 11 DC 43 04 0465*  	ld de,filedata
+040F32 11 F5 43 04 0465*  	ld de,filedata
 040F36 01 00 00 01 0466*  	ld bc,65536
 040F3A 3E 01       0467*  	ld a,mos_load
 040F3C 5B CF       0468*  	RST.LIL 08h
@@ -1962,7 +1962,7 @@ PC     Output      Line
 040F4F CD 68 39 04 0473*  	call vdu_load_img_2
 040F53             0474*  
 040F53 21 2C 17 04 0475*  	ld hl,Fhonda077
-040F57 11 DC 43 04 0476*  	ld de,filedata
+040F57 11 F5 43 04 0476*  	ld de,filedata
 040F5B 01 00 00 01 0477*  	ld bc,65536
 040F5F 3E 01       0478*  	ld a,mos_load
 040F61 5B CF       0479*  	RST.LIL 08h
@@ -1974,7 +1974,7 @@ PC     Output      Line
 040F74 CD 68 39 04 0484*  	call vdu_load_img_2
 040F78             0485*  
 040F78 21 42 17 04 0486*  	ld hl,Fhonda078
-040F7C 11 DC 43 04 0487*  	ld de,filedata
+040F7C 11 F5 43 04 0487*  	ld de,filedata
 040F80 01 00 00 01 0488*  	ld bc,65536
 040F84 3E 01       0489*  	ld a,mos_load
 040F86 5B CF       0490*  	RST.LIL 08h
@@ -1986,7 +1986,7 @@ PC     Output      Line
 040F99 CD 68 39 04 0495*  	call vdu_load_img_2
 040F9D             0496*  
 040F9D 21 58 17 04 0497*  	ld hl,Fhonda079
-040FA1 11 DC 43 04 0498*  	ld de,filedata
+040FA1 11 F5 43 04 0498*  	ld de,filedata
 040FA5 01 00 00 01 0499*  	ld bc,65536
 040FA9 3E 01       0500*  	ld a,mos_load
 040FAB 5B CF       0501*  	RST.LIL 08h
@@ -1998,7 +1998,7 @@ PC     Output      Line
 040FBE CD 68 39 04 0506*  	call vdu_load_img_2
 040FC2             0507*  
 040FC2 21 6E 17 04 0508*  	ld hl,Fhonda080
-040FC6 11 DC 43 04 0509*  	ld de,filedata
+040FC6 11 F5 43 04 0509*  	ld de,filedata
 040FCA 01 00 00 01 0510*  	ld bc,65536
 040FCE 3E 01       0511*  	ld a,mos_load
 040FD0 5B CF       0512*  	RST.LIL 08h
@@ -2010,7 +2010,7 @@ PC     Output      Line
 040FE3 CD 68 39 04 0517*  	call vdu_load_img_2
 040FE7             0518*  
 040FE7 21 84 17 04 0519*  	ld hl,Fhonda081
-040FEB 11 DC 43 04 0520*  	ld de,filedata
+040FEB 11 F5 43 04 0520*  	ld de,filedata
 040FEF 01 00 00 01 0521*  	ld bc,65536
 040FF3 3E 01       0522*  	ld a,mos_load
 040FF5 5B CF       0523*  	RST.LIL 08h
@@ -2022,7 +2022,7 @@ PC     Output      Line
 041008 CD 68 39 04 0528*  	call vdu_load_img_2
 04100C             0529*  
 04100C 21 9A 17 04 0530*  	ld hl,Fhonda082
-041010 11 DC 43 04 0531*  	ld de,filedata
+041010 11 F5 43 04 0531*  	ld de,filedata
 041014 01 00 00 01 0532*  	ld bc,65536
 041018 3E 01       0533*  	ld a,mos_load
 04101A 5B CF       0534*  	RST.LIL 08h
@@ -2034,7 +2034,7 @@ PC     Output      Line
 04102D CD 68 39 04 0539*  	call vdu_load_img_2
 041031             0540*  
 041031 21 B0 17 04 0541*  	ld hl,Fhonda083
-041035 11 DC 43 04 0542*  	ld de,filedata
+041035 11 F5 43 04 0542*  	ld de,filedata
 041039 01 00 00 01 0543*  	ld bc,65536
 04103D 3E 01       0544*  	ld a,mos_load
 04103F 5B CF       0545*  	RST.LIL 08h
@@ -2046,7 +2046,7 @@ PC     Output      Line
 041052 CD 68 39 04 0550*  	call vdu_load_img_2
 041056             0551*  
 041056 21 C6 17 04 0552*  	ld hl,Fhonda084
-04105A 11 DC 43 04 0553*  	ld de,filedata
+04105A 11 F5 43 04 0553*  	ld de,filedata
 04105E 01 00 00 01 0554*  	ld bc,65536
 041062 3E 01       0555*  	ld a,mos_load
 041064 5B CF       0556*  	RST.LIL 08h
@@ -2058,7 +2058,7 @@ PC     Output      Line
 041077 CD 68 39 04 0561*  	call vdu_load_img_2
 04107B             0562*  
 04107B 21 DC 17 04 0563*  	ld hl,Fhonda085
-04107F 11 DC 43 04 0564*  	ld de,filedata
+04107F 11 F5 43 04 0564*  	ld de,filedata
 041083 01 00 00 01 0565*  	ld bc,65536
 041087 3E 01       0566*  	ld a,mos_load
 041089 5B CF       0567*  	RST.LIL 08h
@@ -2070,7 +2070,7 @@ PC     Output      Line
 04109C CD 68 39 04 0572*  	call vdu_load_img_2
 0410A0             0573*  
 0410A0 21 F2 17 04 0574*  	ld hl,Fhonda086
-0410A4 11 DC 43 04 0575*  	ld de,filedata
+0410A4 11 F5 43 04 0575*  	ld de,filedata
 0410A8 01 00 00 01 0576*  	ld bc,65536
 0410AC 3E 01       0577*  	ld a,mos_load
 0410AE 5B CF       0578*  	RST.LIL 08h
@@ -2082,7 +2082,7 @@ PC     Output      Line
 0410C1 CD 68 39 04 0583*  	call vdu_load_img_2
 0410C5             0584*  
 0410C5 21 08 18 04 0585*  	ld hl,Fhonda087
-0410C9 11 DC 43 04 0586*  	ld de,filedata
+0410C9 11 F5 43 04 0586*  	ld de,filedata
 0410CD 01 00 00 01 0587*  	ld bc,65536
 0410D1 3E 01       0588*  	ld a,mos_load
 0410D3 5B CF       0589*  	RST.LIL 08h
@@ -2094,7 +2094,7 @@ PC     Output      Line
 0410E6 CD 68 39 04 0594*  	call vdu_load_img_2
 0410EA             0595*  
 0410EA 21 1E 18 04 0596*  	ld hl,Fhonda088
-0410EE 11 DC 43 04 0597*  	ld de,filedata
+0410EE 11 F5 43 04 0597*  	ld de,filedata
 0410F2 01 00 00 01 0598*  	ld bc,65536
 0410F6 3E 01       0599*  	ld a,mos_load
 0410F8 5B CF       0600*  	RST.LIL 08h
@@ -2106,7 +2106,7 @@ PC     Output      Line
 04110B CD 68 39 04 0605*  	call vdu_load_img_2
 04110F             0606*  
 04110F 21 34 18 04 0607*  	ld hl,Fhonda089
-041113 11 DC 43 04 0608*  	ld de,filedata
+041113 11 F5 43 04 0608*  	ld de,filedata
 041117 01 00 00 01 0609*  	ld bc,65536
 04111B 3E 01       0610*  	ld a,mos_load
 04111D 5B CF       0611*  	RST.LIL 08h
@@ -2118,7 +2118,7 @@ PC     Output      Line
 041130 CD 68 39 04 0616*  	call vdu_load_img_2
 041134             0617*  
 041134 21 4A 18 04 0618*  	ld hl,Fhonda090
-041138 11 DC 43 04 0619*  	ld de,filedata
+041138 11 F5 43 04 0619*  	ld de,filedata
 04113C 01 00 00 01 0620*  	ld bc,65536
 041140 3E 01       0621*  	ld a,mos_load
 041142 5B CF       0622*  	RST.LIL 08h
@@ -2136,7 +2136,7 @@ PC     Output      Line
 041159             0633*  ; Missing character 96
 041159             0634*  
 041159 21 60 18 04 0635*  	ld hl,Fhonda097
-04115D 11 DC 43 04 0636*  	ld de,filedata
+04115D 11 F5 43 04 0636*  	ld de,filedata
 041161 01 00 00 01 0637*  	ld bc,65536
 041165 3E 01       0638*  	ld a,mos_load
 041167 5B CF       0639*  	RST.LIL 08h
@@ -2148,7 +2148,7 @@ PC     Output      Line
 04117A CD 68 39 04 0644*  	call vdu_load_img_2
 04117E             0645*  
 04117E 21 76 18 04 0646*  	ld hl,Fhonda098
-041182 11 DC 43 04 0647*  	ld de,filedata
+041182 11 F5 43 04 0647*  	ld de,filedata
 041186 01 00 00 01 0648*  	ld bc,65536
 04118A 3E 01       0649*  	ld a,mos_load
 04118C 5B CF       0650*  	RST.LIL 08h
@@ -2160,7 +2160,7 @@ PC     Output      Line
 04119F CD 68 39 04 0655*  	call vdu_load_img_2
 0411A3             0656*  
 0411A3 21 8C 18 04 0657*  	ld hl,Fhonda099
-0411A7 11 DC 43 04 0658*  	ld de,filedata
+0411A7 11 F5 43 04 0658*  	ld de,filedata
 0411AB 01 00 00 01 0659*  	ld bc,65536
 0411AF 3E 01       0660*  	ld a,mos_load
 0411B1 5B CF       0661*  	RST.LIL 08h
@@ -2172,7 +2172,7 @@ PC     Output      Line
 0411C4 CD 68 39 04 0666*  	call vdu_load_img_2
 0411C8             0667*  
 0411C8 21 A2 18 04 0668*  	ld hl,Fhonda100
-0411CC 11 DC 43 04 0669*  	ld de,filedata
+0411CC 11 F5 43 04 0669*  	ld de,filedata
 0411D0 01 00 00 01 0670*  	ld bc,65536
 0411D4 3E 01       0671*  	ld a,mos_load
 0411D6 5B CF       0672*  	RST.LIL 08h
@@ -2184,7 +2184,7 @@ PC     Output      Line
 0411E9 CD 68 39 04 0677*  	call vdu_load_img_2
 0411ED             0678*  
 0411ED 21 B8 18 04 0679*  	ld hl,Fhonda101
-0411F1 11 DC 43 04 0680*  	ld de,filedata
+0411F1 11 F5 43 04 0680*  	ld de,filedata
 0411F5 01 00 00 01 0681*  	ld bc,65536
 0411F9 3E 01       0682*  	ld a,mos_load
 0411FB 5B CF       0683*  	RST.LIL 08h
@@ -2196,7 +2196,7 @@ PC     Output      Line
 04120E CD 68 39 04 0688*  	call vdu_load_img_2
 041212             0689*  
 041212 21 CE 18 04 0690*  	ld hl,Fhonda102
-041216 11 DC 43 04 0691*  	ld de,filedata
+041216 11 F5 43 04 0691*  	ld de,filedata
 04121A 01 00 00 01 0692*  	ld bc,65536
 04121E 3E 01       0693*  	ld a,mos_load
 041220 5B CF       0694*  	RST.LIL 08h
@@ -2208,7 +2208,7 @@ PC     Output      Line
 041233 CD 68 39 04 0699*  	call vdu_load_img_2
 041237             0700*  
 041237 21 E4 18 04 0701*  	ld hl,Fhonda103
-04123B 11 DC 43 04 0702*  	ld de,filedata
+04123B 11 F5 43 04 0702*  	ld de,filedata
 04123F 01 00 00 01 0703*  	ld bc,65536
 041243 3E 01       0704*  	ld a,mos_load
 041245 5B CF       0705*  	RST.LIL 08h
@@ -2220,7 +2220,7 @@ PC     Output      Line
 041258 CD 68 39 04 0710*  	call vdu_load_img_2
 04125C             0711*  
 04125C 21 FA 18 04 0712*  	ld hl,Fhonda104
-041260 11 DC 43 04 0713*  	ld de,filedata
+041260 11 F5 43 04 0713*  	ld de,filedata
 041264 01 00 00 01 0714*  	ld bc,65536
 041268 3E 01       0715*  	ld a,mos_load
 04126A 5B CF       0716*  	RST.LIL 08h
@@ -2232,7 +2232,7 @@ PC     Output      Line
 04127D CD 68 39 04 0721*  	call vdu_load_img_2
 041281             0722*  
 041281 21 10 19 04 0723*  	ld hl,Fhonda105
-041285 11 DC 43 04 0724*  	ld de,filedata
+041285 11 F5 43 04 0724*  	ld de,filedata
 041289 01 00 00 01 0725*  	ld bc,65536
 04128D 3E 01       0726*  	ld a,mos_load
 04128F 5B CF       0727*  	RST.LIL 08h
@@ -2244,7 +2244,7 @@ PC     Output      Line
 0412A2 CD 68 39 04 0732*  	call vdu_load_img_2
 0412A6             0733*  
 0412A6 21 26 19 04 0734*  	ld hl,Fhonda106
-0412AA 11 DC 43 04 0735*  	ld de,filedata
+0412AA 11 F5 43 04 0735*  	ld de,filedata
 0412AE 01 00 00 01 0736*  	ld bc,65536
 0412B2 3E 01       0737*  	ld a,mos_load
 0412B4 5B CF       0738*  	RST.LIL 08h
@@ -2256,7 +2256,7 @@ PC     Output      Line
 0412C7 CD 68 39 04 0743*  	call vdu_load_img_2
 0412CB             0744*  
 0412CB 21 3C 19 04 0745*  	ld hl,Fhonda107
-0412CF 11 DC 43 04 0746*  	ld de,filedata
+0412CF 11 F5 43 04 0746*  	ld de,filedata
 0412D3 01 00 00 01 0747*  	ld bc,65536
 0412D7 3E 01       0748*  	ld a,mos_load
 0412D9 5B CF       0749*  	RST.LIL 08h
@@ -2268,7 +2268,7 @@ PC     Output      Line
 0412EC CD 68 39 04 0754*  	call vdu_load_img_2
 0412F0             0755*  
 0412F0 21 52 19 04 0756*  	ld hl,Fhonda108
-0412F4 11 DC 43 04 0757*  	ld de,filedata
+0412F4 11 F5 43 04 0757*  	ld de,filedata
 0412F8 01 00 00 01 0758*  	ld bc,65536
 0412FC 3E 01       0759*  	ld a,mos_load
 0412FE 5B CF       0760*  	RST.LIL 08h
@@ -2280,7 +2280,7 @@ PC     Output      Line
 041311 CD 68 39 04 0765*  	call vdu_load_img_2
 041315             0766*  
 041315 21 68 19 04 0767*  	ld hl,Fhonda109
-041319 11 DC 43 04 0768*  	ld de,filedata
+041319 11 F5 43 04 0768*  	ld de,filedata
 04131D 01 00 00 01 0769*  	ld bc,65536
 041321 3E 01       0770*  	ld a,mos_load
 041323 5B CF       0771*  	RST.LIL 08h
@@ -2292,7 +2292,7 @@ PC     Output      Line
 041336 CD 68 39 04 0776*  	call vdu_load_img_2
 04133A             0777*  
 04133A 21 7E 19 04 0778*  	ld hl,Fhonda110
-04133E 11 DC 43 04 0779*  	ld de,filedata
+04133E 11 F5 43 04 0779*  	ld de,filedata
 041342 01 00 00 01 0780*  	ld bc,65536
 041346 3E 01       0781*  	ld a,mos_load
 041348 5B CF       0782*  	RST.LIL 08h
@@ -2304,7 +2304,7 @@ PC     Output      Line
 04135B CD 68 39 04 0787*  	call vdu_load_img_2
 04135F             0788*  
 04135F 21 94 19 04 0789*  	ld hl,Fhonda111
-041363 11 DC 43 04 0790*  	ld de,filedata
+041363 11 F5 43 04 0790*  	ld de,filedata
 041367 01 00 00 01 0791*  	ld bc,65536
 04136B 3E 01       0792*  	ld a,mos_load
 04136D 5B CF       0793*  	RST.LIL 08h
@@ -2316,7 +2316,7 @@ PC     Output      Line
 041380 CD 68 39 04 0798*  	call vdu_load_img_2
 041384             0799*  
 041384 21 AA 19 04 0800*  	ld hl,Fhonda112
-041388 11 DC 43 04 0801*  	ld de,filedata
+041388 11 F5 43 04 0801*  	ld de,filedata
 04138C 01 00 00 01 0802*  	ld bc,65536
 041390 3E 01       0803*  	ld a,mos_load
 041392 5B CF       0804*  	RST.LIL 08h
@@ -2328,7 +2328,7 @@ PC     Output      Line
 0413A5 CD 68 39 04 0809*  	call vdu_load_img_2
 0413A9             0810*  
 0413A9 21 C0 19 04 0811*  	ld hl,Fhonda113
-0413AD 11 DC 43 04 0812*  	ld de,filedata
+0413AD 11 F5 43 04 0812*  	ld de,filedata
 0413B1 01 00 00 01 0813*  	ld bc,65536
 0413B5 3E 01       0814*  	ld a,mos_load
 0413B7 5B CF       0815*  	RST.LIL 08h
@@ -2340,7 +2340,7 @@ PC     Output      Line
 0413CA CD 68 39 04 0820*  	call vdu_load_img_2
 0413CE             0821*  
 0413CE 21 D6 19 04 0822*  	ld hl,Fhonda114
-0413D2 11 DC 43 04 0823*  	ld de,filedata
+0413D2 11 F5 43 04 0823*  	ld de,filedata
 0413D6 01 00 00 01 0824*  	ld bc,65536
 0413DA 3E 01       0825*  	ld a,mos_load
 0413DC 5B CF       0826*  	RST.LIL 08h
@@ -2352,7 +2352,7 @@ PC     Output      Line
 0413EF CD 68 39 04 0831*  	call vdu_load_img_2
 0413F3             0832*  
 0413F3 21 EC 19 04 0833*  	ld hl,Fhonda115
-0413F7 11 DC 43 04 0834*  	ld de,filedata
+0413F7 11 F5 43 04 0834*  	ld de,filedata
 0413FB 01 00 00 01 0835*  	ld bc,65536
 0413FF 3E 01       0836*  	ld a,mos_load
 041401 5B CF       0837*  	RST.LIL 08h
@@ -2364,7 +2364,7 @@ PC     Output      Line
 041414 CD 68 39 04 0842*  	call vdu_load_img_2
 041418             0843*  
 041418 21 02 1A 04 0844*  	ld hl,Fhonda116
-04141C 11 DC 43 04 0845*  	ld de,filedata
+04141C 11 F5 43 04 0845*  	ld de,filedata
 041420 01 00 00 01 0846*  	ld bc,65536
 041424 3E 01       0847*  	ld a,mos_load
 041426 5B CF       0848*  	RST.LIL 08h
@@ -2376,7 +2376,7 @@ PC     Output      Line
 041439 CD 68 39 04 0853*  	call vdu_load_img_2
 04143D             0854*  
 04143D 21 18 1A 04 0855*  	ld hl,Fhonda117
-041441 11 DC 43 04 0856*  	ld de,filedata
+041441 11 F5 43 04 0856*  	ld de,filedata
 041445 01 00 00 01 0857*  	ld bc,65536
 041449 3E 01       0858*  	ld a,mos_load
 04144B 5B CF       0859*  	RST.LIL 08h
@@ -2388,7 +2388,7 @@ PC     Output      Line
 04145E CD 68 39 04 0864*  	call vdu_load_img_2
 041462             0865*  
 041462 21 2E 1A 04 0866*  	ld hl,Fhonda118
-041466 11 DC 43 04 0867*  	ld de,filedata
+041466 11 F5 43 04 0867*  	ld de,filedata
 04146A 01 00 00 01 0868*  	ld bc,65536
 04146E 3E 01       0869*  	ld a,mos_load
 041470 5B CF       0870*  	RST.LIL 08h
@@ -2400,7 +2400,7 @@ PC     Output      Line
 041483 CD 68 39 04 0875*  	call vdu_load_img_2
 041487             0876*  
 041487 21 44 1A 04 0877*  	ld hl,Fhonda119
-04148B 11 DC 43 04 0878*  	ld de,filedata
+04148B 11 F5 43 04 0878*  	ld de,filedata
 04148F 01 00 00 01 0879*  	ld bc,65536
 041493 3E 01       0880*  	ld a,mos_load
 041495 5B CF       0881*  	RST.LIL 08h
@@ -2412,7 +2412,7 @@ PC     Output      Line
 0414A8 CD 68 39 04 0886*  	call vdu_load_img_2
 0414AC             0887*  
 0414AC 21 5A 1A 04 0888*  	ld hl,Fhonda120
-0414B0 11 DC 43 04 0889*  	ld de,filedata
+0414B0 11 F5 43 04 0889*  	ld de,filedata
 0414B4 01 00 00 01 0890*  	ld bc,65536
 0414B8 3E 01       0891*  	ld a,mos_load
 0414BA 5B CF       0892*  	RST.LIL 08h
@@ -2424,7 +2424,7 @@ PC     Output      Line
 0414CD CD 68 39 04 0897*  	call vdu_load_img_2
 0414D1             0898*  
 0414D1 21 70 1A 04 0899*  	ld hl,Fhonda121
-0414D5 11 DC 43 04 0900*  	ld de,filedata
+0414D5 11 F5 43 04 0900*  	ld de,filedata
 0414D9 01 00 00 01 0901*  	ld bc,65536
 0414DD 3E 01       0902*  	ld a,mos_load
 0414DF 5B CF       0903*  	RST.LIL 08h
@@ -2436,7 +2436,7 @@ PC     Output      Line
 0414F2 CD 68 39 04 0908*  	call vdu_load_img_2
 0414F6             0909*  
 0414F6 21 86 1A 04 0910*  	ld hl,Fhonda122
-0414FA 11 DC 43 04 0911*  	ld de,filedata
+0414FA 11 F5 43 04 0911*  	ld de,filedata
 0414FE 01 00 00 01 0912*  	ld bc,65536
 041502 3E 01       0913*  	ld a,mos_load
 041504 5B CF       0914*  	RST.LIL 08h
@@ -3115,7 +3115,7 @@ PC     Output      Line
 041CBE             0188*  load_font_retro_computer:
 041CBE             0189*  
 041CBE 21 62 22 04 0190*  	ld hl,Frc032
-041CC2 11 DC 43 04 0191*  	ld de,filedata
+041CC2 11 F5 43 04 0191*  	ld de,filedata
 041CC6 01 00 00 01 0192*  	ld bc,65536
 041CCA 3E 01       0193*  	ld a,mos_load
 041CCC 5B CF       0194*  	RST.LIL 08h
@@ -3127,7 +3127,7 @@ PC     Output      Line
 041CDF CD 68 39 04 0199*  	call vdu_load_img_2
 041CE3             0200*  
 041CE3 21 75 22 04 0201*  	ld hl,Frc033
-041CE7 11 DC 43 04 0202*  	ld de,filedata
+041CE7 11 F5 43 04 0202*  	ld de,filedata
 041CEB 01 00 00 01 0203*  	ld bc,65536
 041CEF 3E 01       0204*  	ld a,mos_load
 041CF1 5B CF       0205*  	RST.LIL 08h
@@ -3153,7 +3153,7 @@ PC     Output      Line
 041D08             0224*  ; Missing character 47
 041D08             0225*  
 041D08 21 88 22 04 0226*  	ld hl,Frc048
-041D0C 11 DC 43 04 0227*  	ld de,filedata
+041D0C 11 F5 43 04 0227*  	ld de,filedata
 041D10 01 00 00 01 0228*  	ld bc,65536
 041D14 3E 01       0229*  	ld a,mos_load
 041D16 5B CF       0230*  	RST.LIL 08h
@@ -3165,7 +3165,7 @@ PC     Output      Line
 041D29 CD 68 39 04 0235*  	call vdu_load_img_2
 041D2D             0236*  
 041D2D 21 9B 22 04 0237*  	ld hl,Frc049
-041D31 11 DC 43 04 0238*  	ld de,filedata
+041D31 11 F5 43 04 0238*  	ld de,filedata
 041D35 01 00 00 01 0239*  	ld bc,65536
 041D39 3E 01       0240*  	ld a,mos_load
 041D3B 5B CF       0241*  	RST.LIL 08h
@@ -3177,7 +3177,7 @@ PC     Output      Line
 041D4E CD 68 39 04 0246*  	call vdu_load_img_2
 041D52             0247*  
 041D52 21 AE 22 04 0248*  	ld hl,Frc050
-041D56 11 DC 43 04 0249*  	ld de,filedata
+041D56 11 F5 43 04 0249*  	ld de,filedata
 041D5A 01 00 00 01 0250*  	ld bc,65536
 041D5E 3E 01       0251*  	ld a,mos_load
 041D60 5B CF       0252*  	RST.LIL 08h
@@ -3189,7 +3189,7 @@ PC     Output      Line
 041D73 CD 68 39 04 0257*  	call vdu_load_img_2
 041D77             0258*  
 041D77 21 C1 22 04 0259*  	ld hl,Frc051
-041D7B 11 DC 43 04 0260*  	ld de,filedata
+041D7B 11 F5 43 04 0260*  	ld de,filedata
 041D7F 01 00 00 01 0261*  	ld bc,65536
 041D83 3E 01       0262*  	ld a,mos_load
 041D85 5B CF       0263*  	RST.LIL 08h
@@ -3201,7 +3201,7 @@ PC     Output      Line
 041D98 CD 68 39 04 0268*  	call vdu_load_img_2
 041D9C             0269*  
 041D9C 21 D4 22 04 0270*  	ld hl,Frc052
-041DA0 11 DC 43 04 0271*  	ld de,filedata
+041DA0 11 F5 43 04 0271*  	ld de,filedata
 041DA4 01 00 00 01 0272*  	ld bc,65536
 041DA8 3E 01       0273*  	ld a,mos_load
 041DAA 5B CF       0274*  	RST.LIL 08h
@@ -3213,7 +3213,7 @@ PC     Output      Line
 041DBD CD 68 39 04 0279*  	call vdu_load_img_2
 041DC1             0280*  
 041DC1 21 E7 22 04 0281*  	ld hl,Frc053
-041DC5 11 DC 43 04 0282*  	ld de,filedata
+041DC5 11 F5 43 04 0282*  	ld de,filedata
 041DC9 01 00 00 01 0283*  	ld bc,65536
 041DCD 3E 01       0284*  	ld a,mos_load
 041DCF 5B CF       0285*  	RST.LIL 08h
@@ -3225,7 +3225,7 @@ PC     Output      Line
 041DE2 CD 68 39 04 0290*  	call vdu_load_img_2
 041DE6             0291*  
 041DE6 21 FA 22 04 0292*  	ld hl,Frc054
-041DEA 11 DC 43 04 0293*  	ld de,filedata
+041DEA 11 F5 43 04 0293*  	ld de,filedata
 041DEE 01 00 00 01 0294*  	ld bc,65536
 041DF2 3E 01       0295*  	ld a,mos_load
 041DF4 5B CF       0296*  	RST.LIL 08h
@@ -3237,7 +3237,7 @@ PC     Output      Line
 041E07 CD 68 39 04 0301*  	call vdu_load_img_2
 041E0B             0302*  
 041E0B 21 0D 23 04 0303*  	ld hl,Frc055
-041E0F 11 DC 43 04 0304*  	ld de,filedata
+041E0F 11 F5 43 04 0304*  	ld de,filedata
 041E13 01 00 00 01 0305*  	ld bc,65536
 041E17 3E 01       0306*  	ld a,mos_load
 041E19 5B CF       0307*  	RST.LIL 08h
@@ -3249,7 +3249,7 @@ PC     Output      Line
 041E2C CD 68 39 04 0312*  	call vdu_load_img_2
 041E30             0313*  
 041E30 21 20 23 04 0314*  	ld hl,Frc056
-041E34 11 DC 43 04 0315*  	ld de,filedata
+041E34 11 F5 43 04 0315*  	ld de,filedata
 041E38 01 00 00 01 0316*  	ld bc,65536
 041E3C 3E 01       0317*  	ld a,mos_load
 041E3E 5B CF       0318*  	RST.LIL 08h
@@ -3261,7 +3261,7 @@ PC     Output      Line
 041E51 CD 68 39 04 0323*  	call vdu_load_img_2
 041E55             0324*  
 041E55 21 33 23 04 0325*  	ld hl,Frc057
-041E59 11 DC 43 04 0326*  	ld de,filedata
+041E59 11 F5 43 04 0326*  	ld de,filedata
 041E5D 01 00 00 01 0327*  	ld bc,65536
 041E61 3E 01       0328*  	ld a,mos_load
 041E63 5B CF       0329*  	RST.LIL 08h
@@ -3278,7 +3278,7 @@ PC     Output      Line
 041E7A             0339*  ; Missing character 62
 041E7A             0340*  
 041E7A 21 46 23 04 0341*  	ld hl,Frc063
-041E7E 11 DC 43 04 0342*  	ld de,filedata
+041E7E 11 F5 43 04 0342*  	ld de,filedata
 041E82 01 00 00 01 0343*  	ld bc,65536
 041E86 3E 01       0344*  	ld a,mos_load
 041E88 5B CF       0345*  	RST.LIL 08h
@@ -3291,7 +3291,7 @@ PC     Output      Line
 041E9F             0351*  ; Missing character 64
 041E9F             0352*  
 041E9F 21 59 23 04 0353*  	ld hl,Frc065
-041EA3 11 DC 43 04 0354*  	ld de,filedata
+041EA3 11 F5 43 04 0354*  	ld de,filedata
 041EA7 01 00 00 01 0355*  	ld bc,65536
 041EAB 3E 01       0356*  	ld a,mos_load
 041EAD 5B CF       0357*  	RST.LIL 08h
@@ -3303,7 +3303,7 @@ PC     Output      Line
 041EC0 CD 68 39 04 0362*  	call vdu_load_img_2
 041EC4             0363*  
 041EC4 21 6C 23 04 0364*  	ld hl,Frc066
-041EC8 11 DC 43 04 0365*  	ld de,filedata
+041EC8 11 F5 43 04 0365*  	ld de,filedata
 041ECC 01 00 00 01 0366*  	ld bc,65536
 041ED0 3E 01       0367*  	ld a,mos_load
 041ED2 5B CF       0368*  	RST.LIL 08h
@@ -3315,7 +3315,7 @@ PC     Output      Line
 041EE5 CD 68 39 04 0373*  	call vdu_load_img_2
 041EE9             0374*  
 041EE9 21 7F 23 04 0375*  	ld hl,Frc067
-041EED 11 DC 43 04 0376*  	ld de,filedata
+041EED 11 F5 43 04 0376*  	ld de,filedata
 041EF1 01 00 00 01 0377*  	ld bc,65536
 041EF5 3E 01       0378*  	ld a,mos_load
 041EF7 5B CF       0379*  	RST.LIL 08h
@@ -3327,7 +3327,7 @@ PC     Output      Line
 041F0A CD 68 39 04 0384*  	call vdu_load_img_2
 041F0E             0385*  
 041F0E 21 92 23 04 0386*  	ld hl,Frc068
-041F12 11 DC 43 04 0387*  	ld de,filedata
+041F12 11 F5 43 04 0387*  	ld de,filedata
 041F16 01 00 00 01 0388*  	ld bc,65536
 041F1A 3E 01       0389*  	ld a,mos_load
 041F1C 5B CF       0390*  	RST.LIL 08h
@@ -3339,7 +3339,7 @@ PC     Output      Line
 041F2F CD 68 39 04 0395*  	call vdu_load_img_2
 041F33             0396*  
 041F33 21 A5 23 04 0397*  	ld hl,Frc069
-041F37 11 DC 43 04 0398*  	ld de,filedata
+041F37 11 F5 43 04 0398*  	ld de,filedata
 041F3B 01 00 00 01 0399*  	ld bc,65536
 041F3F 3E 01       0400*  	ld a,mos_load
 041F41 5B CF       0401*  	RST.LIL 08h
@@ -3351,7 +3351,7 @@ PC     Output      Line
 041F54 CD 68 39 04 0406*  	call vdu_load_img_2
 041F58             0407*  
 041F58 21 B8 23 04 0408*  	ld hl,Frc070
-041F5C 11 DC 43 04 0409*  	ld de,filedata
+041F5C 11 F5 43 04 0409*  	ld de,filedata
 041F60 01 00 00 01 0410*  	ld bc,65536
 041F64 3E 01       0411*  	ld a,mos_load
 041F66 5B CF       0412*  	RST.LIL 08h
@@ -3363,7 +3363,7 @@ PC     Output      Line
 041F79 CD 68 39 04 0417*  	call vdu_load_img_2
 041F7D             0418*  
 041F7D 21 CB 23 04 0419*  	ld hl,Frc071
-041F81 11 DC 43 04 0420*  	ld de,filedata
+041F81 11 F5 43 04 0420*  	ld de,filedata
 041F85 01 00 00 01 0421*  	ld bc,65536
 041F89 3E 01       0422*  	ld a,mos_load
 041F8B 5B CF       0423*  	RST.LIL 08h
@@ -3375,7 +3375,7 @@ PC     Output      Line
 041F9E CD 68 39 04 0428*  	call vdu_load_img_2
 041FA2             0429*  
 041FA2 21 DE 23 04 0430*  	ld hl,Frc072
-041FA6 11 DC 43 04 0431*  	ld de,filedata
+041FA6 11 F5 43 04 0431*  	ld de,filedata
 041FAA 01 00 00 01 0432*  	ld bc,65536
 041FAE 3E 01       0433*  	ld a,mos_load
 041FB0 5B CF       0434*  	RST.LIL 08h
@@ -3387,7 +3387,7 @@ PC     Output      Line
 041FC3 CD 68 39 04 0439*  	call vdu_load_img_2
 041FC7             0440*  
 041FC7 21 F1 23 04 0441*  	ld hl,Frc073
-041FCB 11 DC 43 04 0442*  	ld de,filedata
+041FCB 11 F5 43 04 0442*  	ld de,filedata
 041FCF 01 00 00 01 0443*  	ld bc,65536
 041FD3 3E 01       0444*  	ld a,mos_load
 041FD5 5B CF       0445*  	RST.LIL 08h
@@ -3399,7 +3399,7 @@ PC     Output      Line
 041FE8 CD 68 39 04 0450*  	call vdu_load_img_2
 041FEC             0451*  
 041FEC 21 04 24 04 0452*  	ld hl,Frc074
-041FF0 11 DC 43 04 0453*  	ld de,filedata
+041FF0 11 F5 43 04 0453*  	ld de,filedata
 041FF4 01 00 00 01 0454*  	ld bc,65536
 041FF8 3E 01       0455*  	ld a,mos_load
 041FFA 5B CF       0456*  	RST.LIL 08h
@@ -3411,7 +3411,7 @@ PC     Output      Line
 04200D CD 68 39 04 0461*  	call vdu_load_img_2
 042011             0462*  
 042011 21 17 24 04 0463*  	ld hl,Frc075
-042015 11 DC 43 04 0464*  	ld de,filedata
+042015 11 F5 43 04 0464*  	ld de,filedata
 042019 01 00 00 01 0465*  	ld bc,65536
 04201D 3E 01       0466*  	ld a,mos_load
 04201F 5B CF       0467*  	RST.LIL 08h
@@ -3423,7 +3423,7 @@ PC     Output      Line
 042032 CD 68 39 04 0472*  	call vdu_load_img_2
 042036             0473*  
 042036 21 2A 24 04 0474*  	ld hl,Frc076
-04203A 11 DC 43 04 0475*  	ld de,filedata
+04203A 11 F5 43 04 0475*  	ld de,filedata
 04203E 01 00 00 01 0476*  	ld bc,65536
 042042 3E 01       0477*  	ld a,mos_load
 042044 5B CF       0478*  	RST.LIL 08h
@@ -3435,7 +3435,7 @@ PC     Output      Line
 042057 CD 68 39 04 0483*  	call vdu_load_img_2
 04205B             0484*  
 04205B 21 3D 24 04 0485*  	ld hl,Frc077
-04205F 11 DC 43 04 0486*  	ld de,filedata
+04205F 11 F5 43 04 0486*  	ld de,filedata
 042063 01 00 00 01 0487*  	ld bc,65536
 042067 3E 01       0488*  	ld a,mos_load
 042069 5B CF       0489*  	RST.LIL 08h
@@ -3447,7 +3447,7 @@ PC     Output      Line
 04207C CD 68 39 04 0494*  	call vdu_load_img_2
 042080             0495*  
 042080 21 50 24 04 0496*  	ld hl,Frc078
-042084 11 DC 43 04 0497*  	ld de,filedata
+042084 11 F5 43 04 0497*  	ld de,filedata
 042088 01 00 00 01 0498*  	ld bc,65536
 04208C 3E 01       0499*  	ld a,mos_load
 04208E 5B CF       0500*  	RST.LIL 08h
@@ -3459,7 +3459,7 @@ PC     Output      Line
 0420A1 CD 68 39 04 0505*  	call vdu_load_img_2
 0420A5             0506*  
 0420A5 21 63 24 04 0507*  	ld hl,Frc079
-0420A9 11 DC 43 04 0508*  	ld de,filedata
+0420A9 11 F5 43 04 0508*  	ld de,filedata
 0420AD 01 00 00 01 0509*  	ld bc,65536
 0420B1 3E 01       0510*  	ld a,mos_load
 0420B3 5B CF       0511*  	RST.LIL 08h
@@ -3471,7 +3471,7 @@ PC     Output      Line
 0420C6 CD 68 39 04 0516*  	call vdu_load_img_2
 0420CA             0517*  
 0420CA 21 76 24 04 0518*  	ld hl,Frc080
-0420CE 11 DC 43 04 0519*  	ld de,filedata
+0420CE 11 F5 43 04 0519*  	ld de,filedata
 0420D2 01 00 00 01 0520*  	ld bc,65536
 0420D6 3E 01       0521*  	ld a,mos_load
 0420D8 5B CF       0522*  	RST.LIL 08h
@@ -3483,7 +3483,7 @@ PC     Output      Line
 0420EB CD 68 39 04 0527*  	call vdu_load_img_2
 0420EF             0528*  
 0420EF 21 89 24 04 0529*  	ld hl,Frc081
-0420F3 11 DC 43 04 0530*  	ld de,filedata
+0420F3 11 F5 43 04 0530*  	ld de,filedata
 0420F7 01 00 00 01 0531*  	ld bc,65536
 0420FB 3E 01       0532*  	ld a,mos_load
 0420FD 5B CF       0533*  	RST.LIL 08h
@@ -3495,7 +3495,7 @@ PC     Output      Line
 042110 CD 68 39 04 0538*  	call vdu_load_img_2
 042114             0539*  
 042114 21 9C 24 04 0540*  	ld hl,Frc082
-042118 11 DC 43 04 0541*  	ld de,filedata
+042118 11 F5 43 04 0541*  	ld de,filedata
 04211C 01 00 00 01 0542*  	ld bc,65536
 042120 3E 01       0543*  	ld a,mos_load
 042122 5B CF       0544*  	RST.LIL 08h
@@ -3507,7 +3507,7 @@ PC     Output      Line
 042135 CD 68 39 04 0549*  	call vdu_load_img_2
 042139             0550*  
 042139 21 AF 24 04 0551*  	ld hl,Frc083
-04213D 11 DC 43 04 0552*  	ld de,filedata
+04213D 11 F5 43 04 0552*  	ld de,filedata
 042141 01 00 00 01 0553*  	ld bc,65536
 042145 3E 01       0554*  	ld a,mos_load
 042147 5B CF       0555*  	RST.LIL 08h
@@ -3519,7 +3519,7 @@ PC     Output      Line
 04215A CD 68 39 04 0560*  	call vdu_load_img_2
 04215E             0561*  
 04215E 21 C2 24 04 0562*  	ld hl,Frc084
-042162 11 DC 43 04 0563*  	ld de,filedata
+042162 11 F5 43 04 0563*  	ld de,filedata
 042166 01 00 00 01 0564*  	ld bc,65536
 04216A 3E 01       0565*  	ld a,mos_load
 04216C 5B CF       0566*  	RST.LIL 08h
@@ -3531,7 +3531,7 @@ PC     Output      Line
 04217F CD 68 39 04 0571*  	call vdu_load_img_2
 042183             0572*  
 042183 21 D5 24 04 0573*  	ld hl,Frc085
-042187 11 DC 43 04 0574*  	ld de,filedata
+042187 11 F5 43 04 0574*  	ld de,filedata
 04218B 01 00 00 01 0575*  	ld bc,65536
 04218F 3E 01       0576*  	ld a,mos_load
 042191 5B CF       0577*  	RST.LIL 08h
@@ -3543,7 +3543,7 @@ PC     Output      Line
 0421A4 CD 68 39 04 0582*  	call vdu_load_img_2
 0421A8             0583*  
 0421A8 21 E8 24 04 0584*  	ld hl,Frc086
-0421AC 11 DC 43 04 0585*  	ld de,filedata
+0421AC 11 F5 43 04 0585*  	ld de,filedata
 0421B0 01 00 00 01 0586*  	ld bc,65536
 0421B4 3E 01       0587*  	ld a,mos_load
 0421B6 5B CF       0588*  	RST.LIL 08h
@@ -3555,7 +3555,7 @@ PC     Output      Line
 0421C9 CD 68 39 04 0593*  	call vdu_load_img_2
 0421CD             0594*  
 0421CD 21 FB 24 04 0595*  	ld hl,Frc087
-0421D1 11 DC 43 04 0596*  	ld de,filedata
+0421D1 11 F5 43 04 0596*  	ld de,filedata
 0421D5 01 00 00 01 0597*  	ld bc,65536
 0421D9 3E 01       0598*  	ld a,mos_load
 0421DB 5B CF       0599*  	RST.LIL 08h
@@ -3567,7 +3567,7 @@ PC     Output      Line
 0421EE CD 68 39 04 0604*  	call vdu_load_img_2
 0421F2             0605*  
 0421F2 21 0E 25 04 0606*  	ld hl,Frc088
-0421F6 11 DC 43 04 0607*  	ld de,filedata
+0421F6 11 F5 43 04 0607*  	ld de,filedata
 0421FA 01 00 00 01 0608*  	ld bc,65536
 0421FE 3E 01       0609*  	ld a,mos_load
 042200 5B CF       0610*  	RST.LIL 08h
@@ -3579,7 +3579,7 @@ PC     Output      Line
 042213 CD 68 39 04 0615*  	call vdu_load_img_2
 042217             0616*  
 042217 21 21 25 04 0617*  	ld hl,Frc089
-04221B 11 DC 43 04 0618*  	ld de,filedata
+04221B 11 F5 43 04 0618*  	ld de,filedata
 04221F 01 00 00 01 0619*  	ld bc,65536
 042223 3E 01       0620*  	ld a,mos_load
 042225 5B CF       0621*  	RST.LIL 08h
@@ -3591,7 +3591,7 @@ PC     Output      Line
 042238 CD 68 39 04 0626*  	call vdu_load_img_2
 04223C             0627*  
 04223C 21 34 25 04 0628*  	ld hl,Frc090
-042240 11 DC 43 04 0629*  	ld de,filedata
+042240 11 F5 43 04 0629*  	ld de,filedata
 042244 01 00 00 01 0630*  	ld bc,65536
 042248 3E 01       0631*  	ld a,mos_load
 04224A 5B CF       0632*  	RST.LIL 08h
@@ -3851,7 +3851,7 @@ PC     Output      Line
 042547             0015*  load_ui_images:
 042547             0016*  
 042547 21 0B 27 04 0017*  	ld hl,F_UI_bj_025
-04254B 11 DC 43 04 0018*  	ld de,filedata
+04254B 11 F5 43 04 0018*  	ld de,filedata
 04254F 01 00 00 01 0019*  	ld bc,65536
 042553 3E 01       0020*  	ld a,mos_load
 042555 5B CF       0021*  	RST.LIL 08h
@@ -3865,7 +3865,7 @@ PC     Output      Line
 04256E 5B D7       0028*  	RST.LIL 10h
 042570             0029*  
 042570 21 1B 27 04 0030*  	ld hl,F_UI_bj_050
-042574 11 DC 43 04 0031*  	ld de,filedata
+042574 11 F5 43 04 0031*  	ld de,filedata
 042578 01 00 00 01 0032*  	ld bc,65536
 04257C 3E 01       0033*  	ld a,mos_load
 04257E 5B CF       0034*  	RST.LIL 08h
@@ -3879,7 +3879,7 @@ PC     Output      Line
 042597 5B D7       0041*  	RST.LIL 10h
 042599             0042*  
 042599 21 2B 27 04 0043*  	ld hl,F_UI_bj_075
-04259D 11 DC 43 04 0044*  	ld de,filedata
+04259D 11 F5 43 04 0044*  	ld de,filedata
 0425A1 01 00 00 01 0045*  	ld bc,65536
 0425A5 3E 01       0046*  	ld a,mos_load
 0425A7 5B CF       0047*  	RST.LIL 08h
@@ -3893,7 +3893,7 @@ PC     Output      Line
 0425C0 5B D7       0054*  	RST.LIL 10h
 0425C2             0055*  
 0425C2 21 3B 27 04 0056*  	ld hl,F_UI_bj_100
-0425C6 11 DC 43 04 0057*  	ld de,filedata
+0425C6 11 F5 43 04 0057*  	ld de,filedata
 0425CA 01 00 00 01 0058*  	ld bc,65536
 0425CE 3E 01       0059*  	ld a,mos_load
 0425D0 5B CF       0060*  	RST.LIL 08h
@@ -3907,7 +3907,7 @@ PC     Output      Line
 0425E9 5B D7       0067*  	RST.LIL 10h
 0425EB             0068*  
 0425EB 21 4B 27 04 0069*  	ld hl,F_UI_bj_120_120
-0425EF 11 DC 43 04 0070*  	ld de,filedata
+0425EF 11 F5 43 04 0070*  	ld de,filedata
 0425F3 01 00 00 01 0071*  	ld bc,65536
 0425F7 3E 01       0072*  	ld a,mos_load
 0425F9 5B CF       0073*  	RST.LIL 08h
@@ -3921,7 +3921,7 @@ PC     Output      Line
 042612 5B D7       0080*  	RST.LIL 10h
 042614             0081*  
 042614 21 5F 27 04 0082*  	ld hl,F_UI_lower_panel
-042618 11 DC 43 04 0083*  	ld de,filedata
+042618 11 F5 43 04 0083*  	ld de,filedata
 04261C 01 00 00 01 0084*  	ld bc,65536
 042620 3E 01       0085*  	ld a,mos_load
 042622 5B CF       0086*  	RST.LIL 08h
@@ -3935,7 +3935,7 @@ PC     Output      Line
 04263B 5B D7       0093*  	RST.LIL 10h
 04263D             0094*  
 04263D 21 74 27 04 0095*  	ld hl,F_UI_lower_panel_gatling
-042641 11 DC 43 04 0096*  	ld de,filedata
+042641 11 F5 43 04 0096*  	ld de,filedata
 042645 01 00 00 01 0097*  	ld bc,65536
 042649 3E 01       0098*  	ld a,mos_load
 04264B 5B CF       0099*  	RST.LIL 08h
@@ -3949,7 +3949,7 @@ PC     Output      Line
 042664 5B D7       0106*  	RST.LIL 10h
 042666             0107*  
 042666 21 91 27 04 0108*  	ld hl,F_UI_lower_panel_knife
-04266A 11 DC 43 04 0109*  	ld de,filedata
+04266A 11 F5 43 04 0109*  	ld de,filedata
 04266E 01 00 00 01 0110*  	ld bc,65536
 042672 3E 01       0111*  	ld a,mos_load
 042674 5B CF       0112*  	RST.LIL 08h
@@ -3963,7 +3963,7 @@ PC     Output      Line
 04268D 5B D7       0119*  	RST.LIL 10h
 04268F             0120*  
 04268F 21 AC 27 04 0121*  	ld hl,F_UI_lower_panel_machine_gun
-042693 11 DC 43 04 0122*  	ld de,filedata
+042693 11 F5 43 04 0122*  	ld de,filedata
 042697 01 00 00 01 0123*  	ld bc,65536
 04269B 3E 01       0124*  	ld a,mos_load
 04269D 5B CF       0125*  	RST.LIL 08h
@@ -3977,7 +3977,7 @@ PC     Output      Line
 0426B6 5B D7       0132*  	RST.LIL 10h
 0426B8             0133*  
 0426B8 21 CD 27 04 0134*  	ld hl,F_UI_lower_panel_pistol
-0426BC 11 DC 43 04 0135*  	ld de,filedata
+0426BC 11 F5 43 04 0135*  	ld de,filedata
 0426C0 01 00 00 01 0136*  	ld bc,65536
 0426C4 3E 01       0137*  	ld a,mos_load
 0426C6 5B CF       0138*  	RST.LIL 08h
@@ -3991,7 +3991,7 @@ PC     Output      Line
 0426DF 5B D7       0145*  	RST.LIL 10h
 0426E1             0146*  
 0426E1 21 E9 27 04 0147*  	ld hl,F_UI_splash
-0426E5 11 DC 43 04 0148*  	ld de,filedata
+0426E5 11 F5 43 04 0148*  	ld de,filedata
 0426E9 01 00 00 01 0149*  	ld bc,65536
 0426ED 3E 01       0150*  	ld a,mos_load
 0426EF 5B CF       0151*  	RST.LIL 08h
@@ -4095,7 +4095,7 @@ PC     Output      Line
 0427F9             0024*  load_ui_images_bj:
 0427F9             0025*  
 0427F9 21 2E 2B 04 0026*  	ld hl,F_UI_bj_gatling_00
-0427FD 11 DC 43 04 0027*  	ld de,filedata
+0427FD 11 F5 43 04 0027*  	ld de,filedata
 042801 01 00 00 01 0028*  	ld bc,65536
 042805 3E 01       0029*  	ld a,mos_load
 042807 5B CF       0030*  	RST.LIL 08h
@@ -4109,7 +4109,7 @@ PC     Output      Line
 042820 5B D7       0037*  	RST.LIL 10h
 042822             0038*  
 042822 21 48 2B 04 0039*  	ld hl,F_UI_bj_gatling_01
-042826 11 DC 43 04 0040*  	ld de,filedata
+042826 11 F5 43 04 0040*  	ld de,filedata
 04282A 01 00 00 01 0041*  	ld bc,65536
 04282E 3E 01       0042*  	ld a,mos_load
 042830 5B CF       0043*  	RST.LIL 08h
@@ -4123,7 +4123,7 @@ PC     Output      Line
 042849 5B D7       0050*  	RST.LIL 10h
 04284B             0051*  
 04284B 21 62 2B 04 0052*  	ld hl,F_UI_bj_gatling_02
-04284F 11 DC 43 04 0053*  	ld de,filedata
+04284F 11 F5 43 04 0053*  	ld de,filedata
 042853 01 00 00 01 0054*  	ld bc,65536
 042857 3E 01       0055*  	ld a,mos_load
 042859 5B CF       0056*  	RST.LIL 08h
@@ -4137,7 +4137,7 @@ PC     Output      Line
 042872 5B D7       0063*  	RST.LIL 10h
 042874             0064*  
 042874 21 7C 2B 04 0065*  	ld hl,F_UI_bj_gatling_03
-042878 11 DC 43 04 0066*  	ld de,filedata
+042878 11 F5 43 04 0066*  	ld de,filedata
 04287C 01 00 00 01 0067*  	ld bc,65536
 042880 3E 01       0068*  	ld a,mos_load
 042882 5B CF       0069*  	RST.LIL 08h
@@ -4151,7 +4151,7 @@ PC     Output      Line
 04289B 5B D7       0076*  	RST.LIL 10h
 04289D             0077*  
 04289D 21 96 2B 04 0078*  	ld hl,F_UI_bj_gatling_04
-0428A1 11 DC 43 04 0079*  	ld de,filedata
+0428A1 11 F5 43 04 0079*  	ld de,filedata
 0428A5 01 00 00 01 0080*  	ld bc,65536
 0428A9 3E 01       0081*  	ld a,mos_load
 0428AB 5B CF       0082*  	RST.LIL 08h
@@ -4165,7 +4165,7 @@ PC     Output      Line
 0428C4 5B D7       0089*  	RST.LIL 10h
 0428C6             0090*  
 0428C6 21 B0 2B 04 0091*  	ld hl,F_UI_bj_knife_00
-0428CA 11 DC 43 04 0092*  	ld de,filedata
+0428CA 11 F5 43 04 0092*  	ld de,filedata
 0428CE 01 00 00 01 0093*  	ld bc,65536
 0428D2 3E 01       0094*  	ld a,mos_load
 0428D4 5B CF       0095*  	RST.LIL 08h
@@ -4179,7 +4179,7 @@ PC     Output      Line
 0428ED 5B D7       0102*  	RST.LIL 10h
 0428EF             0103*  
 0428EF 21 C8 2B 04 0104*  	ld hl,F_UI_bj_knife_01
-0428F3 11 DC 43 04 0105*  	ld de,filedata
+0428F3 11 F5 43 04 0105*  	ld de,filedata
 0428F7 01 00 00 01 0106*  	ld bc,65536
 0428FB 3E 01       0107*  	ld a,mos_load
 0428FD 5B CF       0108*  	RST.LIL 08h
@@ -4193,7 +4193,7 @@ PC     Output      Line
 042916 5B D7       0115*  	RST.LIL 10h
 042918             0116*  
 042918 21 E0 2B 04 0117*  	ld hl,F_UI_bj_knife_02
-04291C 11 DC 43 04 0118*  	ld de,filedata
+04291C 11 F5 43 04 0118*  	ld de,filedata
 042920 01 00 00 01 0119*  	ld bc,65536
 042924 3E 01       0120*  	ld a,mos_load
 042926 5B CF       0121*  	RST.LIL 08h
@@ -4207,7 +4207,7 @@ PC     Output      Line
 04293F 5B D7       0128*  	RST.LIL 10h
 042941             0129*  
 042941 21 F8 2B 04 0130*  	ld hl,F_UI_bj_knife_03
-042945 11 DC 43 04 0131*  	ld de,filedata
+042945 11 F5 43 04 0131*  	ld de,filedata
 042949 01 00 00 01 0132*  	ld bc,65536
 04294D 3E 01       0133*  	ld a,mos_load
 04294F 5B CF       0134*  	RST.LIL 08h
@@ -4221,7 +4221,7 @@ PC     Output      Line
 042968 5B D7       0141*  	RST.LIL 10h
 04296A             0142*  
 04296A 21 10 2C 04 0143*  	ld hl,F_UI_bj_knife_04
-04296E 11 DC 43 04 0144*  	ld de,filedata
+04296E 11 F5 43 04 0144*  	ld de,filedata
 042972 01 00 00 01 0145*  	ld bc,65536
 042976 3E 01       0146*  	ld a,mos_load
 042978 5B CF       0147*  	RST.LIL 08h
@@ -4235,7 +4235,7 @@ PC     Output      Line
 042991 5B D7       0154*  	RST.LIL 10h
 042993             0155*  
 042993 21 28 2C 04 0156*  	ld hl,F_UI_bj_machine_gun_00
-042997 11 DC 43 04 0157*  	ld de,filedata
+042997 11 F5 43 04 0157*  	ld de,filedata
 04299B 01 00 00 01 0158*  	ld bc,65536
 04299F 3E 01       0159*  	ld a,mos_load
 0429A1 5B CF       0160*  	RST.LIL 08h
@@ -4249,7 +4249,7 @@ PC     Output      Line
 0429BA 5B D7       0167*  	RST.LIL 10h
 0429BC             0168*  
 0429BC 21 46 2C 04 0169*  	ld hl,F_UI_bj_machine_gun_01
-0429C0 11 DC 43 04 0170*  	ld de,filedata
+0429C0 11 F5 43 04 0170*  	ld de,filedata
 0429C4 01 00 00 01 0171*  	ld bc,65536
 0429C8 3E 01       0172*  	ld a,mos_load
 0429CA 5B CF       0173*  	RST.LIL 08h
@@ -4263,7 +4263,7 @@ PC     Output      Line
 0429E3 5B D7       0180*  	RST.LIL 10h
 0429E5             0181*  
 0429E5 21 64 2C 04 0182*  	ld hl,F_UI_bj_machine_gun_02
-0429E9 11 DC 43 04 0183*  	ld de,filedata
+0429E9 11 F5 43 04 0183*  	ld de,filedata
 0429ED 01 00 00 01 0184*  	ld bc,65536
 0429F1 3E 01       0185*  	ld a,mos_load
 0429F3 5B CF       0186*  	RST.LIL 08h
@@ -4277,7 +4277,7 @@ PC     Output      Line
 042A0C 5B D7       0193*  	RST.LIL 10h
 042A0E             0194*  
 042A0E 21 82 2C 04 0195*  	ld hl,F_UI_bj_machine_gun_03
-042A12 11 DC 43 04 0196*  	ld de,filedata
+042A12 11 F5 43 04 0196*  	ld de,filedata
 042A16 01 00 00 01 0197*  	ld bc,65536
 042A1A 3E 01       0198*  	ld a,mos_load
 042A1C 5B CF       0199*  	RST.LIL 08h
@@ -4291,7 +4291,7 @@ PC     Output      Line
 042A35 5B D7       0206*  	RST.LIL 10h
 042A37             0207*  
 042A37 21 A0 2C 04 0208*  	ld hl,F_UI_bj_machine_gun_04
-042A3B 11 DC 43 04 0209*  	ld de,filedata
+042A3B 11 F5 43 04 0209*  	ld de,filedata
 042A3F 01 00 00 01 0210*  	ld bc,65536
 042A43 3E 01       0211*  	ld a,mos_load
 042A45 5B CF       0212*  	RST.LIL 08h
@@ -4305,7 +4305,7 @@ PC     Output      Line
 042A5E 5B D7       0219*  	RST.LIL 10h
 042A60             0220*  
 042A60 21 BE 2C 04 0221*  	ld hl,F_UI_bj_pistol_00
-042A64 11 DC 43 04 0222*  	ld de,filedata
+042A64 11 F5 43 04 0222*  	ld de,filedata
 042A68 01 00 00 01 0223*  	ld bc,65536
 042A6C 3E 01       0224*  	ld a,mos_load
 042A6E 5B CF       0225*  	RST.LIL 08h
@@ -4319,7 +4319,7 @@ PC     Output      Line
 042A87 5B D7       0232*  	RST.LIL 10h
 042A89             0233*  
 042A89 21 D7 2C 04 0234*  	ld hl,F_UI_bj_pistol_01
-042A8D 11 DC 43 04 0235*  	ld de,filedata
+042A8D 11 F5 43 04 0235*  	ld de,filedata
 042A91 01 00 00 01 0236*  	ld bc,65536
 042A95 3E 01       0237*  	ld a,mos_load
 042A97 5B CF       0238*  	RST.LIL 08h
@@ -4333,7 +4333,7 @@ PC     Output      Line
 042AB0 5B D7       0245*  	RST.LIL 10h
 042AB2             0246*  
 042AB2 21 F0 2C 04 0247*  	ld hl,F_UI_bj_pistol_02
-042AB6 11 DC 43 04 0248*  	ld de,filedata
+042AB6 11 F5 43 04 0248*  	ld de,filedata
 042ABA 01 00 00 01 0249*  	ld bc,65536
 042ABE 3E 01       0250*  	ld a,mos_load
 042AC0 5B CF       0251*  	RST.LIL 08h
@@ -4347,7 +4347,7 @@ PC     Output      Line
 042AD9 5B D7       0258*  	RST.LIL 10h
 042ADB             0259*  
 042ADB 21 09 2D 04 0260*  	ld hl,F_UI_bj_pistol_03
-042ADF 11 DC 43 04 0261*  	ld de,filedata
+042ADF 11 F5 43 04 0261*  	ld de,filedata
 042AE3 01 00 00 01 0262*  	ld bc,65536
 042AE7 3E 01       0263*  	ld a,mos_load
 042AE9 5B CF       0264*  	RST.LIL 08h
@@ -4361,7 +4361,7 @@ PC     Output      Line
 042B02 5B D7       0271*  	RST.LIL 10h
 042B04             0272*  
 042B04 21 22 2D 04 0273*  	ld hl,F_UI_bj_pistol_04
-042B08 11 DC 43 04 0274*  	ld de,filedata
+042B08 11 F5 43 04 0274*  	ld de,filedata
 042B0C 01 00 00 01 0275*  	ld bc,65536
 042B10 3E 01       0276*  	ld a,mos_load
 042B12 5B CF       0277*  	RST.LIL 08h
@@ -6153,7 +6153,7 @@ PC     Output      Line
 04338D             1587*  ; back up input parameters
 04338D E5          1588*      push hl ; bufferId
 04338E             1589*  ; load the sound
-04338E CD 8F 43 04 1590*  	call vdu_load_buffer_from_file
+04338E CD A8 43 04 1590*  	call vdu_load_buffer_from_file
 043392             1591*  ; now make the buffer a sound sample
 043392 E1          1592*      pop hl ; bufferId
 043393 AF          1593*  	xor a ; zero is the magic number for 8-bit signed PCM 16KHz
@@ -7072,7 +7072,7 @@ PC     Output      Line
 043968 C5          0172*  	push bc
 043969 D5          0173*  	push de
 04396A             0174*  ; load the image
-04396A CD 8F 43 04 0175*  	call vdu_load_buffer_from_file
+04396A CD A8 43 04 0175*  	call vdu_load_buffer_from_file
 04396E             0176*  ; now make it a bitmap
 04396E D1          0177*  	pop de
 04396F C1          0178*  	pop bc
@@ -7086,7 +7086,7 @@ PC     Output      Line
 043976 C5          0186*  	push bc
 043977 D5          0187*  	push de
 043978             0188*  ; load the image
-043978 CD 8F 43 04 0189*  	call vdu_load_buffer_from_file
+043978 CD A8 43 04 0189*  	call vdu_load_buffer_from_file
 04397C             0190*  ; now make it a bitmap
 04397C D1          0191*  	pop de
 04397D C1          0192*  	pop bc
@@ -7200,7 +7200,7 @@ PC     Output      Line
 043A34             0105*  load_sfx_ACHTUNG:
 043A34 21 20 3D 04 0106*  	ld hl,FACHTUNG
 043A38 22 ED 37 04 0107*  	ld (cur_filename),hl
-043A3C 11 DC 43 04 0108*  	ld de,filedata
+043A3C 11 F5 43 04 0108*  	ld de,filedata
 043A40 01 00 00 01 0109*  	ld bc,65536
 043A44 3E 01       0110*  	ld a,mos_load
 043A46 5B CF       0111*  	RST.LIL 08h
@@ -7213,7 +7213,7 @@ PC     Output      Line
 043A56             0117*  load_sfx_AHH:
 043A56 21 30 3D 04 0118*  	ld hl,FAHH
 043A5A 22 ED 37 04 0119*  	ld (cur_filename),hl
-043A5E 11 DC 43 04 0120*  	ld de,filedata
+043A5E 11 F5 43 04 0120*  	ld de,filedata
 043A62 01 00 00 01 0121*  	ld bc,65536
 043A66 3E 01       0122*  	ld a,mos_load
 043A68 5B CF       0123*  	RST.LIL 08h
@@ -7226,7 +7226,7 @@ PC     Output      Line
 043A78             0129*  load_sfx_AUGH:
 043A78 21 3C 3D 04 0130*  	ld hl,FAUGH
 043A7C 22 ED 37 04 0131*  	ld (cur_filename),hl
-043A80 11 DC 43 04 0132*  	ld de,filedata
+043A80 11 F5 43 04 0132*  	ld de,filedata
 043A84 01 00 00 01 0133*  	ld bc,65536
 043A88 3E 01       0134*  	ld a,mos_load
 043A8A 5B CF       0135*  	RST.LIL 08h
@@ -7239,7 +7239,7 @@ PC     Output      Line
 043A9A             0141*  load_sfx_AYEE:
 043A9A 21 49 3D 04 0142*  	ld hl,FAYEE
 043A9E 22 ED 37 04 0143*  	ld (cur_filename),hl
-043AA2 11 DC 43 04 0144*  	ld de,filedata
+043AA2 11 F5 43 04 0144*  	ld de,filedata
 043AA6 01 00 00 01 0145*  	ld bc,65536
 043AAA 3E 01       0146*  	ld a,mos_load
 043AAC 5B CF       0147*  	RST.LIL 08h
@@ -7252,7 +7252,7 @@ PC     Output      Line
 043ABC             0153*  load_sfx_AYEE_HIGH:
 043ABC 21 56 3D 04 0154*  	ld hl,FAYEE_HIGH
 043AC0 22 ED 37 04 0155*  	ld (cur_filename),hl
-043AC4 11 DC 43 04 0156*  	ld de,filedata
+043AC4 11 F5 43 04 0156*  	ld de,filedata
 043AC8 01 00 00 01 0157*  	ld bc,65536
 043ACC 3E 01       0158*  	ld a,mos_load
 043ACE 5B CF       0159*  	RST.LIL 08h
@@ -7265,7 +7265,7 @@ PC     Output      Line
 043ADE             0165*  load_sfx_DOG_WOOF_DOUBLE:
 043ADE 21 68 3D 04 0166*  	ld hl,FDOG_WOOF_DOUBLE
 043AE2 22 ED 37 04 0167*  	ld (cur_filename),hl
-043AE6 11 DC 43 04 0168*  	ld de,filedata
+043AE6 11 F5 43 04 0168*  	ld de,filedata
 043AEA 01 00 00 01 0169*  	ld bc,65536
 043AEE 3E 01       0170*  	ld a,mos_load
 043AF0 5B CF       0171*  	RST.LIL 08h
@@ -7278,7 +7278,7 @@ PC     Output      Line
 043B00             0177*  load_sfx_DOG_WOOF_SINGLE:
 043B00 21 80 3D 04 0178*  	ld hl,FDOG_WOOF_SINGLE
 043B04 22 ED 37 04 0179*  	ld (cur_filename),hl
-043B08 11 DC 43 04 0180*  	ld de,filedata
+043B08 11 F5 43 04 0180*  	ld de,filedata
 043B0C 01 00 00 01 0181*  	ld bc,65536
 043B10 3E 01       0182*  	ld a,mos_load
 043B12 5B CF       0183*  	RST.LIL 08h
@@ -7291,7 +7291,7 @@ PC     Output      Line
 043B22             0189*  load_sfx_DOG_YELP:
 043B22 21 98 3D 04 0190*  	ld hl,FDOG_YELP
 043B26 22 ED 37 04 0191*  	ld (cur_filename),hl
-043B2A 11 DC 43 04 0192*  	ld de,filedata
+043B2A 11 F5 43 04 0192*  	ld de,filedata
 043B2E 01 00 00 01 0193*  	ld bc,65536
 043B32 3E 01       0194*  	ld a,mos_load
 043B34 5B CF       0195*  	RST.LIL 08h
@@ -7304,7 +7304,7 @@ PC     Output      Line
 043B44             0201*  load_sfx_EXPLODE:
 043B44 21 A9 3D 04 0202*  	ld hl,FEXPLODE
 043B48 22 ED 37 04 0203*  	ld (cur_filename),hl
-043B4C 11 DC 43 04 0204*  	ld de,filedata
+043B4C 11 F5 43 04 0204*  	ld de,filedata
 043B50 01 00 00 01 0205*  	ld bc,65536
 043B54 3E 01       0206*  	ld a,mos_load
 043B56 5B CF       0207*  	RST.LIL 08h
@@ -7317,7 +7317,7 @@ PC     Output      Line
 043B66             0213*  load_sfx_GOT_TREASURE:
 043B66 21 B9 3D 04 0214*  	ld hl,FGOT_TREASURE
 043B6A 22 ED 37 04 0215*  	ld (cur_filename),hl
-043B6E 11 DC 43 04 0216*  	ld de,filedata
+043B6E 11 F5 43 04 0216*  	ld de,filedata
 043B72 01 00 00 01 0217*  	ld bc,65536
 043B76 3E 01       0218*  	ld a,mos_load
 043B78 5B CF       0219*  	RST.LIL 08h
@@ -7330,7 +7330,7 @@ PC     Output      Line
 043B88             0225*  load_sfx_GUN_EMPTY:
 043B88 21 CE 3D 04 0226*  	ld hl,FGUN_EMPTY
 043B8C 22 ED 37 04 0227*  	ld (cur_filename),hl
-043B90 11 DC 43 04 0228*  	ld de,filedata
+043B90 11 F5 43 04 0228*  	ld de,filedata
 043B94 01 00 00 01 0229*  	ld bc,65536
 043B98 3E 01       0230*  	ld a,mos_load
 043B9A 5B CF       0231*  	RST.LIL 08h
@@ -7343,7 +7343,7 @@ PC     Output      Line
 043BAA             0237*  load_sfx_GUN_RELOAD:
 043BAA 21 E0 3D 04 0238*  	ld hl,FGUN_RELOAD
 043BAE 22 ED 37 04 0239*  	ld (cur_filename),hl
-043BB2 11 DC 43 04 0240*  	ld de,filedata
+043BB2 11 F5 43 04 0240*  	ld de,filedata
 043BB6 01 00 00 01 0241*  	ld bc,65536
 043BBA 3E 01       0242*  	ld a,mos_load
 043BBC 5B CF       0243*  	RST.LIL 08h
@@ -7356,7 +7356,7 @@ PC     Output      Line
 043BCC             0249*  load_sfx_KNIFE:
 043BCC 21 F3 3D 04 0250*  	ld hl,FKNIFE
 043BD0 22 ED 37 04 0251*  	ld (cur_filename),hl
-043BD4 11 DC 43 04 0252*  	ld de,filedata
+043BD4 11 F5 43 04 0252*  	ld de,filedata
 043BD8 01 00 00 01 0253*  	ld bc,65536
 043BDC 3E 01       0254*  	ld a,mos_load
 043BDE 5B CF       0255*  	RST.LIL 08h
@@ -7369,7 +7369,7 @@ PC     Output      Line
 043BEE             0261*  load_sfx_MEIN_LEBEN:
 043BEE 21 01 3E 04 0262*  	ld hl,FMEIN_LEBEN
 043BF2 22 ED 37 04 0263*  	ld (cur_filename),hl
-043BF6 11 DC 43 04 0264*  	ld de,filedata
+043BF6 11 F5 43 04 0264*  	ld de,filedata
 043BFA 01 00 00 01 0265*  	ld bc,65536
 043BFE 3E 01       0266*  	ld a,mos_load
 043C00 5B CF       0267*  	RST.LIL 08h
@@ -7382,7 +7382,7 @@ PC     Output      Line
 043C10             0273*  load_sfx_OOF:
 043C10 21 14 3E 04 0274*  	ld hl,FOOF
 043C14 22 ED 37 04 0275*  	ld (cur_filename),hl
-043C18 11 DC 43 04 0276*  	ld de,filedata
+043C18 11 F5 43 04 0276*  	ld de,filedata
 043C1C 01 00 00 01 0277*  	ld bc,65536
 043C20 3E 01       0278*  	ld a,mos_load
 043C22 5B CF       0279*  	RST.LIL 08h
@@ -7395,7 +7395,7 @@ PC     Output      Line
 043C32             0285*  load_sfx_SCHUSSTAFFEL:
 043C32 21 20 3E 04 0286*  	ld hl,FSCHUSSTAFFEL
 043C36 22 ED 37 04 0287*  	ld (cur_filename),hl
-043C3A 11 DC 43 04 0288*  	ld de,filedata
+043C3A 11 F5 43 04 0288*  	ld de,filedata
 043C3E 01 00 00 01 0289*  	ld bc,65536
 043C42 3E 01       0290*  	ld a,mos_load
 043C44 5B CF       0291*  	RST.LIL 08h
@@ -7408,7 +7408,7 @@ PC     Output      Line
 043C54             0297*  load_sfx_SCREAM:
 043C54 21 35 3E 04 0298*  	ld hl,FSCREAM
 043C58 22 ED 37 04 0299*  	ld (cur_filename),hl
-043C5C 11 DC 43 04 0300*  	ld de,filedata
+043C5C 11 F5 43 04 0300*  	ld de,filedata
 043C60 01 00 00 01 0301*  	ld bc,65536
 043C64 3E 01       0302*  	ld a,mos_load
 043C66 5B CF       0303*  	RST.LIL 08h
@@ -7421,7 +7421,7 @@ PC     Output      Line
 043C76             0309*  load_sfx_SHOT_GATLING_BURST:
 043C76 21 44 3E 04 0310*  	ld hl,FSHOT_GATLING_BURST
 043C7A 22 ED 37 04 0311*  	ld (cur_filename),hl
-043C7E 11 DC 43 04 0312*  	ld de,filedata
+043C7E 11 F5 43 04 0312*  	ld de,filedata
 043C82 01 00 00 01 0313*  	ld bc,65536
 043C86 3E 01       0314*  	ld a,mos_load
 043C88 5B CF       0315*  	RST.LIL 08h
@@ -7434,7 +7434,7 @@ PC     Output      Line
 043C98             0321*  load_sfx_SHOT_MACHINE_GUN_BURST:
 043C98 21 5F 3E 04 0322*  	ld hl,FSHOT_MACHINE_GUN_BURST
 043C9C 22 ED 37 04 0323*  	ld (cur_filename),hl
-043CA0 11 DC 43 04 0324*  	ld de,filedata
+043CA0 11 F5 43 04 0324*  	ld de,filedata
 043CA4 01 00 00 01 0325*  	ld bc,65536
 043CA8 3E 01       0326*  	ld a,mos_load
 043CAA 5B CF       0327*  	RST.LIL 08h
@@ -7447,7 +7447,7 @@ PC     Output      Line
 043CBA             0333*  load_sfx_SHOT_PISTOL:
 043CBA 21 7E 3E 04 0334*  	ld hl,FSHOT_PISTOL
 043CBE 22 ED 37 04 0335*  	ld (cur_filename),hl
-043CC2 11 DC 43 04 0336*  	ld de,filedata
+043CC2 11 F5 43 04 0336*  	ld de,filedata
 043CC6 01 00 00 01 0337*  	ld bc,65536
 043CCA 3E 01       0338*  	ld a,mos_load
 043CCC 5B CF       0339*  	RST.LIL 08h
@@ -7460,7 +7460,7 @@ PC     Output      Line
 043CDC             0345*  load_sfx_UGH:
 043CDC 21 92 3E 04 0346*  	ld hl,FUGH
 043CE0 22 ED 37 04 0347*  	ld (cur_filename),hl
-043CE4 11 DC 43 04 0348*  	ld de,filedata
+043CE4 11 F5 43 04 0348*  	ld de,filedata
 043CE8 01 00 00 01 0349*  	ld bc,65536
 043CEC 3E 01       0350*  	ld a,mos_load
 043CEE 5B CF       0351*  	RST.LIL 08h
@@ -7473,7 +7473,7 @@ PC     Output      Line
 043CFE             0357*  load_sfx_WILHELM:
 043CFE 21 9E 3E 04 0358*  	ld hl,FWILHELM
 043D02 22 ED 37 04 0359*  	ld (cur_filename),hl
-043D06 11 DC 43 04 0360*  	ld de,filedata
+043D06 11 F5 43 04 0360*  	ld de,filedata
 043D0A 01 00 00 01 0361*  	ld bc,65536
 043D0E 3E 01       0362*  	ld a,mos_load
 043D10 5B CF       0363*  	RST.LIL 08h
@@ -8121,43 +8121,59 @@ PC     Output      Line
 04419A C9          0393*      ret
 04419B             0394*  
 04419B 00          0395*  oldTimeStamp:   .db 00h
-04419C             0030   
+04419C             0030   	include "src/asm/vdu_wolf3d.inc"
+04419C             0001*  ; create wolf3d control structure
+04419C             0002*      MACRO CCS SID, SCENE_WIDTH, SCENE_HEIGHT
+04419C             0003*      ld hl,@beg
+04419C             0004*      ld bc,@end-@beg
+04419C             0005*      rst.lil $18
+04419C             0006*      jp @end
+04419C             0007*  @beg:
+04419C             0008*  ;   VDU 23,0, &A0, sid%; &49, 0, cstw%; csth%; Create Control Structure
+04419C             0009*      db 23,0,$A0
+04419C             0010*      dw SID
+04419C             0011*      db $50,0
+04419C             0012*      dw SCENE_WIDTH
+04419C             0013*      dw SCENE_HEIGHT
+04419C             0014*  @end:
+04419C             0015*      ENDMACRO
 04419C             0031   
-04419C             0032   start:
-04419C F5          0033       push af
-04419D C5          0034       push bc
-04419E D5          0035       push de
-04419F DD E5       0036       push ix
-0441A1 FD E5       0037       push iy
-0441A3             0038   
-0441A3 CD 33 42 04 0039   	call init ; Initialization code
-0441A7 CD 47 43 04 0040       call main ; Call the main function
-0441AB             0041   
-0441AB             0042   exit:
-0441AB             0043   
-0441AB FD E1       0044       pop iy
-0441AD DD E1       0045       pop ix
-0441AF D1          0046       pop de
-0441B0 C1          0047       pop bc
-0441B1 F1          0048       pop af
-0441B2 21 00 00 00 0049       ld hl,0
-0441B6             0050   
-0441B6 C9          0051       ret
-0441B7             0052   
-0441B7 57 65 6C 63 0053   hello_world: defb "Welcome to Agon Wolf3D",0
+04419C             0032   
+04419C             0033   start:
+04419C F5          0034       push af
+04419D C5          0035       push bc
+04419E D5          0036       push de
+04419F DD E5       0037       push ix
+0441A1 FD E5       0038       push iy
+0441A3             0039   
+0441A3 CD 33 42 04 0040   	call init ; Initialization code
+0441A7 CD 60 43 04 0041       call main ; Call the main function
+0441AB             0042   
+0441AB             0043   exit:
+0441AB             0044   
+0441AB FD E1       0045       pop iy
+0441AD DD E1       0046       pop ix
+0441AF D1          0047       pop de
+0441B0 C1          0048       pop bc
+0441B1 F1          0049       pop af
+0441B2 21 00 00 00 0050       ld hl,0
+0441B6             0051   
+0441B6 C9          0052       ret
+0441B7             0053   
+0441B7 57 65 6C 63 0054   hello_world: defb "Welcome to Agon Wolf3D",0
        6F 6D 65 20 
        74 6F 20 41 
        67 6F 6E 20 
        57 6F 6C 66 
        33 44 00    
-0441CE 4C 6F 61 64 0054   loading_ui: defb "Loading UI",0
+0441CE 4C 6F 61 64 0055   loading_ui: defb "Loading UI",0
        69 6E 67 20 
        55 49 00    
-0441D9 4C 6F 61 64 0055   loading_time: defb "Loading time:",0
+0441D9 4C 6F 61 64 0056   loading_time: defb "Loading time:",0
        69 6E 67 20 
        74 69 6D 65 
        3A 00       
-0441E7 50 72 65 73 0056   loading_complete: defb "Press any key to continue.\r\n",0
+0441E7 50 72 65 73 0057   loading_complete: defb "Press any key to continue.\r\n",0
        73 20 61 6E 
        79 20 6B 65 
        79 20 74 6F 
@@ -8165,278 +8181,297 @@ PC     Output      Line
        74 69 6E 75 
        65 2E 0D 0A 
        00          
-044204 00          0057   is_emulator: defb 0
-044205 52 75 6E 6E 0058   on_emulator: defb "Running on emulator.\r\n",0
+044204 00          0058   is_emulator: defb 0
+044205 52 75 6E 6E 0059   on_emulator: defb "Running on emulator.\r\n",0
        69 6E 67 20 
        6F 6E 20 65 
        6D 75 6C 61 
        74 6F 72 2E 
        0D 0A 00    
-04421C 52 75 6E 6E 0059   on_hardware: defb "Running on hardware.\r\n",0
+04421C 52 75 6E 6E 0060   on_hardware: defb "Running on hardware.\r\n",0
        69 6E 67 20 
        6F 6E 20 68 
        61 72 64 77 
        61 72 65 2E 
        0D 0A 00    
-044233             0060   
-044233             0061   init:
-044233             0062   ; clear all buffers
-044233 CD 99 33 04 0063       call vdu_clear_all_buffers
-044237             0064   
-044237             0065   ; set up the display
-044237 3E 88       0066       ld a,8+128 ; 320x240x64 double-buffered
-044239 CD 27 2E 04 0067       call vdu_set_screen_mode
-04423D AF          0068       xor a
-04423E CD 56 2F 04 0069       call vdu_set_scaling
-044242             0070   
-044242             0071   ; start generic stopwatch to time setup loop
-044242             0072   ; so we can determine if we're running on emulator or hardware
-044242 CD 5D 41 04 0073   	call stopwatch_set
-044246             0074   
-044246             0075   ; initialize global timestamp
-044246 DD 27 00    0076       ld hl,(ix+sysvar_time) ; ix was set by stopwatch_start
-044249 22 1A 41 04 0077       ld (timestamp_now),hl
-04424D             0078   
-04424D             0079   ; enable additional audio channels
-04424D CD 8C 00 04 0080   	call vdu_enable_channels
-044251             0081   
-044251             0082   ; set the cursor off
-044251 CD E6 2F 04 0083   	call cursor_off
-044255             0084   
-044255             0085   ; print loading ui message
-044255 21 CE 41 04 0086   	ld hl,loading_ui
-044259 CD AA 33 04 0087   	call printString
-04425D             0088   
-04425D             0089   ; load fonts
-04425D CD DB 0B 04 0090   	call load_font_itc_honda
-044261 CD BE 1C 04 0091   	call load_font_retro_computer
-044265             0092   
-044265             0093   ; load UI images
-044265 CD 47 25 04 0094   	call load_ui_images
-044269 CD F9 27 04 0095   	call load_ui_images_bj
-04426D             0096   
-04426D             0097   ; set text background color
-04426D 3E 84       0098   	ld a,4 + 128
-04426F CD B3 2D 04 0099   	call vdu_colour_text
-044273             0100   
-044273             0101   ; set text foreground color
-044273 3E 2F       0102   	ld a,47 ; aaaaff lavenderish
-044275 CD B3 2D 04 0103   	call vdu_colour_text
-044279             0104   
-044279             0105   ; set gfx bg color
-044279 AF          0106   	xor a ; plotting mode 0
-04427A 0E 04       0107   	ld c,4 ; dark blue
-04427C CD DB 2D 04 0108   	call vdu_gcol_bg
-044280 CD AE 2D 04 0109   	call vdu_clg
-044284             0110   
-044284             0111   ; set the cursor off again since we changed screen modes
-044284 CD E6 2F 04 0112   	call cursor_off
-044288             0113   
-044288             0114   ; VDU 28, left, bottom, right, top: Set text viewport **
-044288             0115   ; MIND THE LITTLE-ENDIANESS
-044288             0116   ; inputs: c=left,b=bottom,e=right,d=top
-044288 0E 00       0117   	ld c,0 ; left
-04428A 16 14       0118   	ld d,20 ; top
-04428C 1E 27       0119   	ld e,39 ; right
-04428E 06 1D       0120   	ld b,29; bottom
-044290 CD 9C 2E 04 0121   	call vdu_set_txt_viewport
-044294             0122   
-044294             0123   ; initialize image load routine
-044294 CD F9 37 04 0124   	call img_load_init
-044298             0125   
-044298             0126   ; load tiles
-044298 01 0B 00 00 0127   	ld bc,cube_num_tiles
-04429C 21 D4 01 04 0128   	ld hl,cube_buffer_id_lut
-0442A0 22 F3 37 04 0129   	ld (cur_buffer_id_lut),hl
-0442A4 21 F5 01 04 0130   	ld hl,cube_load_tiles_table
-0442A8 22 F6 37 04 0131   	ld (cur_load_jump_table),hl
-0442AC CD 2E 38 04 0132   	call img_load_main
-0442B0             0133   
-0442B0             0134   ; load sprites
-0442B0 01 14 00 00 0135   	ld bc,sprite_num_tiles
-0442B4 21 89 04 04 0136   	ld hl,sprite_buffer_id_lut
-0442B8 22 F3 37 04 0137   	ld (cur_buffer_id_lut),hl
-0442BC 21 C5 04 04 0138   	ld hl,sprite_load_tiles_table
-0442C0 22 F6 37 04 0139   	ld (cur_load_jump_table),hl
-0442C4 CD 2E 38 04 0140   	call img_load_main
-0442C8             0141   
-0442C8             0142   ; load sound effects
-0442C8 01 16 00 00 0143   	ld bc,SFX_num_buffers
-0442CC 21 84 39 04 0144   	ld hl,SFX_buffer_id_lut
-0442D0 22 F3 37 04 0145   	ld (cur_buffer_id_lut),hl
-0442D4 21 F2 39 04 0146   	ld hl,SFX_load_routines_table
-0442D8 22 F6 37 04 0147   	ld (cur_load_jump_table),hl
-0442DC CD F4 32 04 0148   	call sfx_load_main
-0442E0             0149   
-0442E0             0150   ; self modify vdu_play_sfx to enable sound
-0442E0 AF          0151   	xor a
-0442E1 32 46 00 04 0152   	ld (vdu_play_sfx_disable),a
-0442E5             0153   
-0442E5             0154   ; use loading time to determine if we're running on emulator or hardware
-0442E5 CD 69 41 04 0155   	call stopwatch_get ; hl = elapsed time in 120ths of a second
-0442E9 11 40 1F 00 0156   	ld de,8000 ; emulator loads in about 2,400 ticks, hardware about 15,000
-0442ED AF          0157   	xor a ; clear carry, default is running on hardware
-0442EE 32 04 42 04 0158   	ld (is_emulator),a
-0442F2 ED 52       0159   	sbc hl,de
-0442F4 FA 08 43 04 0160   	jp m,@on_emulator
-0442F8 CD D2 2E 04 0161   	call vdu_home_cursor
-0442FC 21 1C 42 04 0162   	ld hl,on_hardware
-044300 CD AA 33 04 0163   	call printString
-044304 C3 1A 43 04 0164   	jp @test_done
-044308             0165   
-044308             0166   @on_emulator:
-044308             0167   ; print emulator message
-044308 3E 01       0168   	ld a,1
-04430A 32 04 42 04 0169   	ld (is_emulator),a
-04430E CD D2 2E 04 0170   	call vdu_home_cursor
-044312 21 05 42 04 0171   	ld hl,on_emulator
-044316 CD AA 33 04 0172   	call printString
-04431A             0173   
-04431A             0174   @test_done:
-04431A             0175   ; print final loading time
-04431A 21 D9 41 04 0176   	ld hl,loading_time
-04431E CD AA 33 04 0177   	call printString
-044322 CD 69 41 04 0178   	call stopwatch_get ; hl = elapsed time in 120ths of a second
-044326 CD F8 33 04 0179   	call printDec
-04432A CD BF 33 04 0180   	call printNewLine
-04432E             0181   
-04432E             0182   ; print loading complete message and wait for user keypress
-04432E 21 E7 41 04 0183   	ld hl,loading_complete
-044332 CD AA 33 04 0184   	call printString
-044336 CD 69 2F 04 0185   	call vdu_flip
-04433A CD 2A 37 04 0186   	call waitKeypress
-04433E             0187   
-04433E             0188   ; initialization done
-04433E C9          0189   	ret
-04433F             0190   
-04433F             0191   ; DEBUG: set up a simple countdown timer
-04433F 01          0192   debug_timer: db 0x01
-044340             0193   
-044340             0194   main_loop_tmr: ds 6
-044346             0195   framerate: equ 30
-044346             0196   
-044346             0197   new_game:
-044346             0198   ; ; initialize map variables and load map file
-044346             0199   ; 	ld hl,room_flags
-044346             0200   ; 	xor a
-044346             0201   ; 	ld b,10
-044346             0202   ; @room_flags_loop:
-044346             0203   ; 	ld (hl),a
-044346             0204   ; 	inc hl
-044346             0205   ; 	djnz @room_flags_loop
-044346             0206   ; ; map_init:
-044346             0207   ; 	ld (cur_floor),a
-044346             0208   ; 	ld (cur_room),a
-044346             0209   ; ; load room file
-044346             0210   ; 	call map_load
-044346             0211   ; ; initialize sprite data
-044346             0212   ; 	call map_init_sprites
-044346             0213   ; ; initialize player position
-044346             0214   ; 	call plyr_init
-044346             0215   
-044346 C9          0216   	ret
-044347             0217   
-044347             0218   main:
-044347 CD 46 43 04 0219   	call new_game
-04434B             0220   
-04434B             0221   main_loop:
-04434B             0222   ; update global timestamp
-04434B CD 23 41 04 0223       call timestamp_tick
-04434F             0224   
-04434F             0225   ; ; move enemies
-04434F             0226   ; 	call sprites_see_plyr ; 220-285  prt ticks
-04434F             0227   
-04434F             0228   ; ; get player input and update sprite position
-04434F             0229   ; 	; 0-1 prt ticks
-04434F             0230   ; 	call plyr_input ; ix points to cell defs/status, a is target cell current obj_id
-04434F             0231   
-04434F             0232   ; ; render the updated scene
-04434F             0233   ; 	call render_scene ; 6-12 prt ticks
-04434F             0234   ; ; full loop 12-16 prt ticks
-04434F             0235   
-04434F             0236   ; ; flip the screen
-04434F             0237   ; 	call vdu_flip
-04434F             0238   
-04434F             0239   @wait:
-04434F FD 21 40 43 0240   	ld iy,main_loop_tmr
+044233             0061   
+044233             0062   init:
+044233             0063   ; clear all buffers
+044233 CD 99 33 04 0064       call vdu_clear_all_buffers
+044237             0065   
+044237             0066   ; set up the display
+044237 3E 88       0067       ld a,8+128 ; 320x240x64 double-buffered
+044239 CD 27 2E 04 0068       call vdu_set_screen_mode
+04423D AF          0069       xor a
+04423E CD 56 2F 04 0070       call vdu_set_scaling
+044242             0071   
+044242             0072   ; start generic stopwatch to time setup loop
+044242             0073   ; so we can determine if we're running on emulator or hardware
+044242 CD 5D 41 04 0074   	call stopwatch_set
+044246             0075   
+044246             0076   ; initialize global timestamp
+044246 DD 27 00    0077       ld hl,(ix+sysvar_time) ; ix was set by stopwatch_start
+044249 22 1A 41 04 0078       ld (timestamp_now),hl
+04424D             0079   
+04424D             0080   ; enable additional audio channels
+04424D CD 8C 00 04 0081   	call vdu_enable_channels
+044251             0082   
+044251             0083   ; set the cursor off
+044251 CD E6 2F 04 0084   	call cursor_off
+044255             0085   
+044255             0086   ; print loading ui message
+044255 21 CE 41 04 0087   	ld hl,loading_ui
+044259 CD AA 33 04 0088   	call printString
+04425D             0089   
+04425D             0090   ; load fonts
+04425D CD DB 0B 04 0091   	call load_font_itc_honda
+044261 CD BE 1C 04 0092   	call load_font_retro_computer
+044265             0093   
+044265             0094   ; load UI images
+044265 CD 47 25 04 0095   	call load_ui_images
+044269 CD F9 27 04 0096   	call load_ui_images_bj
+04426D             0097   
+04426D             0098   ; set text background color
+04426D 3E 84       0099   	ld a,4 + 128
+04426F CD B3 2D 04 0100   	call vdu_colour_text
+044273             0101   
+044273             0102   ; set text foreground color
+044273 3E 2F       0103   	ld a,47 ; aaaaff lavenderish
+044275 CD B3 2D 04 0104   	call vdu_colour_text
+044279             0105   
+044279             0106   ; set gfx bg color
+044279 AF          0107   	xor a ; plotting mode 0
+04427A 0E 04       0108   	ld c,4 ; dark blue
+04427C CD DB 2D 04 0109   	call vdu_gcol_bg
+044280 CD AE 2D 04 0110   	call vdu_clg
+044284             0111   
+044284             0112   ; set the cursor off again since we changed screen modes
+044284 CD E6 2F 04 0113   	call cursor_off
+044288             0114   
+044288             0115   ; VDU 28, left, bottom, right, top: Set text viewport **
+044288             0116   ; MIND THE LITTLE-ENDIANESS
+044288             0117   ; inputs: c=left,b=bottom,e=right,d=top
+044288 0E 00       0118   	ld c,0 ; left
+04428A 16 14       0119   	ld d,20 ; top
+04428C 1E 27       0120   	ld e,39 ; right
+04428E 06 1D       0121   	ld b,29; bottom
+044290 CD 9C 2E 04 0122   	call vdu_set_txt_viewport
+044294             0123   
+044294             0124   ; initialize image load routine
+044294 CD F9 37 04 0125   	call img_load_init
+044298             0126   
+044298             0127   ; load tiles
+044298 01 0B 00 00 0128   	ld bc,cube_num_tiles
+04429C 21 D4 01 04 0129   	ld hl,cube_buffer_id_lut
+0442A0 22 F3 37 04 0130   	ld (cur_buffer_id_lut),hl
+0442A4 21 F5 01 04 0131   	ld hl,cube_load_tiles_table
+0442A8 22 F6 37 04 0132   	ld (cur_load_jump_table),hl
+0442AC CD 2E 38 04 0133   	call img_load_main
+0442B0             0134   
+0442B0             0135   ; load sprites
+0442B0 01 14 00 00 0136   	ld bc,sprite_num_tiles
+0442B4 21 89 04 04 0137   	ld hl,sprite_buffer_id_lut
+0442B8 22 F3 37 04 0138   	ld (cur_buffer_id_lut),hl
+0442BC 21 C5 04 04 0139   	ld hl,sprite_load_tiles_table
+0442C0 22 F6 37 04 0140   	ld (cur_load_jump_table),hl
+0442C4 CD 2E 38 04 0141   	call img_load_main
+0442C8             0142   
+0442C8             0143   ; load sound effects
+0442C8 01 16 00 00 0144   	ld bc,SFX_num_buffers
+0442CC 21 84 39 04 0145   	ld hl,SFX_buffer_id_lut
+0442D0 22 F3 37 04 0146   	ld (cur_buffer_id_lut),hl
+0442D4 21 F2 39 04 0147   	ld hl,SFX_load_routines_table
+0442D8 22 F6 37 04 0148   	ld (cur_load_jump_table),hl
+0442DC CD F4 32 04 0149   	call sfx_load_main
+0442E0             0150   
+0442E0             0151   ; self modify vdu_play_sfx to enable sound
+0442E0 AF          0152   	xor a
+0442E1 32 46 00 04 0153   	ld (vdu_play_sfx_disable),a
+0442E5             0154   
+0442E5             0155   ; use loading time to determine if we're running on emulator or hardware
+0442E5 CD 69 41 04 0156   	call stopwatch_get ; hl = elapsed time in 120ths of a second
+0442E9 11 40 1F 00 0157   	ld de,8000 ; emulator loads in about 2,400 ticks, hardware about 15,000
+0442ED AF          0158   	xor a ; clear carry, default is running on hardware
+0442EE 32 04 42 04 0159   	ld (is_emulator),a
+0442F2 ED 52       0160   	sbc hl,de
+0442F4 FA 08 43 04 0161   	jp m,@on_emulator
+0442F8 CD D2 2E 04 0162   	call vdu_home_cursor
+0442FC 21 1C 42 04 0163   	ld hl,on_hardware
+044300 CD AA 33 04 0164   	call printString
+044304 C3 1A 43 04 0165   	jp @test_done
+044308             0166   
+044308             0167   @on_emulator:
+044308             0168   ; print emulator message
+044308 3E 01       0169   	ld a,1
+04430A 32 04 42 04 0170   	ld (is_emulator),a
+04430E CD D2 2E 04 0171   	call vdu_home_cursor
+044312 21 05 42 04 0172   	ld hl,on_emulator
+044316 CD AA 33 04 0173   	call printString
+04431A             0174   
+04431A             0175   @test_done:
+04431A             0176   ; print final loading time
+04431A 21 D9 41 04 0177   	ld hl,loading_time
+04431E CD AA 33 04 0178   	call printString
+044322 CD 69 41 04 0179   	call stopwatch_get ; hl = elapsed time in 120ths of a second
+044326 CD F8 33 04 0180   	call printDec
+04432A CD BF 33 04 0181   	call printNewLine
+04432E             0182   
+04432E             0183   ; print loading complete message and wait for user keypress
+04432E 21 E7 41 04 0184   	ld hl,loading_complete
+044332 CD AA 33 04 0185   	call printString
+044336 CD 69 2F 04 0186   	call vdu_flip
+04433A CD 2A 37 04 0187   	call waitKeypress
+04433E             0188   
+04433E             0189   ; initialization done
+04433E C9          0190   	ret
+04433F             0191   
+04433F             0192   ; DEBUG: set up a simple countdown timer
+04433F 01          0193   debug_timer: db 0x01
+044340             0194   
+044340             0195   main_loop_tmr: ds 6
+044346             0196   framerate: equ 30
+044346             0197   
+044346             0198   new_game:
+044346             0199   ; create wolf3d control structure
+044346             0200   sid: equ 0x1000
+044346             0201   scene_width: equ 256
+044346             0202   scene_height: equ 192
+044346             0203   ccs:
+044346             0204   	CCS sid, scene_width, scene_height
+044346 21 54 43 04 0001M      ld hl,@beg
+04434A 01 0B 00 00 0002M      ld bc,@end-@beg
+04434E 5B DF       0003M      rst.lil $18
+044350 C3 5F 43 04 0004M      jp @end
+044354             0005M  @beg:
+044354             0006M  ;   VDU 23,0, &A0, sid%; &49, 0, cstw%; csth%; Create Control Structure
+044354 17 00 A0    0007M      db 23,0,$A0
+044357 00 10       0008M      dw SID
+044359 50 00       0009M      db $50,0
+04435B 00 01       0010M      dw SCENE_WIDTH
+04435D C0 00       0011M      dw SCENE_HEIGHT
+04435F             0012M  @end:
+04435F             0205   
+04435F             0206   ; ; initialize map variables and load map file
+04435F             0207   ; 	ld hl,room_flags
+04435F             0208   ; 	xor a
+04435F             0209   ; 	ld b,10
+04435F             0210   ; @room_flags_loop:
+04435F             0211   ; 	ld (hl),a
+04435F             0212   ; 	inc hl
+04435F             0213   ; 	djnz @room_flags_loop
+04435F             0214   ; ; map_init:
+04435F             0215   ; 	ld (cur_floor),a
+04435F             0216   ; 	ld (cur_room),a
+04435F             0217   ; ; load room file
+04435F             0218   ; 	call map_load
+04435F             0219   ; ; initialize sprite data
+04435F             0220   ; 	call map_init_sprites
+04435F             0221   ; ; initialize player position
+04435F             0222   ; 	call plyr_init
+04435F             0223   
+04435F C9          0224   	ret
+044360             0225   
+044360             0226   main:
+044360 CD 46 43 04 0227   	call new_game
+044364             0228   
+044364             0229   main_loop:
+044364             0230   ; update global timestamp
+044364 CD 23 41 04 0231       call timestamp_tick
+044368             0232   
+044368             0233   ; ; move enemies
+044368             0234   ; 	call sprites_see_plyr ; 220-285  prt ticks
+044368             0235   
+044368             0236   ; ; get player input and update sprite position
+044368             0237   ; 	; 0-1 prt ticks
+044368             0238   ; 	call plyr_input ; ix points to cell defs/status, a is target cell current obj_id
+044368             0239   
+044368             0240   ; ; render the updated scene
+044368             0241   ; 	call render_scene ; 6-12 prt ticks
+044368             0242   ; ; full loop 12-16 prt ticks
+044368             0243   
+044368             0244   ; ; flip the screen
+044368             0245   ; 	call vdu_flip
+044368             0246   
+044368             0247   @wait:
+044368 FD 21 40 43 0248   	ld iy,main_loop_tmr
        04          
-044354 CD 00 41 04 0241   	call tmr_get
-044358 CA 64 43 04 0242   	jp z,@continue
-04435C FA 64 43 04 0243   	jp m,@continue
-044360 C3 4F 43 04 0244   	jp @wait
-044364             0245   @continue:
-044364             0246   
-044364             0247   ; reset main loop timer
-044364 FD 21 40 43 0248   	ld iy,main_loop_tmr
+04436D CD 00 41 04 0249   	call tmr_get
+044371 CA 7D 43 04 0250   	jp z,@continue
+044375 FA 7D 43 04 0251   	jp m,@continue
+044379 C3 68 43 04 0252   	jp @wait
+04437D             0253   @continue:
+04437D             0254   
+04437D             0255   ; reset main loop timer
+04437D FD 21 40 43 0256   	ld iy,main_loop_tmr
        04          
-044369 21 04 00 00 0249   	ld hl,120/framerate
-04436D CD F2 40 04 0250   	call tmr_set
-044371             0251   
-044371             0252   ; check for escape key and quit if pressed
-044371             0253   	MOSCALL mos_getkbmap
-044371 3E 1E       0001M  			LD	A, function
-044373 5B CF       0002M  			RST.LIL	08h
-044375             0254   ; 113 Escape
-044375 DD CB 0E 46 0255       bit 0,(ix+14)
-044379 20 02       0256   	jr nz,main_end
-04437B             0257   @Escape:
-04437B 18 CE       0258   	jr main_loop
-04437D             0259   
-04437D             0260   main_end:
-04437D             0261   	; call do_outro
-04437D             0262   
-04437D CD 99 33 04 0263       call vdu_clear_all_buffers
-044381 CD B4 00 04 0264   	call vdu_disable_channels
-044385             0265   
-044385             0266   ; restore screen to something normalish
-044385 AF          0267   	xor a
-044386 CD 27 2E 04 0268   	call vdu_set_screen_mode
-04438A CD D8 2F 04 0269   	call cursor_on
-04438E C9          0270   	ret
-04438F             0271   
-04438F             0272   ; files.inc must go here so that filedata doesn't stomp on program data
-04438F             0273   	include "src/asm/files.inc"
-04438F             0001*  ; WARNING: this routine must be the last one loaded in the main program so that filedata doesn't stomp on any program code
-04438F             0002*  ; inputs: hl = bufferId, ix = file size
-04438F             0003*  vdu_load_buffer_from_file:
-04438F             0004*  	; load buffer ids
-04438F 22 CC 43 04 0005*  		ld (@id0),hl
-044393 22 D2 43 04 0006*  		ld (@id1),hl
-044397 22 D7 43 04 0007*  		ld (@id2),hl
-04439B             0008*  	; clean up bytes that got stomped on by the ID loads
-04439B 3E 02       0009*  		ld a,2
-04439D 32 CE 43 04 0010*  		ld (@id0+2),a
-0443A1 3E 17       0011*  		ld a,23
-0443A3 32 D4 43 04 0012*  		ld (@id1+2),a
-0443A7 AF          0013*  		xor a
-0443A8 32 D9 43 04 0014*  		ld (@id2+2),a
-0443AC             0015*  	; read size from ix
-0443AC DD 7D       0016*  		ld a,ixl
-0443AE 32 DA 43 04 0017*  		ld (@size),a
-0443B2 DD 7C       0018*  		ld a,ixh
-0443B4 32 DB 43 04 0019*  		ld (@size+1),a
-0443B8             0020*  	; get all the ducks in a row for the vdu call
-0443B8 01 13 00 00 0021*  		ld bc,filedata-@start
-0443BC DD 09       0022*  		add ix,bc
-0443BE DD 44       0023*  		ld b,ixh
-0443C0 DD 4D       0024*  		ld c,ixl
-0443C2 21 C9 43 04 0025*  		ld hl,@start
-0443C6             0026*  	; push the button
-0443C6 5B DF       0027*  		rst.lil $18
-0443C8             0028*  	; back to caller
-0443C8 C9          0029*  		ret
-0443C9             0030*  ; vdp command string:
-0443C9 17 00 A0    0031*  @start: db 23,0,0xA0 ; Clear buffer
-0443CC 00 00       0032*  @id0:	dw 0x0000 ; bufferId
-0443CE 02          0033*  		db 2
-0443CF             0034*  	; select buffer VDU 23, 27, &20, bufferId;
-0443CF 17 1B 20    0035*  		db 23,27,0x20
-0443D2 00 00       0036*  @id1:	dw 0x0000 ; bufferId
-0443D4             0037*  	; Upload data :: VDU 23, 0 &A0, bufferId; 0, length; <buffer-data>
-0443D4 17 00 A0    0038*  		db 23,0,0xA0
-0443D7 00 00       0039*  @id2:	dw 0x0000 ; bufferId
-0443D9 00          0040*  		db 0
-0443DA             0041*  		; CAUTION: the size argument is a 16-bit value, so the max number of bytes we can load in one chunk is 64KiB!! This corresponds to an rgba2 image size of 320x204.
-0443DA 00 00       0042*  @size:	dw 0x0000 ; length of data in bytes
-0443DC             0043*  filedata: ; no need to allocate space here if this is the final include of the application
-0443DC             0044*  	; ds 65536 ; placeholder for file data	DEBUG
+044382 21 04 00 00 0257   	ld hl,120/framerate
+044386 CD F2 40 04 0258   	call tmr_set
+04438A             0259   
+04438A             0260   ; check for escape key and quit if pressed
+04438A             0261   	MOSCALL mos_getkbmap
+04438A 3E 1E       0001M  			LD	A, function
+04438C 5B CF       0002M  			RST.LIL	08h
+04438E             0262   ; 113 Escape
+04438E DD CB 0E 46 0263       bit 0,(ix+14)
+044392 20 02       0264   	jr nz,main_end
+044394             0265   @Escape:
+044394 18 CE       0266   	jr main_loop
+044396             0267   
+044396             0268   main_end:
+044396             0269   	; call do_outro
+044396             0270   
+044396 CD 99 33 04 0271       call vdu_clear_all_buffers
+04439A CD B4 00 04 0272   	call vdu_disable_channels
+04439E             0273   
+04439E             0274   ; restore screen to something normalish
+04439E AF          0275   	xor a
+04439F CD 27 2E 04 0276   	call vdu_set_screen_mode
+0443A3 CD D8 2F 04 0277   	call cursor_on
+0443A7 C9          0278   	ret
+0443A8             0279   
+0443A8             0280   ; files.inc must go here so that filedata doesn't stomp on program data
+0443A8             0281   	include "src/asm/files.inc"
+0443A8             0001*  ; WARNING: this routine must be the last one loaded in the main program so that filedata doesn't stomp on any program code
+0443A8             0002*  ; inputs: hl = bufferId, ix = file size
+0443A8             0003*  vdu_load_buffer_from_file:
+0443A8             0004*  	; load buffer ids
+0443A8 22 E5 43 04 0005*  		ld (@id0),hl
+0443AC 22 EB 43 04 0006*  		ld (@id1),hl
+0443B0 22 F0 43 04 0007*  		ld (@id2),hl
+0443B4             0008*  	; clean up bytes that got stomped on by the ID loads
+0443B4 3E 02       0009*  		ld a,2
+0443B6 32 E7 43 04 0010*  		ld (@id0+2),a
+0443BA 3E 17       0011*  		ld a,23
+0443BC 32 ED 43 04 0012*  		ld (@id1+2),a
+0443C0 AF          0013*  		xor a
+0443C1 32 F2 43 04 0014*  		ld (@id2+2),a
+0443C5             0015*  	; read size from ix
+0443C5 DD 7D       0016*  		ld a,ixl
+0443C7 32 F3 43 04 0017*  		ld (@size),a
+0443CB DD 7C       0018*  		ld a,ixh
+0443CD 32 F4 43 04 0019*  		ld (@size+1),a
+0443D1             0020*  	; get all the ducks in a row for the vdu call
+0443D1 01 13 00 00 0021*  		ld bc,filedata-@start
+0443D5 DD 09       0022*  		add ix,bc
+0443D7 DD 44       0023*  		ld b,ixh
+0443D9 DD 4D       0024*  		ld c,ixl
+0443DB 21 E2 43 04 0025*  		ld hl,@start
+0443DF             0026*  	; push the button
+0443DF 5B DF       0027*  		rst.lil $18
+0443E1             0028*  	; back to caller
+0443E1 C9          0029*  		ret
+0443E2             0030*  ; vdp command string:
+0443E2 17 00 A0    0031*  @start: db 23,0,0xA0 ; Clear buffer
+0443E5 00 00       0032*  @id0:	dw 0x0000 ; bufferId
+0443E7 02          0033*  		db 2
+0443E8             0034*  	; select buffer VDU 23, 27, &20, bufferId;
+0443E8 17 1B 20    0035*  		db 23,27,0x20
+0443EB 00 00       0036*  @id1:	dw 0x0000 ; bufferId
+0443ED             0037*  	; Upload data :: VDU 23, 0 &A0, bufferId; 0, length; <buffer-data>
+0443ED 17 00 A0    0038*  		db 23,0,0xA0
+0443F0 00 00       0039*  @id2:	dw 0x0000 ; bufferId
+0443F2 00          0040*  		db 0
+0443F3             0041*  		; CAUTION: the size argument is a 16-bit value, so the max number of bytes we can load in one chunk is 64KiB!! This corresponds to an rgba2 image size of 320x204.
+0443F3 00 00       0042*  @size:	dw 0x0000 ; length of data in bytes
+0443F5             0043*  filedata: ; no need to allocate space here if this is the final include of the application
+0443F5             0044*  	; ds 65536 ; placeholder for file data	DEBUG

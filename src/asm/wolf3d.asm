@@ -27,6 +27,7 @@
 	include "src/asm/img_load.inc"
 	include "src/asm/sfx.inc"
 	include "src/asm/timer.inc"
+	include "src/asm/vdu_wolf3d.inc"
 
 
 start:              
@@ -195,6 +196,13 @@ main_loop_tmr: ds 6
 framerate: equ 30
 
 new_game:
+; create wolf3d control structure
+sid: equ 0x1000
+scene_width: equ 256
+scene_height: equ 192
+ccs:
+	CCS sid, scene_width, scene_height
+
 ; ; initialize map variables and load map file
 ; 	ld hl,room_flags
 ; 	xor a
