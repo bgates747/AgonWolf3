@@ -124,11 +124,6 @@ def asm_make_map_masks(db_path, floor_nums, maps_tgt_dir):
                     # Write to binary file
                     bin_file.write(bytes([int(map_type_status, 2), cell['img_idx'], cell['obj_id'], sprite_id & 0xFF]))
 
-                # Write map masks
-                asm_file.write(f'\n\t.org 0xB7E400 ; cell_status + 256*4\n\n')
-                asm_file.write(f'; mind the little-endianess in the bit order here!\n')
-                asm_file.write(f'cell_views:\n')
-
                 # Write sprite table base and limit to the asm file
                 asm_file.write(f'\n')
                 asm_file.write('sprite_table_base: blkb 1024,255 ; so that sprite_id and sprite_obj default to no sprite\n')
