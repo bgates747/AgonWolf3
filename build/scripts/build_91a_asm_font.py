@@ -263,21 +263,13 @@ def make_asm_font(db_path,font_inc_path,buffer_id_counter,space_width,font_name,
                 plot_x, y_offset, dim_x, dim_y, img_filename = char_def_dict[char_num]
                 buffer_id = char_num + buffer_id_counter
                 name = f'{char_num:03d}'
-                # Write the relevant information to file
                 asm_writer.write(f"\n")
-                asm_writer.write(f"\tld hl,F{abbr_name}{img_filename}\n")
-                asm_writer.write(f"\tld de,filedata\n")
-                asm_writer.write(f"\tld bc,{65536}\n") # some extra padding just in case
-                asm_writer.write("\tld a,mos_load\n")
-                asm_writer.write("\tRST.LIL 08h\n")
                 asm_writer.write(f"\tld hl,BUF_{buffer_id:04d}\n")
                 asm_writer.write(f"\tld bc,{dim_x}\n")
                 asm_writer.write(f"\tld de,{dim_y}\n")
                 asm_writer.write(f"\tld ix,{dim_x*dim_y}\n")
+                asm_writer.write(f"\tld iy,F{abbr_name}{img_filename}\n")
                 asm_writer.write("\tcall vdu_load_img_2\n")
-                # asm_writer.write("\tLD A, '.'\n") # this is now handled by the vdu_load_img_2 function
-                # asm_writer.write("\tRST.LIL 10h\n")
-
             else:
                 asm_writer.write(f"; Missing character {char_num}\n")
 

@@ -520,10 +520,5 @@ cell_status:
 	dl 0x0A0050 ; cell 255 x,y (15,15) cube outer LIGHT GREY WALL 
 	db 0xFF ; no sprite
 
-	.org 0xB7E400 ; cell_status + 256*4
-
-; mind the little-endianess in the bit order here!
-cell_views:
-
 sprite_table_base: blkb 1024,255 ; so that sprite_id and sprite_obj default to no sprite
 sprite_table_limit:

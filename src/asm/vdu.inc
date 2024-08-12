@@ -1582,7 +1582,7 @@ load_next_sound:
 	ret
 
 ; load a sound file to a buffer
-; inputs: hl = bufferId ; ix = file size
+; inputs: hl = bufferId ; ix = file size ; iy = pointer to filename
 vdu_load_sfx:
 ; back up input parameters
     push hl ; bufferId

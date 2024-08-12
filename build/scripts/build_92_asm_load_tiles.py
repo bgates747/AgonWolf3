@@ -53,16 +53,12 @@ def make_asm_img_load(tiles_inc_path, render_type, src_img_dir, unique_rows):
             constName = f"BUF_{render_obj_id}"
             asm_writer.write(f"\n")
             asm_writer.write(f"ld_{render_obj_id}:\n")
-            asm_writer.write(f"\tld hl,F{render_obj_id}\n")
-            asm_writer.write(f"\tld (cur_filename),hl\n")
-            asm_writer.write(f"\tld de,filedata\n")
-            asm_writer.write(f"\tld bc,{65536}\n") 
-            asm_writer.write("\tld a,mos_load\n")
-            asm_writer.write("\tRST.LIL 08h\n")
             asm_writer.write(f"\tld hl,{constName}\n")
             asm_writer.write(f"\tld bc,{dim_x}\n")
             asm_writer.write(f"\tld de,{dim_y}\n")
             asm_writer.write(f"\tld ix,{dim_x*dim_y*4}\n") # 4 bytes per pixel in rgba8 format
+            asm_writer.write(f"\tld iy,F{render_obj_id}\n")
+            asm_writer.write(f"\tld (cur_filename),iy\n")
             asm_writer.write("\tcall vdu_load_img_8\n")
             asm_writer.write("\tret\n")
 

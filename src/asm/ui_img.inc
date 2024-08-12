@@ -14,148 +14,82 @@ BUF_UI_SPLASH: equ 0x030A
 ; Import .rgba2 bitmap files and load them into VDP buffers
 load_ui_images:
 
-	ld hl,F_UI_bj_025
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_025
 	ld bc,32
 	ld de,32
 	ld ix,1024
+	ld iy,F_UI_bj_025
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_050
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_050
 	ld bc,32
 	ld de,32
 	ld ix,1024
+	ld iy,F_UI_bj_050
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_075
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_075
 	ld bc,32
 	ld de,32
 	ld ix,1024
+	ld iy,F_UI_bj_075
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_100
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_100
 	ld bc,32
 	ld de,32
 	ld ix,1024
+	ld iy,F_UI_bj_100
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_120_120
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_120_120
 	ld bc,120
 	ld de,120
 	ld ix,14400
+	ld iy,F_UI_bj_120_120
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_lower_panel
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_LOWER_PANEL
 	ld bc,320
 	ld de,80
 	ld ix,25600
+	ld iy,F_UI_lower_panel
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_lower_panel_gatling
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_LOWER_PANEL_GATLING
 	ld bc,40
 	ld de,20
 	ld ix,800
+	ld iy,F_UI_lower_panel_gatling
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_lower_panel_knife
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_LOWER_PANEL_KNIFE
 	ld bc,40
 	ld de,20
 	ld ix,800
+	ld iy,F_UI_lower_panel_knife
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_lower_panel_machine_gun
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_LOWER_PANEL_MACHINE_GUN
 	ld bc,40
 	ld de,20
 	ld ix,800
+	ld iy,F_UI_lower_panel_machine_gun
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_lower_panel_pistol
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_LOWER_PANEL_PISTOL
 	ld bc,40
 	ld de,20
 	ld ix,800
+	ld iy,F_UI_lower_panel_pistol
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_splash
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_SPLASH
 	ld bc,320
 	ld de,160
 	ld ix,51200
+	ld iy,F_UI_splash
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
 	ret
 

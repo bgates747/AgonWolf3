@@ -23,265 +23,145 @@ BUF_UI_BJ_PISTOL_04: equ 0x0413
 ; Import .rgba2 bitmap files and load them into VDP buffers
 load_ui_images_bj:
 
-	ld hl,F_UI_bj_gatling_00
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_GATLING_00
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_gatling_00
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_gatling_01
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_GATLING_01
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_gatling_01
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_gatling_02
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_GATLING_02
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_gatling_02
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_gatling_03
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_GATLING_03
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_gatling_03
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_gatling_04
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_GATLING_04
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_gatling_04
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_knife_00
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_KNIFE_00
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_knife_00
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_knife_01
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_KNIFE_01
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_knife_01
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_knife_02
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_KNIFE_02
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_knife_02
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_knife_03
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_KNIFE_03
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_knife_03
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_knife_04
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_KNIFE_04
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_knife_04
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_machine_gun_00
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_MACHINE_GUN_00
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_machine_gun_00
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_machine_gun_01
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_MACHINE_GUN_01
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_machine_gun_01
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_machine_gun_02
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_MACHINE_GUN_02
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_machine_gun_02
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_machine_gun_03
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_MACHINE_GUN_03
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_machine_gun_03
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_machine_gun_04
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_MACHINE_GUN_04
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_machine_gun_04
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_pistol_00
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_PISTOL_00
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_pistol_00
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_pistol_01
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_PISTOL_01
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_pistol_01
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_pistol_02
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_PISTOL_02
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_pistol_02
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_pistol_03
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_PISTOL_03
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_pistol_03
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
-	ld hl,F_UI_bj_pistol_04
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UI_BJ_PISTOL_04
 	ld bc,64
 	ld de,64
 	ld ix,4096
+	ld iy,F_UI_bj_pistol_04
 	call vdu_load_img_2
-	LD A, '.'
-	RST.LIL 10h
 
 	ret
 

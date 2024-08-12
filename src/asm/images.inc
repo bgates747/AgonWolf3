@@ -46,156 +46,112 @@ cube_load_tiles_table:
 ; Import cube .rgba8 bitmap files and load them into VDP buffers
 
 ld_10:
-	ld hl,F10
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_10
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F10
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_11:
-	ld hl,F11
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_11
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F11
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_12:
-	ld hl,F12
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_12
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F12
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_13:
-	ld hl,F13
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_13
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F13
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_14:
-	ld hl,F14
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_14
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F14
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_15:
-	ld hl,F15
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_15
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F15
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_16:
-	ld hl,F16
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_16
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F16
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_17:
-	ld hl,F17
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_17
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F17
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_57:
-	ld hl,F57
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_57
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F57
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_58:
-	ld hl,F58
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_58
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F58
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_59:
-	ld hl,F59
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_59
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F59
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
@@ -285,282 +241,202 @@ sprite_load_tiles_table:
 ; Import sprite .rgba8 bitmap files and load them into VDP buffers
 
 ld_20:
-	ld hl,F20
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_20
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F20
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_21:
-	ld hl,F21
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_21
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F21
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_22:
-	ld hl,F22
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_22
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F22
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_23:
-	ld hl,F23
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_23
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F23
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_24:
-	ld hl,F24
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_24
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F24
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_40:
-	ld hl,F40
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_40
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F40
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_41:
-	ld hl,F41
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_41
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F41
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_42:
-	ld hl,F42
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_42
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F42
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_43:
-	ld hl,F43
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_43
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F43
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_44:
-	ld hl,F44
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_44
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F44
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_45:
-	ld hl,F45
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_45
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F45
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_46:
-	ld hl,F46
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_46
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F46
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_47:
-	ld hl,F47
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_47
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F47
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_48:
-	ld hl,F48
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_48
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F48
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_49:
-	ld hl,F49
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_49
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F49
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_50:
-	ld hl,F50
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_50
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F50
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_51:
-	ld hl,F51
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_51
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F51
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_52:
-	ld hl,F52
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_52
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F52
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_56:
-	ld hl,F56
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_56
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F56
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 
 ld_60:
-	ld hl,F60
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_60
 	ld bc,16
 	ld de,16
 	ld ix,1024
+	ld iy,F60
+	ld (cur_filename),iy
 	call vdu_load_img_8
 	ret
 

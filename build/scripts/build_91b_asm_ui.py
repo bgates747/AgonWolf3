@@ -39,18 +39,12 @@ def make_asm_ui(db_path, ui_inc_path, last_buffer_id):
                 dim_y = row['dim_y']
                 constName = "BUF_UI_" + panel_base_filename.upper()
                 asm_writer.write(f"\n")
-                asm_writer.write(f"\tld hl,F_UI_{panel_base_filename}\n")
-                asm_writer.write(f"\tld de,filedata\n")
-                asm_writer.write(f"\tld bc,{65536}\n") # some extra padding just in case
-                asm_writer.write("\tld a,mos_load\n")
-                asm_writer.write("\tRST.LIL 08h\n")
                 asm_writer.write(f"\tld hl,{constName}\n")
                 asm_writer.write(f"\tld bc,{dim_x}\n")
                 asm_writer.write(f"\tld de,{dim_y}\n")
                 asm_writer.write(f"\tld ix,{dim_x*dim_y}\n")
+                asm_writer.write(f"\tld iy,F_UI_{panel_base_filename}\n")
                 asm_writer.write("\tcall vdu_load_img_2\n")
-                asm_writer.write("\tLD A, '.'\n") # breadcrumbs now handled by vdu_load_img_2
-                asm_writer.write("\tRST.LIL 10h\n")
 
             asm_writer.write("\n\tret\n\n")
 

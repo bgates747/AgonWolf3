@@ -193,17 +193,16 @@ map_init:
 	ld (cur_room),a
 ; load room file
 	call map_load
-; set player initial position
 	ret
 
 ; load map file
 ; inputs: cur_floor, cur_room set
 map_load:
-	ld hl,floors ; address of floors lut
 	ld a,(cur_floor)
 	ld e,a
 	ld d,3 ; three bytes per lookup record
 	mlt de ; de = offset to floor lut entry
+	ld hl,floors ; address of floors lut
 	add hl,de ; hl = address of floor lut entry
 	ld hl,(hl) ; hl = base address of rooms for given floor
 	ld a,(cur_room)
@@ -214,46 +213,46 @@ map_load:
 	ld hl,(hl) ; hl = address of room file name
 	ld (cur_filename),hl ; DEBUG
 	ld de,cell_status ; address to load map data
-	ld bc,8*1024 ; size of map data in bytes
+	ld bc,2048 ; size of map data in bytes
 	ld a,mos_load
 	RST.LIL 08h
-; load sprite data
-	call map_init_sprites
+; ; load sprite data
+; 	call map_init_sprites
 	ret
 
-; initialize sprite data for the current room into sprite table
-; inputs: map data loaded
-map_init_sprites:
-; initialize pointers
-	ld ix,cell_status
-	ld iy,sprite_table_base
-	xor a
-	ld (@cell_id),a
-@loop:
-	ld (sprite_table_pointer),iy ; probably don't strictly need this but why not
-	ld a,(ix+map_sprite_id)
-	cp 255 ; check for no sprite
-	jr z,@next_cell
-	ld (iy+sprite_id),a
-	ld a,(ix+map_img_idx)
-	ld (iy+sprite_obj),a
-	call sprite_init_data
-	ld a,(@cell_id)
-	call cell_id_to_coords ; d = map_y, e = map_x
-	ld (iy+sprite_x),de ; set sprite x,y
-	lea iy,iy+sprite_record_size ; advance pointer to next sprite record
-@next_cell:
-	lea ix,ix+map_record_size ; advance pointer to next cell
-; check if we've reached the end of the map data
-	ld a,(@cell_id)
-	inc a
-	ld (@cell_id),a
-	jr nz,@loop ; still more to do
-; cleanup and return
-	ld iy,sprite_table_base ; reset pointer
-	ld (sprite_table_pointer),iy
-	ret
-@cell_id: db 0
+; ; initialize sprite data for the current room into sprite table
+; ; inputs: map data loaded
+; map_init_sprites:
+; ; initialize pointers
+; 	ld ix,cell_status
+; 	ld iy,sprite_table_base
+; 	xor a
+; 	ld (@cell_id),a
+; @loop:
+; 	ld (sprite_table_pointer),iy ; probably don't strictly need this but why not
+; 	ld a,(ix+map_sprite_id)
+; 	cp 255 ; check for no sprite
+; 	jr z,@next_cell
+; 	ld (iy+sprite_id),a
+; 	ld a,(ix+map_img_idx)
+; 	ld (iy+sprite_obj),a
+; 	call sprite_init_data
+; 	ld a,(@cell_id)
+; 	call cell_id_to_coords ; d = map_y, e = map_x
+; 	ld (iy+sprite_x),de ; set sprite x,y
+; 	lea iy,iy+sprite_record_size ; advance pointer to next sprite record
+; @next_cell:
+; 	lea ix,ix+map_record_size ; advance pointer to next cell
+; ; check if we've reached the end of the map data
+; 	ld a,(@cell_id)
+; 	inc a
+; 	ld (@cell_id),a
+; 	jr nz,@loop ; still more to do
+; ; cleanup and return
+; 	ld iy,sprite_table_base ; reset pointer
+; 	ld (sprite_table_pointer),iy
+; 	ret
+; @cell_id: db 0
 
 ; get the x,y map coordinates from a cell_id
 ; inputs: a = cell_id
@@ -315,73 +314,73 @@ get_room_start:
 	ret
 
 
-; moves player to the room indicated by the too room cell they've just entered
-; inputs: ix = pointer to the cell containing the too room door
-change_room:
-; set visited flag for old room
-	ld a,(cur_room)
-	ld hl,room_flags
-	ld de,0 ; make sure deu and d are zero
-	ld e,a
-	add hl,de ; hl = address of room flags entry
-	ld a,room_flag_visited
-	or (hl)
-	ld (hl),a
-; update from_room
-	ld a,(cur_room)
-	ld (from_room),a
-; get the new room id from the cell and update cur_room
-	ld hl,to_room_obj_lut
-	ld a,(ix+map_obj_id)
-	sub (hl)
-	ld (cur_room),a
-; save old room state to room dat memory location
-	ld hl,room_dat_lut
-	ld a,(from_room)
-	ld d,a
-	ld e,3 ; three bytes per lookup record
-	mlt de ; de = offset to room dat entry
-	add hl,de ; hl = address of room dat entry
-	ld de,(hl) ; destination address for room data
-	ld hl,cell_status ; source address for room data
-	ld bc,8*1024 ; size of room data
-	ldir
-; check room visited flag for target room
-	ld hl,room_flags
-	ld a,(cur_room)
-	ld de,0 ; make sure deu and d are zero
-	ld e,a
-	add hl,de ; hl = address of room flags entry
-	ld a,room_flag_visited
-	and (hl)
-	jr nz,@room_visited
-; room not visited so load room data from file
-	call map_load
-	call map_init_sprites
-	jr @get_room_start
-@room_visited:
-; fetch new room state from room dat memory location
-	ld hl,room_dat_lut
-	ld a,(cur_room)
-	ld d,a
-	ld e,3 ; three bytes per lookup record
-	mlt de ; de = offset to room dat entry
-	add hl,de ; hl = address of room dat entry
-	ld hl,(hl) ; source address for room data
-	ld de,cell_status ; destination address for room data
-	ld bc,8*1024 ; size of room data
-	ldir
-@get_room_start:
-; get player starting position from to_room_obj_lut
-	ld a,(from_room)
-	ld hl,to_room_obj_lut
-	ld de,0 ; make sure deu and d are zero
-	ld e,a
-	add hl,de ; hl = address of to_room_obj_lut entry
-	ld a,(hl)
-	call get_room_start
-	ld (cur_x),de
-	ret
+; ; moves player to the room indicated by the too room cell they've just entered
+; ; inputs: ix = pointer to the cell containing the too room door
+; change_room:
+; ; set visited flag for old room
+; 	ld a,(cur_room)
+; 	ld hl,room_flags
+; 	ld de,0 ; make sure deu and d are zero
+; 	ld e,a
+; 	add hl,de ; hl = address of room flags entry
+; 	ld a,room_flag_visited
+; 	or (hl)
+; 	ld (hl),a
+; ; update from_room
+; 	ld a,(cur_room)
+; 	ld (from_room),a
+; ; get the new room id from the cell and update cur_room
+; 	ld hl,to_room_obj_lut
+; 	ld a,(ix+map_obj_id)
+; 	sub (hl)
+; 	ld (cur_room),a
+; ; save old room state to room dat memory location
+; 	ld hl,room_dat_lut
+; 	ld a,(from_room)
+; 	ld d,a
+; 	ld e,3 ; three bytes per lookup record
+; 	mlt de ; de = offset to room dat entry
+; 	add hl,de ; hl = address of room dat entry
+; 	ld de,(hl) ; destination address for room data
+; 	ld hl,cell_status ; source address for room data
+; 	ld bc,8*1024 ; size of room data
+; 	ldir
+; ; check room visited flag for target room
+; 	ld hl,room_flags
+; 	ld a,(cur_room)
+; 	ld de,0 ; make sure deu and d are zero
+; 	ld e,a
+; 	add hl,de ; hl = address of room flags entry
+; 	ld a,room_flag_visited
+; 	and (hl)
+; 	jr nz,@room_visited
+; ; room not visited so load room data from file
+; 	call map_load
+; 	call map_init_sprites
+; 	jr @get_room_start
+; @room_visited:
+; ; fetch new room state from room dat memory location
+; 	ld hl,room_dat_lut
+; 	ld a,(cur_room)
+; 	ld d,a
+; 	ld e,3 ; three bytes per lookup record
+; 	mlt de ; de = offset to room dat entry
+; 	add hl,de ; hl = address of room dat entry
+; 	ld hl,(hl) ; source address for room data
+; 	ld de,cell_status ; destination address for room data
+; 	ld bc,8*1024 ; size of room data
+; 	ldir
+; @get_room_start:
+; ; get player starting position from to_room_obj_lut
+; 	ld a,(from_room)
+; 	ld hl,to_room_obj_lut
+; 	ld de,0 ; make sure deu and d are zero
+; 	ld e,a
+; 	add hl,de ; hl = address of to_room_obj_lut entry
+; 	ld a,(hl)
+; 	call get_room_start
+; 	ld (cur_x),de
+; 	ret
 
 to_room_obj_lut: db 30,31,32,33,34,35,36,37,38,39
 

@@ -187,26 +187,18 @@ font_retro_computer:
 ; Import .rgba2 bitmap files and load them into VDP buffers
 load_font_retro_computer:
 
-	ld hl,Frc032
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0288
 	ld bc,6
 	ld de,1
 	ld ix,6
+	ld iy,Frc032
 	call vdu_load_img_2
 
-	ld hl,Frc033
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0289
 	ld bc,3
 	ld de,14
 	ld ix,42
+	ld iy,Frc033
 	call vdu_load_img_2
 ; Missing character 34
 ; Missing character 35
@@ -223,114 +215,74 @@ load_font_retro_computer:
 ; Missing character 46
 ; Missing character 47
 
-	ld hl,Frc048
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0304
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc048
 	call vdu_load_img_2
 
-	ld hl,Frc049
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0305
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc049
 	call vdu_load_img_2
 
-	ld hl,Frc050
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0306
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc050
 	call vdu_load_img_2
 
-	ld hl,Frc051
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0307
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc051
 	call vdu_load_img_2
 
-	ld hl,Frc052
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0308
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc052
 	call vdu_load_img_2
 
-	ld hl,Frc053
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0309
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc053
 	call vdu_load_img_2
 
-	ld hl,Frc054
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0310
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc054
 	call vdu_load_img_2
 
-	ld hl,Frc055
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0311
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc055
 	call vdu_load_img_2
 
-	ld hl,Frc056
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0312
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc056
 	call vdu_load_img_2
 
-	ld hl,Frc057
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0313
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc057
 	call vdu_load_img_2
 ; Missing character 58
 ; Missing character 59
@@ -338,302 +290,194 @@ load_font_retro_computer:
 ; Missing character 61
 ; Missing character 62
 
-	ld hl,Frc063
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0319
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc063
 	call vdu_load_img_2
 ; Missing character 64
 
-	ld hl,Frc065
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0321
 	ld bc,7
 	ld de,14
 	ld ix,98
+	ld iy,Frc065
 	call vdu_load_img_2
 
-	ld hl,Frc066
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0322
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc066
 	call vdu_load_img_2
 
-	ld hl,Frc067
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0323
 	ld bc,7
 	ld de,14
 	ld ix,98
+	ld iy,Frc067
 	call vdu_load_img_2
 
-	ld hl,Frc068
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0324
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc068
 	call vdu_load_img_2
 
-	ld hl,Frc069
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0325
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc069
 	call vdu_load_img_2
 
-	ld hl,Frc070
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0326
 	ld bc,7
 	ld de,14
 	ld ix,98
+	ld iy,Frc070
 	call vdu_load_img_2
 
-	ld hl,Frc071
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0327
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc071
 	call vdu_load_img_2
 
-	ld hl,Frc072
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0328
 	ld bc,7
 	ld de,14
 	ld ix,98
+	ld iy,Frc072
 	call vdu_load_img_2
 
-	ld hl,Frc073
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0329
 	ld bc,7
 	ld de,14
 	ld ix,98
+	ld iy,Frc073
 	call vdu_load_img_2
 
-	ld hl,Frc074
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0330
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc074
 	call vdu_load_img_2
 
-	ld hl,Frc075
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0331
 	ld bc,7
 	ld de,14
 	ld ix,98
+	ld iy,Frc075
 	call vdu_load_img_2
 
-	ld hl,Frc076
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0332
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc076
 	call vdu_load_img_2
 
-	ld hl,Frc077
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0333
 	ld bc,9
 	ld de,14
 	ld ix,126
+	ld iy,Frc077
 	call vdu_load_img_2
 
-	ld hl,Frc078
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0334
 	ld bc,7
 	ld de,14
 	ld ix,98
+	ld iy,Frc078
 	call vdu_load_img_2
 
-	ld hl,Frc079
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0335
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc079
 	call vdu_load_img_2
 
-	ld hl,Frc080
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0336
 	ld bc,7
 	ld de,14
 	ld ix,98
+	ld iy,Frc080
 	call vdu_load_img_2
 
-	ld hl,Frc081
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0337
 	ld bc,8
 	ld de,15
 	ld ix,120
+	ld iy,Frc081
 	call vdu_load_img_2
 
-	ld hl,Frc082
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0338
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc082
 	call vdu_load_img_2
 
-	ld hl,Frc083
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0339
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc083
 	call vdu_load_img_2
 
-	ld hl,Frc084
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0340
 	ld bc,7
 	ld de,14
 	ld ix,98
+	ld iy,Frc084
 	call vdu_load_img_2
 
-	ld hl,Frc085
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0341
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc085
 	call vdu_load_img_2
 
-	ld hl,Frc086
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0342
 	ld bc,7
 	ld de,14
 	ld ix,98
+	ld iy,Frc086
 	call vdu_load_img_2
 
-	ld hl,Frc087
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0343
 	ld bc,11
 	ld de,14
 	ld ix,154
+	ld iy,Frc087
 	call vdu_load_img_2
 
-	ld hl,Frc088
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0344
 	ld bc,7
 	ld de,14
 	ld ix,98
+	ld iy,Frc088
 	call vdu_load_img_2
 
-	ld hl,Frc089
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0345
 	ld bc,8
 	ld de,14
 	ld ix,112
+	ld iy,Frc089
 	call vdu_load_img_2
 
-	ld hl,Frc090
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0346
 	ld bc,7
 	ld de,14
 	ld ix,98
+	ld iy,Frc090
 	call vdu_load_img_2
 ; Missing character 91
 ; Missing character 92

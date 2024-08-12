@@ -103,266 +103,178 @@ SFX_load_routines_table:
 ; Import sfx .raw files and load them into VDP buffers
 
 load_sfx_ACHTUNG:
-	ld hl,FACHTUNG
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_ACHTUNG
 	ld ix,14394
+	ld iy,FACHTUNG
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_AHH:
-	ld hl,FAHH
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_AHH
 	ld ix,6755
+	ld iy,FAHH
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_AUGH:
-	ld hl,FAUGH
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_AUGH
 	ld ix,12857
+	ld iy,FAUGH
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_AYEE:
-	ld hl,FAYEE
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_AYEE
 	ld ix,8192
+	ld iy,FAYEE
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_AYEE_HIGH:
-	ld hl,FAYEE_HIGH
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_AYEE_HIGH
 	ld ix,18295
+	ld iy,FAYEE_HIGH
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_DOG_WOOF_DOUBLE:
-	ld hl,FDOG_WOOF_DOUBLE
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_DOG_WOOF_DOUBLE
 	ld ix,10276
+	ld iy,FDOG_WOOF_DOUBLE
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_DOG_WOOF_SINGLE:
-	ld hl,FDOG_WOOF_SINGLE
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_DOG_WOOF_SINGLE
 	ld ix,8976
+	ld iy,FDOG_WOOF_SINGLE
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_DOG_YELP:
-	ld hl,FDOG_YELP
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_DOG_YELP
 	ld ix,7264
+	ld iy,FDOG_YELP
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_EXPLODE:
-	ld hl,FEXPLODE
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_EXPLODE
 	ld ix,21832
+	ld iy,FEXPLODE
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_GOT_TREASURE:
-	ld hl,FGOT_TREASURE
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_GOT_TREASURE
 	ld ix,24327
+	ld iy,FGOT_TREASURE
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_GUN_EMPTY:
-	ld hl,FGUN_EMPTY
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_GUN_EMPTY
 	ld ix,4927
+	ld iy,FGUN_EMPTY
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_GUN_RELOAD:
-	ld hl,FGUN_RELOAD
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_GUN_RELOAD
 	ld ix,7439
+	ld iy,FGUN_RELOAD
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_KNIFE:
-	ld hl,FKNIFE
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_KNIFE
 	ld ix,4083
+	ld iy,FKNIFE
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_MEIN_LEBEN:
-	ld hl,FMEIN_LEBEN
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_MEIN_LEBEN
 	ld ix,13697
+	ld iy,FMEIN_LEBEN
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_OOF:
-	ld hl,FOOF
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_OOF
 	ld ix,16384
+	ld iy,FOOF
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_SCHUSSTAFFEL:
-	ld hl,FSCHUSSTAFFEL
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_SCHUSSTAFFEL
 	ld ix,9827
+	ld iy,FSCHUSSTAFFEL
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_SCREAM:
-	ld hl,FSCREAM
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_SCREAM
 	ld ix,12382
+	ld iy,FSCREAM
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_SHOT_GATLING_BURST:
-	ld hl,FSHOT_GATLING_BURST
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_SHOT_GATLING_BURST
 	ld ix,24576
+	ld iy,FSHOT_GATLING_BURST
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_SHOT_MACHINE_GUN_BURST:
-	ld hl,FSHOT_MACHINE_GUN_BURST
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_SHOT_MACHINE_GUN_BURST
 	ld ix,17092
+	ld iy,FSHOT_MACHINE_GUN_BURST
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_SHOT_PISTOL:
-	ld hl,FSHOT_PISTOL
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_SHOT_PISTOL
 	ld ix,19297
+	ld iy,FSHOT_PISTOL
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_UGH:
-	ld hl,FUGH
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_UGH
 	ld ix,6313
+	ld iy,FUGH
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 
 load_sfx_WILHELM:
-	ld hl,FWILHELM
-	ld (cur_filename),hl
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_WILHELM
 	ld ix,21463
+	ld iy,FWILHELM
+	ld (cur_filename),iy
 	call vdu_load_sfx
 	ret
 

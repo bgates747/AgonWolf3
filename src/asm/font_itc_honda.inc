@@ -187,15 +187,11 @@ font_itc_honda:
 ; Import .rgba2 bitmap files and load them into VDP buffers
 load_font_itc_honda:
 
-	ld hl,Fhonda032
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0544
 	ld bc,6
 	ld de,1
 	ld ix,6
+	ld iy,Fhonda032
 	call vdu_load_img_2
 ; Missing character 33
 ; Missing character 34
@@ -211,126 +207,82 @@ load_font_itc_honda:
 ; Missing character 44
 ; Missing character 45
 
-	ld hl,Fhonda046
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0558
 	ld bc,5
 	ld de,5
 	ld ix,25
+	ld iy,Fhonda046
 	call vdu_load_img_2
 ; Missing character 47
 
-	ld hl,Fhonda048
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0560
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda048
 	call vdu_load_img_2
 
-	ld hl,Fhonda049
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0561
 	ld bc,4
 	ld de,18
 	ld ix,72
+	ld iy,Fhonda049
 	call vdu_load_img_2
 
-	ld hl,Fhonda050
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0562
 	ld bc,9
 	ld de,18
 	ld ix,162
+	ld iy,Fhonda050
 	call vdu_load_img_2
 
-	ld hl,Fhonda051
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0563
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda051
 	call vdu_load_img_2
 
-	ld hl,Fhonda052
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0564
 	ld bc,12
 	ld de,18
 	ld ix,216
+	ld iy,Fhonda052
 	call vdu_load_img_2
 
-	ld hl,Fhonda053
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0565
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda053
 	call vdu_load_img_2
 
-	ld hl,Fhonda054
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0566
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda054
 	call vdu_load_img_2
 
-	ld hl,Fhonda055
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0567
 	ld bc,8
 	ld de,18
 	ld ix,144
+	ld iy,Fhonda055
 	call vdu_load_img_2
 
-	ld hl,Fhonda056
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0568
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda056
 	call vdu_load_img_2
 
-	ld hl,Fhonda057
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0569
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda057
 	call vdu_load_img_2
 ; Missing character 58
 ; Missing character 59
@@ -340,290 +292,186 @@ load_font_itc_honda:
 ; Missing character 63
 ; Missing character 64
 
-	ld hl,Fhonda065
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0577
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda065
 	call vdu_load_img_2
 
-	ld hl,Fhonda066
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0578
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda066
 	call vdu_load_img_2
 
-	ld hl,Fhonda067
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0579
 	ld bc,8
 	ld de,19
 	ld ix,152
+	ld iy,Fhonda067
 	call vdu_load_img_2
 
-	ld hl,Fhonda068
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0580
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda068
 	call vdu_load_img_2
 
-	ld hl,Fhonda069
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0581
 	ld bc,8
 	ld de,18
 	ld ix,144
+	ld iy,Fhonda069
 	call vdu_load_img_2
 
-	ld hl,Fhonda070
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0582
 	ld bc,8
 	ld de,18
 	ld ix,144
+	ld iy,Fhonda070
 	call vdu_load_img_2
 
-	ld hl,Fhonda071
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0583
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda071
 	call vdu_load_img_2
 
-	ld hl,Fhonda072
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0584
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda072
 	call vdu_load_img_2
 
-	ld hl,Fhonda073
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0585
 	ld bc,3
 	ld de,18
 	ld ix,54
+	ld iy,Fhonda073
 	call vdu_load_img_2
 
-	ld hl,Fhonda074
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0586
 	ld bc,6
 	ld de,18
 	ld ix,108
+	ld iy,Fhonda074
 	call vdu_load_img_2
 
-	ld hl,Fhonda075
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0587
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda075
 	call vdu_load_img_2
 
-	ld hl,Fhonda076
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0588
 	ld bc,8
 	ld de,18
 	ld ix,144
+	ld iy,Fhonda076
 	call vdu_load_img_2
 
-	ld hl,Fhonda077
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0589
 	ld bc,14
 	ld de,18
 	ld ix,252
+	ld iy,Fhonda077
 	call vdu_load_img_2
 
-	ld hl,Fhonda078
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0590
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda078
 	call vdu_load_img_2
 
-	ld hl,Fhonda079
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0591
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda079
 	call vdu_load_img_2
 
-	ld hl,Fhonda080
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0592
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda080
 	call vdu_load_img_2
 
-	ld hl,Fhonda081
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0593
 	ld bc,10
 	ld de,21
 	ld ix,210
+	ld iy,Fhonda081
 	call vdu_load_img_2
 
-	ld hl,Fhonda082
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0594
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda082
 	call vdu_load_img_2
 
-	ld hl,Fhonda083
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0595
 	ld bc,9
 	ld de,19
 	ld ix,171
+	ld iy,Fhonda083
 	call vdu_load_img_2
 
-	ld hl,Fhonda084
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0596
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda084
 	call vdu_load_img_2
 
-	ld hl,Fhonda085
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0597
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda085
 	call vdu_load_img_2
 
-	ld hl,Fhonda086
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0598
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda086
 	call vdu_load_img_2
 
-	ld hl,Fhonda087
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0599
 	ld bc,16
 	ld de,18
 	ld ix,288
+	ld iy,Fhonda087
 	call vdu_load_img_2
 
-	ld hl,Fhonda088
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0600
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda088
 	call vdu_load_img_2
 
-	ld hl,Fhonda089
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0601
 	ld bc,10
 	ld de,18
 	ld ix,180
+	ld iy,Fhonda089
 	call vdu_load_img_2
 
-	ld hl,Fhonda090
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0602
 	ld bc,9
 	ld de,18
 	ld ix,162
+	ld iy,Fhonda090
 	call vdu_load_img_2
 ; Missing character 91
 ; Missing character 92
@@ -632,290 +480,186 @@ load_font_itc_honda:
 ; Missing character 95
 ; Missing character 96
 
-	ld hl,Fhonda097
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0609
 	ld bc,8
 	ld de,12
 	ld ix,96
+	ld iy,Fhonda097
 	call vdu_load_img_2
 
-	ld hl,Fhonda098
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0610
 	ld bc,9
 	ld de,18
 	ld ix,162
+	ld iy,Fhonda098
 	call vdu_load_img_2
 
-	ld hl,Fhonda099
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0611
 	ld bc,7
 	ld de,12
 	ld ix,84
+	ld iy,Fhonda099
 	call vdu_load_img_2
 
-	ld hl,Fhonda100
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0612
 	ld bc,9
 	ld de,18
 	ld ix,162
+	ld iy,Fhonda100
 	call vdu_load_img_2
 
-	ld hl,Fhonda101
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0613
 	ld bc,8
 	ld de,12
 	ld ix,96
+	ld iy,Fhonda101
 	call vdu_load_img_2
 
-	ld hl,Fhonda102
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0614
 	ld bc,9
 	ld de,18
 	ld ix,162
+	ld iy,Fhonda102
 	call vdu_load_img_2
 
-	ld hl,Fhonda103
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0615
 	ld bc,9
 	ld de,18
 	ld ix,162
+	ld iy,Fhonda103
 	call vdu_load_img_2
 
-	ld hl,Fhonda104
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0616
 	ld bc,9
 	ld de,18
 	ld ix,162
+	ld iy,Fhonda104
 	call vdu_load_img_2
 
-	ld hl,Fhonda105
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0617
 	ld bc,4
 	ld de,18
 	ld ix,72
+	ld iy,Fhonda105
 	call vdu_load_img_2
 
-	ld hl,Fhonda106
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0618
 	ld bc,8
 	ld de,24
 	ld ix,192
+	ld iy,Fhonda106
 	call vdu_load_img_2
 
-	ld hl,Fhonda107
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0619
 	ld bc,9
 	ld de,18
 	ld ix,162
+	ld iy,Fhonda107
 	call vdu_load_img_2
 
-	ld hl,Fhonda108
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0620
 	ld bc,3
 	ld de,18
 	ld ix,54
+	ld iy,Fhonda108
 	call vdu_load_img_2
 
-	ld hl,Fhonda109
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0621
 	ld bc,14
 	ld de,13
 	ld ix,182
+	ld iy,Fhonda109
 	call vdu_load_img_2
 
-	ld hl,Fhonda110
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0622
 	ld bc,9
 	ld de,12
 	ld ix,108
+	ld iy,Fhonda110
 	call vdu_load_img_2
 
-	ld hl,Fhonda111
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0623
 	ld bc,9
 	ld de,12
 	ld ix,108
+	ld iy,Fhonda111
 	call vdu_load_img_2
 
-	ld hl,Fhonda112
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0624
 	ld bc,9
 	ld de,18
 	ld ix,162
+	ld iy,Fhonda112
 	call vdu_load_img_2
 
-	ld hl,Fhonda113
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0625
 	ld bc,9
 	ld de,18
 	ld ix,162
+	ld iy,Fhonda113
 	call vdu_load_img_2
 
-	ld hl,Fhonda114
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0626
 	ld bc,6
 	ld de,13
 	ld ix,78
+	ld iy,Fhonda114
 	call vdu_load_img_2
 
-	ld hl,Fhonda115
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0627
 	ld bc,8
 	ld de,13
 	ld ix,104
+	ld iy,Fhonda115
 	call vdu_load_img_2
 
-	ld hl,Fhonda116
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0628
 	ld bc,7
 	ld de,15
 	ld ix,105
+	ld iy,Fhonda116
 	call vdu_load_img_2
 
-	ld hl,Fhonda117
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0629
 	ld bc,9
 	ld de,12
 	ld ix,108
+	ld iy,Fhonda117
 	call vdu_load_img_2
 
-	ld hl,Fhonda118
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0630
 	ld bc,9
 	ld de,12
 	ld ix,108
+	ld iy,Fhonda118
 	call vdu_load_img_2
 
-	ld hl,Fhonda119
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0631
 	ld bc,14
 	ld de,12
 	ld ix,168
+	ld iy,Fhonda119
 	call vdu_load_img_2
 
-	ld hl,Fhonda120
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0632
 	ld bc,9
 	ld de,12
 	ld ix,108
+	ld iy,Fhonda120
 	call vdu_load_img_2
 
-	ld hl,Fhonda121
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0633
 	ld bc,9
 	ld de,17
 	ld ix,153
+	ld iy,Fhonda121
 	call vdu_load_img_2
 
-	ld hl,Fhonda122
-	ld de,filedata
-	ld bc,65536
-	ld a,mos_load
-	RST.LIL 08h
 	ld hl,BUF_0634
 	ld bc,9
 	ld de,12
 	ld ix,108
+	ld iy,Fhonda122
 	call vdu_load_img_2
 
 	ret

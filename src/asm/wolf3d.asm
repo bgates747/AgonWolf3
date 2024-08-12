@@ -12,7 +12,7 @@
 	include "src/asm/vdu_sound.inc" ; also has macros
 	include "src/asm/images.inc"
 	include "src/asm/fonts_bmp.inc"
-	; include "src/asm/maps.inc"
+	include "src/asm/maps.inc"
 	; include "src/asm/render.inc"
 	include "src/asm/font_itc_honda.inc"
 	include "src/asm/font_retro_computer.inc"
@@ -28,6 +28,8 @@
 	include "src/asm/sfx.inc"
 	include "src/asm/timer.inc"
 	include "src/asm/vdu_wolf3d.inc"
+
+	include "src/asm/tmp.inc"
 
 
 start:              
@@ -62,12 +64,6 @@ on_hardware: defb "Running on hardware.\r\n",0
 init:
 ; clear all buffers
     call vdu_clear_all_buffers
-
-; set up the display
-    ld a,8+128 ; 320x240x64 double-buffered
-    call vdu_set_screen_mode
-    xor a
-    call vdu_set_scaling
 	
 ; start generic stopwatch to time setup loop 
 ; so we can determine if we're running on emulator or hardware
@@ -94,6 +90,12 @@ init:
 ; load UI images
 	call load_ui_images
 	call load_ui_images_bj
+
+; set up the display
+    ld a,8+128 ; 320x240x64 double-buffered
+    call vdu_set_screen_mode
+    xor a
+    call vdu_set_scaling
 
 ; set text background color
 	ld a,4 + 128
@@ -197,25 +199,20 @@ framerate: equ 30
 
 new_game:
 ; create wolf3d control structure
-sid: equ 0x1000
-scene_width: equ 256
-scene_height: equ 192
 ccs:
-	CCS sid, scene_width, scene_height
+	CCS sid, cstw, csth
 
-; ; initialize map variables and load map file
-; 	ld hl,room_flags
-; 	xor a
-; 	ld b,10
-; @room_flags_loop:
-; 	ld (hl),a
-; 	inc hl
-; 	djnz @room_flags_loop
-; ; map_init:
-; 	ld (cur_floor),a
-; 	ld (cur_room),a
-; ; load room file
-; 	call map_load
+; initialize map variables and load map file
+	ld hl,room_flags
+	xor a
+	ld b,10
+@room_flags_loop:
+	ld (hl),a
+	inc hl
+	djnz @room_flags_loop
+; load room file
+	call map_init
+	; call vdu_map_init
 ; ; initialize sprite data
 ; 	call map_init_sprites
 ; ; initialize player position
