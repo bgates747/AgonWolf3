@@ -44,7 +44,25 @@ def make_asm_img_load(tiles_inc_path, render_type, src_img_dir, unique_rows):
             render_obj_id = row['render_obj_id']
             asm_writer.write(f"\tdl ld_{render_obj_id}\n")
 
-        asm_writer.write(f"\n; Import {render_type} .rgba8 bitmap files and load them into VDP buffers\n")
+        if render_type == "cube":
+            asm_writer.write(f"\n; TexPanelLut for {render_type} tiles:\n")
+            asm_writer.write(f"; typedef struct TexPanel {{\n")
+            asm_writer.write(f";     uint8_t img_idx;           // Image Index (handled on the vdp side so no need to load it here.\n")
+            asm_writer.write(f";     uint16_t texture_id;       // Texture ID for the panel\n")
+            asm_writer.write(f";     uint16_t width;            // Texture width\n")
+            asm_writer.write(f";     uint16_t height;           // Texture height\n")
+            asm_writer.write(f"; }} TexPanel;\n")
+
+            asm_writer.write(f"{render_type}_tex_panel_lut:")
+            for row in unique_rows:
+                render_obj_id = row['render_obj_id']
+                dim_x = row['dim_x']
+                dim_y = row['dim_y']
+                asm_writer.write(f"\n\tdw 0x{render_obj_id:04X}")
+                asm_writer.write(f",{dim_x}")
+                asm_writer.write(f",{dim_y}")
+
+        asm_writer.write(f"\n\n; Import {render_type} .rgba8 bitmap files and load them into VDP buffers\n")
 
         for row in unique_rows:
             render_obj_id = row['render_obj_id']

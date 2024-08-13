@@ -778,8 +778,11 @@ move_camera_loc:
 @z:     dw 0
 @end:   db 0 ; padding
 
-;   VDU 23, 0, &A0, sid; &50, 0, 1, 0 : Initialize Map
+; VDU 23, 0, &A0, sid; &49, 128, 0, map_id; width; height; <cells> :  Load Wolf3D Map Cells
+; inputs: a map_id, hl pointer to cells data
 vdu_map_init:
+    push hl ; back up pointer to map data
+    ld (@map_id),a ; high byte will always be zero because we'll never need more than 255 maps
     ld hl,@beg
     ld bc,@end-@beg
     rst.lil $18
@@ -787,5 +790,34 @@ vdu_map_init:
 @beg:
     db 23,0,$A0
     dw sid
-    db $50,0,1,0
+    db $49,128,0
+@map_id:    
+    dw 0 
+    dw 16 ; map_width
+    dw 16 ; map_height
 @end:
+    pop hl ; restore pointer to map data
+    ld bc,16*16*map_record_size ; 16x16 map
+    rst.lil $18
+    ret
+
+; VDU 23, 0, &A0, sid; &49, 128, 1, map_id; num_panels; <texture_id; width; height;> :  Load Wolf3D Map Texture Panel Lookup Table
+; inputs: a map_id
+vdu_panel_init:
+    ld (@map_id),a ; high byte will always be zero because we'll never need more than 255 maps
+    ld hl,@beg
+    ld bc,@end-@beg
+    rst.lil $18
+    jp @end
+@beg:
+    db 23,0,$A0
+    dw sid
+    db $49,128,1
+@map_id:
+    dw 0
+    dw cube_num_tiles ; num_panels
+@end:
+    ld hl,cube_tex_panel_lut
+    ld bc,cube_num_tiles*6 ; 6 bytes per panel
+    rst.lil $18
+    ret

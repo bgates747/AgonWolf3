@@ -43,6 +43,26 @@ cube_load_tiles_table:
 	dl ld_58
 	dl ld_59
 
+; TexPanelLut for cube tiles:
+; typedef struct TexPanel {
+;     uint8_t img_idx;           // Image Index (handled on the vdp side so no need to load it here.
+;     uint16_t texture_id;       // Texture ID for the panel
+;     uint16_t width;            // Texture width
+;     uint16_t height;           // Texture height
+; } TexPanel;
+cube_tex_panel_lut:
+	dw 0x000A,16,16
+	dw 0x000B,16,16
+	dw 0x000C,16,16
+	dw 0x000D,16,16
+	dw 0x000E,16,16
+	dw 0x000F,16,16
+	dw 0x0010,16,16
+	dw 0x0011,16,16
+	dw 0x0039,16,16
+	dw 0x003A,16,16
+	dw 0x003B,16,16
+
 ; Import cube .rgba8 bitmap files and load them into VDP buffers
 
 ld_10:
@@ -237,6 +257,7 @@ sprite_load_tiles_table:
 	dl ld_52
 	dl ld_56
 	dl ld_60
+
 
 ; Import sprite .rgba8 bitmap files and load them into VDP buffers
 

@@ -202,6 +202,15 @@ new_game:
 ccs:
 	CCS sid, cstw, csth
 
+; create render target bitmap
+ctb:
+    CTB tgtbmid, cstw, csth
+
+; set dithering type
+    ld a,(dithering_type)
+    ld hl,sid
+    call vdu_set_dither
+
 ; initialize map variables and load map file
 	ld hl,room_flags
 	xor a
@@ -210,9 +219,14 @@ ccs:
 	ld (hl),a
 	inc hl
 	djnz @room_flags_loop
+
 ; load room file
 	call map_init
-	; call vdu_map_init
+	ld hl,cell_status ; pointer to map data
+	ld a,1 ; map_id
+	call vdu_map_init
+	ld a,1 ; map_id
+	call vdu_panel_init
 ; ; initialize sprite data
 ; 	call map_init_sprites
 ; ; initialize player position
