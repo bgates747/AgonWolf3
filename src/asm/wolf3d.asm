@@ -64,6 +64,8 @@ on_hardware: defb "Running on hardware.\r\n",0
 init:
 ; clear all buffers
     call vdu_clear_all_buffers
+
+	call init_display
 	
 ; start generic stopwatch to time setup loop 
 ; so we can determine if we're running on emulator or hardware
@@ -90,29 +92,6 @@ init:
 ; load UI images
 	call load_ui_images
 	call load_ui_images_bj
-
-; set up the display
-    ld a,8+128 ; 320x240x64 double-buffered
-    call vdu_set_screen_mode
-    xor a
-    call vdu_set_scaling
-
-; set text background color
-	ld a,4 + 128
-	call vdu_colour_text
-
-; set text foreground color
-	ld a,47 ; aaaaff lavenderish
-	call vdu_colour_text
-
-; set gfx bg color
-	xor a ; plotting mode 0
-	ld c,4 ; dark blue
-	call vdu_gcol_bg
-	call vdu_clg
-
-; set the cursor off again since we changed screen modes
-	call cursor_off
 
 ; VDU 28, left, bottom, right, top: Set text viewport **
 ; MIND THE LITTLE-ENDIANESS
@@ -232,6 +211,12 @@ ctb:
 ; ; initialize player position
 ; 	call plyr_init
 
+; create camera
+    ld bc,15*256
+    ld de,15*256
+    ld hl,-32*256 ; -45 degrees
+    call vdu_camera_init
+
 	ret
 
 main:
@@ -287,6 +272,30 @@ main_end:
 	call vdu_set_screen_mode
 	call cursor_on
 	ret
+
+init_display:
+; set up the display
+    ld a,8+128 ; 320x240x64 double-buffered
+    call vdu_set_screen_mode
+    xor a
+    call vdu_set_scaling
+
+; set text background color
+	ld a,4 + 128
+	call vdu_colour_text
+
+; set text foreground color
+	ld a,47 ; aaaaff lavenderish
+	call vdu_colour_text
+
+; set gfx bg color
+	xor a ; plotting mode 0
+	ld c,4 ; dark blue
+	call vdu_gcol_bg
+	call vdu_clg
+
+; set the cursor off again since we changed screen modes
+	call cursor_off
 
 ; files.inc must go here so that filedata doesn't stomp on program data
 	include "src/asm/files.inc"

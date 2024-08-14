@@ -821,3 +821,28 @@ vdu_panel_init:
     ld bc,cube_num_tiles*6 ; 6 bytes per panel
     rst.lil $18
     ret
+
+; VDU 23, 0, &A0, sid; &49, 129, 0, x; y; theta; fov; screen_width; screen_height; screen_dist; :  Create Wolf3D Camera
+; inputs: hl theta, bc x, de y
+vdu_camera_init:
+    ld (@x),bc
+    ld (@y),de
+    ld a,l
+    ld (@theta),a
+    ld a,h
+    ld (@theta+1),a
+    ld hl,@beg
+    ld bc,@end-@beg
+    rst.lil $18
+    ret
+@beg:
+    db 23,0,$A0
+    dw sid
+    db $49,129,0
+@x:     dw 0
+@y:     dw 0
+@theta: dw 0
+        dw 64*256 ; fov of 90 degrees in 8.8 fixed point deg256
+        dw cstw, csth ; screen height, width
+        dw 8*256 ; screen_dist of 8 ft in 8.8 fixed point
+@end:

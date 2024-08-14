@@ -2,7 +2,7 @@ PC     Output      Line
 040000             0001       .assume adl=1
 040000             0002       .org 0x040000
 040000             0003   
-040000 C3 76 40 04 0004       jp start
+040000 C3 AB 40 04 0004       jp start
 040004             0005   
 040004 FF FF FF FF 0006       .align 64
        FF FF FF FF 
@@ -1532,8 +1532,8 @@ PC     Output      Line
 04096D             0189*  ; inputs: none
 04096D             0190*  map_init:
 04096D AF          0191*  	xor a
-04096E 32 6D 40 04 0192*  	ld (cur_floor),a
-040972 32 6E 40 04 0193*  	ld (cur_room),a
+04096E 32 A2 40 04 0192*  	ld (cur_floor),a
+040972 32 A3 40 04 0193*  	ld (cur_room),a
 040976             0194*  ; load room file
 040976 CD 7B 09 04 0195*  	call map_load
 04097A C9          0196*  	ret
@@ -1541,14 +1541,14 @@ PC     Output      Line
 04097B             0198*  ; load map file
 04097B             0199*  ; inputs: cur_floor, cur_room set
 04097B             0200*  map_load:
-04097B 3A 6D 40 04 0201*  	ld a,(cur_floor)
+04097B 3A A2 40 04 0201*  	ld a,(cur_floor)
 04097F 5F          0202*  	ld e,a
 040980 16 03       0203*  	ld d,3 ; three bytes per lookup record
 040982 ED 5C       0204*  	mlt de ; de = offset to floor lut entry
 040984 21 29 0A 04 0205*  	ld hl,floors ; address of floors lut
 040988 19          0206*  	add hl,de ; hl = address of floor lut entry
 040989 ED 27       0207*  	ld hl,(hl) ; hl = base address of rooms for given floor
-04098B 3A 6E 40 04 0208*  	ld a,(cur_room)
+04098B 3A A3 40 04 0208*  	ld a,(cur_room)
 04098F 5F          0209*  	ld e,a
 040990 16 03       0210*  	ld d,3 ; three bytes per lookup record
 040992 ED 5C       0211*  	mlt de ; de = offset to room lut entry
@@ -1634,7 +1634,7 @@ PC     Output      Line
 0409CF             0290*  @start_cell_found:
 0409CF 79          0291*  	ld a,c
 0409D0 CD A8 09 04 0292*  	call cell_id_to_coords ; d = map_y, e = map_x, a = cell_id
-0409D4 ED 53 73 40 0293*  	ld (cur_x),de
+0409D4 ED 53 A8 40 0293*  	ld (cur_x),de
        04          
 0409D9 C9          0294*  	ret
 0409DA             0295*  
@@ -1656,7 +1656,7 @@ PC     Output      Line
 0409EC             0310*  @start_cell_found:
 0409EC 79          0311*  	ld a,c
 0409ED CD A8 09 04 0312*  	call cell_id_to_coords ; d = map_y, e = map_x, a = cell_id
-0409F1 ED 53 73 40 0313*  	ld (cur_x),de
+0409F1 ED 53 A8 40 0313*  	ld (cur_x),de
        04          
 0409F6 C9          0314*  	ret
 0409F7             0315*  
@@ -6022,7 +6022,7 @@ PC     Output      Line
 042D7D             1517*  ; print welcome message
 042D7D DD 21 6B 0A 1518*  	ld ix,font_itc_honda
        04          
-042D82 21 91 40 04 1519*  	ld hl,hello_world
+042D82 21 C6 40 04 1519*  	ld hl,hello_world
 042D86 01 20 00 00 1520*  	ld bc,32
 042D8A 11 02 00 00 1521*  	ld de,2
 042D8E CD B0 08 04 1522*  	call font_bmp_print
@@ -6033,7 +6033,7 @@ PC     Output      Line
 042D9E CD 33 2E 04 1527*  	call printNewLine
 042DA2             1528*  
 042DA2             1529*  ; print current load stopwatch
-042DA2 21 B3 40 04 1530*  	ld hl,loading_time
+042DA2 21 E8 40 04 1530*  	ld hl,loading_time
 042DA6 CD 1E 2E 04 1531*  	call printString
 042DAA CD 05 3B 04 1532*  	call stopwatch_get ; hl = elapsed time in 120ths of a second
 042DAE CD 6C 2E 04 1533*  	call printDec
@@ -6097,7 +6097,7 @@ PC     Output      Line
 042E01             1587*  ; back up input parameters
 042E01 E5          1588*      push hl ; bufferId
 042E02             1589*  ; load the sound
-042E02 CD CB 42 04 1590*  	call vdu_load_buffer_from_file
+042E02 CD 14 43 04 1590*  	call vdu_load_buffer_from_file
 042E06             1591*  ; now make the buffer a sound sample
 042E06 E1          1592*      pop hl ; bufferId
 042E07 AF          1593*  	xor a ; zero is the magic number for 8-bit signed PCM 16KHz
@@ -6884,7 +6884,7 @@ PC     Output      Line
 0432CB             0048*  ; print welcome message
 0432CB DD 21 6B 0A 0049*  	ld ix,font_itc_honda
        04          
-0432D0 21 91 40 04 0050*  	ld hl,hello_world
+0432D0 21 C6 40 04 0050*  	ld hl,hello_world
 0432D4 01 20 00 00 0051*  	ld bc,32
 0432D8 11 02 00 00 0052*  	ld de,2
 0432DC CD B0 08 04 0053*  	call font_bmp_print
@@ -6895,7 +6895,7 @@ PC     Output      Line
 0432EC CD 33 2E 04 0058*  	call printNewLine
 0432F0             0059*  
 0432F0             0060*  ; print current load stopwatch
-0432F0 21 B3 40 04 0061*  	ld hl,loading_time
+0432F0 21 E8 40 04 0061*  	ld hl,loading_time
 0432F4 CD 1E 2E 04 0062*  	call printString
 0432F8 CD 05 3B 04 0063*  	call stopwatch_get ; hl = elapsed time in 120ths of a second
 0432FC CD 6C 2E 04 0064*  	call printDec
@@ -7017,7 +7017,7 @@ PC     Output      Line
 0433DD C5          0173*  	push bc
 0433DE D5          0174*  	push de
 0433DF             0175*  ; load the image
-0433DF CD CB 42 04 0176*  	call vdu_load_buffer_from_file
+0433DF CD 14 43 04 0176*  	call vdu_load_buffer_from_file
 0433E3             0177*  ; now make it a bitmap
 0433E3 D1          0178*  	pop de
 0433E4 C1          0179*  	pop bc
@@ -7033,7 +7033,7 @@ PC     Output      Line
 0433ED C5          0189*  	push bc
 0433EE D5          0190*  	push de
 0433EF             0191*  ; load the image
-0433EF CD CB 42 04 0192*  	call vdu_load_buffer_from_file
+0433EF CD 14 43 04 0192*  	call vdu_load_buffer_from_file
 0433F3             0193*  ; now make it a bitmap
 0433F3 D1          0194*  	pop de
 0433F4 C1          0195*  	pop bc
@@ -7724,17 +7724,17 @@ PC     Output      Line
        04          
 04398E 21 64 00 00 0113*      ld hl,100 ; halfway between 101 for real hardware and 99 for emulator
 043992 AF          0114*      xor a ; clear carry,zero is default value for running on hardware
-043993 32 DE 40 04 0115*      ld (is_emulator),a
+043993 32 13 41 04 0115*      ld (is_emulator),a
 043997 ED 52       0116*      sbc hl,de
-043999 21 F6 40 04 0117*      ld hl,on_hardware ; default message for running on hardware
+043999 21 2B 41 04 0117*      ld hl,on_hardware ; default message for running on hardware
 04399D CA 55 39 04 0118*      jp z,prt_calibrate ; zero result is indeterminate so we try again
 0439A1 F8          0119*      ret m ; negative result means we're on hardware
 0439A2 3C          0120*      inc a ; we're on emulator
-0439A3 32 DE 40 04 0121*      ld (is_emulator),a
+0439A3 32 13 41 04 0121*      ld (is_emulator),a
 0439A7 01 FF 2C 00 0122*      ld bc,prt_reload_emulator
 0439AB ED 43 52 39 0123*      ld (prt_reload),bc
        04          
-0439B0 21 DF 40 04 0124*      ld hl,on_emulator
+0439B0 21 14 41 04 0124*      ld hl,on_emulator
 0439B4 C9          0125*      ret
 0439B5             0126*  
 0439B5 43 61 6C 69 0127*  calibrating_timer: defb "Calibrating timer\r\n",0
@@ -8909,57 +8909,84 @@ PC     Output      Line
 044066 01 42 00 00 0821*      ld bc,cube_num_tiles*6 ; 6 bytes per panel
 04406A 5B DF       0822*      rst.lil $18
 04406C C9          0823*      ret
-04406D             0031   
-04406D             0032   	include "src/asm/tmp.inc"
-04406D             0001*  ; labels and subroutines from various include files
-04406D             0002*  ; which have been temporarily excluded until they can be refactored
-04406D             0003*  
-04406D 00          0004*  cur_floor: db 0x00 ; 0-255, corresponds to floor_num in build scripts
-04406E 00          0005*  cur_room: db 0x00 ; 0-9, corresponds to room_id in build scripts
-04406F 00          0006*  cur_cell: db 0x00 ; 0-255, corresponds to cell_id in build scripts
-044070 00          0007*  from_floor: db 0x00 ; 0-255, corresponds to floor_num in build scripts
-044071 00          0008*  from_room: db 0x00 ; 0-9, corresponds to room_id in build scripts
-044072 00          0009*  orientation: db 0x00 ; 0-3 north,east,south,west
-044073 00          0010*  cur_x: db 0x00
-044074 00          0011*  cur_y: db 0x00
-044075 00          0012*         db 0x00 ; padding so we can read/write 24-bit registers
-044076             0033   
-044076             0034   
-044076             0035   start:
-044076 F5          0036       push af
-044077 C5          0037       push bc
-044078 D5          0038       push de
-044079 DD E5       0039       push ix
-04407B FD E5       0040       push iy
-04407D             0041   
-04407D CD 0D 41 04 0042   	call init ; Initialization code
-044081 CD 83 42 04 0043       call main ; Call the main function
-044085             0044   
-044085             0045   exit:
-044085             0046   
-044085 FD E1       0047       pop iy
-044087 DD E1       0048       pop ix
-044089 D1          0049       pop de
-04408A C1          0050       pop bc
-04408B F1          0051       pop af
-04408C 21 00 00 00 0052       ld hl,0
-044090             0053   
-044090 C9          0054       ret
-044091             0055   
-044091 57 65 6C 63 0056   hello_world: defb "Welcome to Agon Wolf3D",0
+04406D             0824*  
+04406D             0825*  ; VDU 23, 0, &A0, sid; &49, 129, 0, x; y; theta; fov; screen_width; screen_height; screen_dist; :  Create Wolf3D Camera
+04406D             0826*  ; inputs: hl theta, bc x, de y
+04406D             0827*  vdu_camera_init:
+04406D ED 43 94 40 0828*      ld (@x),bc
+       04          
+044072 ED 53 96 40 0829*      ld (@y),de
+       04          
+044077 7D          0830*      ld a,l
+044078 32 98 40 04 0831*      ld (@theta),a
+04407C 7C          0832*      ld a,h
+04407D 32 99 40 04 0833*      ld (@theta+1),a
+044081 21 8C 40 04 0834*      ld hl,@beg
+044085 01 16 00 00 0835*      ld bc,@end-@beg
+044089 5B DF       0836*      rst.lil $18
+04408B C9          0837*      ret
+04408C             0838*  @beg:
+04408C 17 00 A0    0839*      db 23,0,$A0
+04408F 00 10       0840*      dw sid
+044091 49 81 00    0841*      db $49,129,0
+044094 00 00       0842*  @x:     dw 0
+044096 00 00       0843*  @y:     dw 0
+044098 00 00       0844*  @theta: dw 0
+04409A 00 40       0845*          dw 64*256 ; fov of 90 degrees in 8.8 fixed point deg256
+04409C F0 00 A0 00 0846*          dw cstw, csth ; screen height, width
+0440A0 00 08       0847*          dw 8*256 ; screen_dist of 8 ft in 8.8 fixed point
+0440A2             0848*  @end:
+0440A2             0031   
+0440A2             0032   	include "src/asm/tmp.inc"
+0440A2             0001*  ; labels and subroutines from various include files
+0440A2             0002*  ; which have been temporarily excluded until they can be refactored
+0440A2             0003*  
+0440A2 00          0004*  cur_floor: db 0x00 ; 0-255, corresponds to floor_num in build scripts
+0440A3 00          0005*  cur_room: db 0x00 ; 0-9, corresponds to room_id in build scripts
+0440A4 00          0006*  cur_cell: db 0x00 ; 0-255, corresponds to cell_id in build scripts
+0440A5 00          0007*  from_floor: db 0x00 ; 0-255, corresponds to floor_num in build scripts
+0440A6 00          0008*  from_room: db 0x00 ; 0-9, corresponds to room_id in build scripts
+0440A7 00          0009*  orientation: db 0x00 ; 0-3 north,east,south,west
+0440A8 00          0010*  cur_x: db 0x00
+0440A9 00          0011*  cur_y: db 0x00
+0440AA 00          0012*         db 0x00 ; padding so we can read/write 24-bit registers
+0440AB             0033   
+0440AB             0034   
+0440AB             0035   start:
+0440AB F5          0036       push af
+0440AC C5          0037       push bc
+0440AD D5          0038       push de
+0440AE DD E5       0039       push ix
+0440B0 FD E5       0040       push iy
+0440B2             0041   
+0440B2 CD 42 41 04 0042   	call init ; Initialization code
+0440B6 CD A6 42 04 0043       call main ; Call the main function
+0440BA             0044   
+0440BA             0045   exit:
+0440BA             0046   
+0440BA FD E1       0047       pop iy
+0440BC DD E1       0048       pop ix
+0440BE D1          0049       pop de
+0440BF C1          0050       pop bc
+0440C0 F1          0051       pop af
+0440C1 21 00 00 00 0052       ld hl,0
+0440C5             0053   
+0440C5 C9          0054       ret
+0440C6             0055   
+0440C6 57 65 6C 63 0056   hello_world: defb "Welcome to Agon Wolf3D",0
        6F 6D 65 20 
        74 6F 20 41 
        67 6F 6E 20 
        57 6F 6C 66 
        33 44 00    
-0440A8 4C 6F 61 64 0057   loading_ui: defb "Loading UI",0
+0440DD 4C 6F 61 64 0057   loading_ui: defb "Loading UI",0
        69 6E 67 20 
        55 49 00    
-0440B3 4C 6F 61 64 0058   loading_time: defb "Loading time:",0
+0440E8 4C 6F 61 64 0058   loading_time: defb "Loading time:",0
        69 6E 67 20 
        74 69 6D 65 
        3A 00       
-0440C1 50 72 65 73 0059   loading_complete: defb "Press any key to continue.\r\n",0
+0440F6 50 72 65 73 0059   loading_complete: defb "Press any key to continue.\r\n",0
        73 20 61 6E 
        79 20 6B 65 
        79 20 74 6F 
@@ -8967,420 +8994,429 @@ PC     Output      Line
        74 69 6E 75 
        65 2E 0D 0A 
        00          
-0440DE 00          0060   is_emulator: defb 0
-0440DF 52 75 6E 6E 0061   on_emulator: defb "Running on emulator.\r\n",0
+044113 00          0060   is_emulator: defb 0
+044114 52 75 6E 6E 0061   on_emulator: defb "Running on emulator.\r\n",0
        69 6E 67 20 
        6F 6E 20 65 
        6D 75 6C 61 
        74 6F 72 2E 
        0D 0A 00    
-0440F6 52 75 6E 6E 0062   on_hardware: defb "Running on hardware.\r\n",0
+04412B 52 75 6E 6E 0062   on_hardware: defb "Running on hardware.\r\n",0
        69 6E 67 20 
        6F 6E 20 68 
        61 72 64 77 
        61 72 65 2E 
        0D 0A 00    
-04410D             0063   
-04410D             0064   init:
-04410D             0065   ; clear all buffers
-04410D CD 0D 2E 04 0066       call vdu_clear_all_buffers
-044111             0067   
-044111             0068   ; start generic stopwatch to time setup loop
-044111             0069   ; so we can determine if we're running on emulator or hardware
-044111 CD F9 3A 04 0070   	call stopwatch_set
-044115             0071   
-044115             0072   ; initialize global timestamp
-044115 DD 27 00    0073       ld hl,(ix+sysvar_time) ; ix was set by stopwatch_start
-044118 22 B6 3A 04 0074       ld (timestamp_now),hl
-04411C             0075   
-04411C             0076   ; enable additional audio channels
-04411C CD 8C 00 04 0077   	call vdu_enable_channels
-044120             0078   
-044120             0079   ; set the cursor off
-044120 CD 5A 2A 04 0080   	call cursor_off
-044124             0081   
-044124             0082   ; print loading ui message
-044124 21 A8 40 04 0083   	ld hl,loading_ui
-044128 CD 1E 2E 04 0084   	call printString
-04412C             0085   
-04412C             0086   ; load fonts
-04412C CD 8D 0C 04 0087   	call load_font_itc_honda
-044130 CD B0 1A 04 0088   	call load_font_retro_computer
-044134             0089   
-044134             0090   ; load UI images
-044134 CD 8C 21 04 0091   	call load_ui_images
-044138 CD 99 23 04 0092   	call load_ui_images_bj
-04413C             0093   
-04413C             0094   ; set up the display
-04413C 3E 88       0095       ld a,8+128 ; 320x240x64 double-buffered
-04413E CD 9B 28 04 0096       call vdu_set_screen_mode
-044142 AF          0097       xor a
-044143 CD CA 29 04 0098       call vdu_set_scaling
-044147             0099   
-044147             0100   ; set text background color
-044147 3E 84       0101   	ld a,4 + 128
-044149 CD 27 28 04 0102   	call vdu_colour_text
-04414D             0103   
-04414D             0104   ; set text foreground color
-04414D 3E 2F       0105   	ld a,47 ; aaaaff lavenderish
-04414F CD 27 28 04 0106   	call vdu_colour_text
-044153             0107   
-044153             0108   ; set gfx bg color
-044153 AF          0109   	xor a ; plotting mode 0
-044154 0E 04       0110   	ld c,4 ; dark blue
-044156 CD 4F 28 04 0111   	call vdu_gcol_bg
-04415A CD 22 28 04 0112   	call vdu_clg
-04415E             0113   
-04415E             0114   ; set the cursor off again since we changed screen modes
-04415E CD 5A 2A 04 0115   	call cursor_off
-044162             0116   
-044162             0117   ; VDU 28, left, bottom, right, top: Set text viewport **
-044162             0118   ; MIND THE LITTLE-ENDIANESS
-044162             0119   ; inputs: c=left,b=bottom,e=right,d=top
-044162 0E 00       0120   	ld c,0 ; left
-044164 16 14       0121   	ld d,20 ; top
-044166 1E 27       0122   	ld e,39 ; right
-044168 06 1D       0123   	ld b,29; bottom
-04416A CD 10 29 04 0124   	call vdu_set_txt_viewport
-04416E             0125   
-04416E             0126   ; initialize image load routine
-04416E CD 6D 32 04 0127   	call img_load_init
-044172             0128   
-044172             0129   ; load tiles
-044172 01 0B 00 00 0130   	ld bc,cube_num_tiles
-044176 21 D4 01 04 0131   	ld hl,cube_buffer_id_lut
-04417A 22 67 32 04 0132   	ld (cur_buffer_id_lut),hl
-04417E 21 F5 01 04 0133   	ld hl,cube_load_tiles_table
-044182 22 6A 32 04 0134   	ld (cur_load_jump_table),hl
-044186 CD A2 32 04 0135   	call img_load_main
-04418A             0136   
-04418A             0137   ; load sprites
-04418A 01 14 00 00 0138   	ld bc,sprite_num_tiles
-04418E 21 5D 04 04 0139   	ld hl,sprite_buffer_id_lut
-044192 22 67 32 04 0140   	ld (cur_buffer_id_lut),hl
-044196 21 99 04 04 0141   	ld hl,sprite_load_tiles_table
-04419A 22 6A 32 04 0142   	ld (cur_load_jump_table),hl
-04419E CD A2 32 04 0143   	call img_load_main
-0441A2             0144   
-0441A2             0145   ; load sound effects
-0441A2 01 16 00 00 0146   	ld bc,SFX_num_buffers
-0441A6 21 FC 33 04 0147   	ld hl,SFX_buffer_id_lut
-0441AA 22 67 32 04 0148   	ld (cur_buffer_id_lut),hl
-0441AE 21 6A 34 04 0149   	ld hl,SFX_load_routines_table
-0441B2 22 6A 32 04 0150   	ld (cur_load_jump_table),hl
-0441B6 CD 68 2D 04 0151   	call sfx_load_main
-0441BA             0152   
-0441BA             0153   ; self modify vdu_play_sfx to enable sound
-0441BA AF          0154   	xor a
-0441BB 32 46 00 04 0155   	ld (vdu_play_sfx_disable),a
-0441BF             0156   
-0441BF             0157   ; use loading time to determine if we're running on emulator or hardware
-0441BF CD 05 3B 04 0158   	call stopwatch_get ; hl = elapsed time in 120ths of a second
-0441C3 11 40 1F 00 0159   	ld de,8000 ; emulator loads in about 2,400 ticks, hardware about 15,000
-0441C7 AF          0160   	xor a ; clear carry, default is running on hardware
-0441C8 32 DE 40 04 0161   	ld (is_emulator),a
-0441CC ED 52       0162   	sbc hl,de
-0441CE FA E2 41 04 0163   	jp m,@on_emulator
-0441D2 CD 46 29 04 0164   	call vdu_home_cursor
-0441D6 21 F6 40 04 0165   	ld hl,on_hardware
-0441DA CD 1E 2E 04 0166   	call printString
-0441DE C3 F4 41 04 0167   	jp @test_done
-0441E2             0168   
-0441E2             0169   @on_emulator:
-0441E2             0170   ; print emulator message
-0441E2 3E 01       0171   	ld a,1
-0441E4 32 DE 40 04 0172   	ld (is_emulator),a
-0441E8 CD 46 29 04 0173   	call vdu_home_cursor
-0441EC 21 DF 40 04 0174   	ld hl,on_emulator
-0441F0 CD 1E 2E 04 0175   	call printString
-0441F4             0176   
-0441F4             0177   @test_done:
-0441F4             0178   ; print final loading time
-0441F4 21 B3 40 04 0179   	ld hl,loading_time
-0441F8 CD 1E 2E 04 0180   	call printString
-0441FC CD 05 3B 04 0181   	call stopwatch_get ; hl = elapsed time in 120ths of a second
-044200 CD 6C 2E 04 0182   	call printDec
-044204 CD 33 2E 04 0183   	call printNewLine
-044208             0184   
-044208             0185   ; print loading complete message and wait for user keypress
-044208 21 C1 40 04 0186   	ld hl,loading_complete
-04420C CD 1E 2E 04 0187   	call printString
-044210 CD DD 29 04 0188   	call vdu_flip
-044214 CD 9E 31 04 0189   	call waitKeypress
-044218             0190   
-044218             0191   ; initialization done
-044218 C9          0192   	ret
-044219             0193   
-044219             0194   ; DEBUG: set up a simple countdown timer
-044219 01          0195   debug_timer: db 0x01
-04421A             0196   
-04421A             0197   main_loop_tmr: ds 6
-044220             0198   framerate: equ 30
-044220             0199   
-044220             0200   new_game:
-044220             0201   ; create wolf3d control structure
-044220             0202   ccs:
-044220             0203   	CCS sid, cstw, csth
-044220 21 2E 42 04 0001M      ld hl,@beg
-044224 01 0B 00 00 0002M      ld bc,@end-@beg
-044228 5B DF       0003M      rst.lil $18
-04422A C3 39 42 04 0004M      jp @end
-04422E             0005M  @beg:
-04422E             0006M  ;   VDU 23,0, &A0, sid%; &49, 0, cstw%; csth%; Create Control Structure
-04422E 17 00 A0    0007M      db 23,0,$A0
-044231 00 10       0008M      dw SID
-044233 49 00       0009M      db $49,0
-044235 F0 00       0010M      dw SCENE_WIDTH
-044237 A0 00       0011M      dw SCENE_HEIGHT
-044239             0012M  @end:
-044239             0204   
-044239             0205   ; create render target bitmap
-044239             0206   ctb:
-044239             0207       CTB tgtbmid, cstw, csth
-044239 21 47 42 04 0001M      ld hl,@beg
-04423D 01 10 00 00 0002M      ld bc,@end-@beg
-044241 5B DF       0003M      rst.lil $18
-044243 C3 57 42 04 0004M      jp @end
-044247             0005M  @beg:
-044247             0006M  ;   VDU 23, 27, &20, bmid2% Select output bitmap
-044247 17 1B 20    0007M      db 23,27,$20
-04424A 02 10       0008M      dw BMID
-04424C             0009M  ;   VDU 23, 27, 2, cstw%; csth%; &0000; &00C0; Create solid color bitmap
-04424C 17 1B 02    0010M      db 23,27,2
-04424F F0 00       0011M      dw SCENE_WIDTH
-044251 A0 00       0012M      dw SCENE_HEIGHT
-044253 00 00       0013M      dw $0000
-044255 C0 00       0014M      dw $00C0
-044257             0015M  @end:
-044257             0208   
-044257             0209   ; set dithering type
-044257 3A 80 3B 04 0210       ld a,(dithering_type)
-04425B 21 00 10 00 0211       ld hl,sid
-04425F CD 00 3D 04 0212       call vdu_set_dither
-044263             0213   
-044263             0214   ; initialize map variables and load map file
-044263 21 01 0A 04 0215   	ld hl,room_flags
-044267 AF          0216   	xor a
-044268 06 0A       0217   	ld b,10
-04426A             0218   @room_flags_loop:
-04426A 77          0219   	ld (hl),a
-04426B 23          0220   	inc hl
-04426C 10 FC       0221   	djnz @room_flags_loop
-04426E             0222   
-04426E             0223   ; load room file
-04426E CD 6D 09 04 0224   	call map_init
-044272 21 00 E0 B7 0225   	ld hl,cell_status ; pointer to map data
-044276 3E 01       0226   	ld a,1 ; map_id
-044278 CD 1B 40 04 0227   	call vdu_map_init
-04427C 3E 01       0228   	ld a,1 ; map_id
-04427E CD 44 40 04 0229   	call vdu_panel_init
-044282             0230   ; ; initialize sprite data
-044282             0231   ; 	call map_init_sprites
-044282             0232   ; ; initialize player position
-044282             0233   ; 	call plyr_init
-044282             0234   
-044282 C9          0235   	ret
-044283             0236   
-044283             0237   main:
-044283 CD 20 42 04 0238   	call new_game
-044287             0239   
-044287             0240   main_loop:
-044287             0241   ; update global timestamp
-044287 CD BF 3A 04 0242       call timestamp_tick
-04428B             0243   
-04428B             0244   ; ; move enemies
-04428B             0245   ; 	call sprites_see_plyr ; 220-285  prt ticks
-04428B             0246   
-04428B             0247   ; ; get player input and update sprite position
-04428B             0248   ; 	; 0-1 prt ticks
-04428B             0249   ; 	call plyr_input ; ix points to cell defs/status, a is target cell current obj_id
-04428B             0250   
-04428B             0251   ; ; render the updated scene
-04428B             0252   ; 	call render_scene ; 6-12 prt ticks
-04428B             0253   ; ; full loop 12-16 prt ticks
-04428B             0254   
-04428B             0255   ; ; flip the screen
-04428B             0256   ; 	call vdu_flip
-04428B             0257   
-04428B             0258   @wait:
-04428B FD 21 1A 42 0259   	ld iy,main_loop_tmr
+044142             0063   
+044142             0064   init:
+044142             0065   ; clear all buffers
+044142 CD 0D 2E 04 0066       call vdu_clear_all_buffers
+044146             0067   
+044146 CD EE 42 04 0068   	call init_display
+04414A             0069   
+04414A             0070   ; start generic stopwatch to time setup loop
+04414A             0071   ; so we can determine if we're running on emulator or hardware
+04414A CD F9 3A 04 0072   	call stopwatch_set
+04414E             0073   
+04414E             0074   ; initialize global timestamp
+04414E DD 27 00    0075       ld hl,(ix+sysvar_time) ; ix was set by stopwatch_start
+044151 22 B6 3A 04 0076       ld (timestamp_now),hl
+044155             0077   
+044155             0078   ; enable additional audio channels
+044155 CD 8C 00 04 0079   	call vdu_enable_channels
+044159             0080   
+044159             0081   ; set the cursor off
+044159 CD 5A 2A 04 0082   	call cursor_off
+04415D             0083   
+04415D             0084   ; print loading ui message
+04415D 21 DD 40 04 0085   	ld hl,loading_ui
+044161 CD 1E 2E 04 0086   	call printString
+044165             0087   
+044165             0088   ; load fonts
+044165 CD 8D 0C 04 0089   	call load_font_itc_honda
+044169 CD B0 1A 04 0090   	call load_font_retro_computer
+04416D             0091   
+04416D             0092   ; load UI images
+04416D CD 8C 21 04 0093   	call load_ui_images
+044171 CD 99 23 04 0094   	call load_ui_images_bj
+044175             0095   
+044175             0096   ; VDU 28, left, bottom, right, top: Set text viewport **
+044175             0097   ; MIND THE LITTLE-ENDIANESS
+044175             0098   ; inputs: c=left,b=bottom,e=right,d=top
+044175 0E 00       0099   	ld c,0 ; left
+044177 16 14       0100   	ld d,20 ; top
+044179 1E 27       0101   	ld e,39 ; right
+04417B 06 1D       0102   	ld b,29; bottom
+04417D CD 10 29 04 0103   	call vdu_set_txt_viewport
+044181             0104   
+044181             0105   ; initialize image load routine
+044181 CD 6D 32 04 0106   	call img_load_init
+044185             0107   
+044185             0108   ; load tiles
+044185 01 0B 00 00 0109   	ld bc,cube_num_tiles
+044189 21 D4 01 04 0110   	ld hl,cube_buffer_id_lut
+04418D 22 67 32 04 0111   	ld (cur_buffer_id_lut),hl
+044191 21 F5 01 04 0112   	ld hl,cube_load_tiles_table
+044195 22 6A 32 04 0113   	ld (cur_load_jump_table),hl
+044199 CD A2 32 04 0114   	call img_load_main
+04419D             0115   
+04419D             0116   ; load sprites
+04419D 01 14 00 00 0117   	ld bc,sprite_num_tiles
+0441A1 21 5D 04 04 0118   	ld hl,sprite_buffer_id_lut
+0441A5 22 67 32 04 0119   	ld (cur_buffer_id_lut),hl
+0441A9 21 99 04 04 0120   	ld hl,sprite_load_tiles_table
+0441AD 22 6A 32 04 0121   	ld (cur_load_jump_table),hl
+0441B1 CD A2 32 04 0122   	call img_load_main
+0441B5             0123   
+0441B5             0124   ; load sound effects
+0441B5 01 16 00 00 0125   	ld bc,SFX_num_buffers
+0441B9 21 FC 33 04 0126   	ld hl,SFX_buffer_id_lut
+0441BD 22 67 32 04 0127   	ld (cur_buffer_id_lut),hl
+0441C1 21 6A 34 04 0128   	ld hl,SFX_load_routines_table
+0441C5 22 6A 32 04 0129   	ld (cur_load_jump_table),hl
+0441C9 CD 68 2D 04 0130   	call sfx_load_main
+0441CD             0131   
+0441CD             0132   ; self modify vdu_play_sfx to enable sound
+0441CD AF          0133   	xor a
+0441CE 32 46 00 04 0134   	ld (vdu_play_sfx_disable),a
+0441D2             0135   
+0441D2             0136   ; use loading time to determine if we're running on emulator or hardware
+0441D2 CD 05 3B 04 0137   	call stopwatch_get ; hl = elapsed time in 120ths of a second
+0441D6 11 40 1F 00 0138   	ld de,8000 ; emulator loads in about 2,400 ticks, hardware about 15,000
+0441DA AF          0139   	xor a ; clear carry, default is running on hardware
+0441DB 32 13 41 04 0140   	ld (is_emulator),a
+0441DF ED 52       0141   	sbc hl,de
+0441E1 FA F5 41 04 0142   	jp m,@on_emulator
+0441E5 CD 46 29 04 0143   	call vdu_home_cursor
+0441E9 21 2B 41 04 0144   	ld hl,on_hardware
+0441ED CD 1E 2E 04 0145   	call printString
+0441F1 C3 07 42 04 0146   	jp @test_done
+0441F5             0147   
+0441F5             0148   @on_emulator:
+0441F5             0149   ; print emulator message
+0441F5 3E 01       0150   	ld a,1
+0441F7 32 13 41 04 0151   	ld (is_emulator),a
+0441FB CD 46 29 04 0152   	call vdu_home_cursor
+0441FF 21 14 41 04 0153   	ld hl,on_emulator
+044203 CD 1E 2E 04 0154   	call printString
+044207             0155   
+044207             0156   @test_done:
+044207             0157   ; print final loading time
+044207 21 E8 40 04 0158   	ld hl,loading_time
+04420B CD 1E 2E 04 0159   	call printString
+04420F CD 05 3B 04 0160   	call stopwatch_get ; hl = elapsed time in 120ths of a second
+044213 CD 6C 2E 04 0161   	call printDec
+044217 CD 33 2E 04 0162   	call printNewLine
+04421B             0163   
+04421B             0164   ; print loading complete message and wait for user keypress
+04421B 21 F6 40 04 0165   	ld hl,loading_complete
+04421F CD 1E 2E 04 0166   	call printString
+044223 CD DD 29 04 0167   	call vdu_flip
+044227 CD 9E 31 04 0168   	call waitKeypress
+04422B             0169   
+04422B             0170   ; initialization done
+04422B C9          0171   	ret
+04422C             0172   
+04422C             0173   ; DEBUG: set up a simple countdown timer
+04422C 01          0174   debug_timer: db 0x01
+04422D             0175   
+04422D             0176   main_loop_tmr: ds 6
+044233             0177   framerate: equ 30
+044233             0178   
+044233             0179   new_game:
+044233             0180   ; create wolf3d control structure
+044233             0181   ccs:
+044233             0182   	CCS sid, cstw, csth
+044233 21 41 42 04 0001M      ld hl,@beg
+044237 01 0B 00 00 0002M      ld bc,@end-@beg
+04423B 5B DF       0003M      rst.lil $18
+04423D C3 4C 42 04 0004M      jp @end
+044241             0005M  @beg:
+044241             0006M  ;   VDU 23,0, &A0, sid%; &49, 0, cstw%; csth%; Create Control Structure
+044241 17 00 A0    0007M      db 23,0,$A0
+044244 00 10       0008M      dw SID
+044246 49 00       0009M      db $49,0
+044248 F0 00       0010M      dw SCENE_WIDTH
+04424A A0 00       0011M      dw SCENE_HEIGHT
+04424C             0012M  @end:
+04424C             0183   
+04424C             0184   ; create render target bitmap
+04424C             0185   ctb:
+04424C             0186       CTB tgtbmid, cstw, csth
+04424C 21 5A 42 04 0001M      ld hl,@beg
+044250 01 10 00 00 0002M      ld bc,@end-@beg
+044254 5B DF       0003M      rst.lil $18
+044256 C3 6A 42 04 0004M      jp @end
+04425A             0005M  @beg:
+04425A             0006M  ;   VDU 23, 27, &20, bmid2% Select output bitmap
+04425A 17 1B 20    0007M      db 23,27,$20
+04425D 02 10       0008M      dw BMID
+04425F             0009M  ;   VDU 23, 27, 2, cstw%; csth%; &0000; &00C0; Create solid color bitmap
+04425F 17 1B 02    0010M      db 23,27,2
+044262 F0 00       0011M      dw SCENE_WIDTH
+044264 A0 00       0012M      dw SCENE_HEIGHT
+044266 00 00       0013M      dw $0000
+044268 C0 00       0014M      dw $00C0
+04426A             0015M  @end:
+04426A             0187   
+04426A             0188   ; set dithering type
+04426A 3A 80 3B 04 0189       ld a,(dithering_type)
+04426E 21 00 10 00 0190       ld hl,sid
+044272 CD 00 3D 04 0191       call vdu_set_dither
+044276             0192   
+044276             0193   ; initialize map variables and load map file
+044276 21 01 0A 04 0194   	ld hl,room_flags
+04427A AF          0195   	xor a
+04427B 06 0A       0196   	ld b,10
+04427D             0197   @room_flags_loop:
+04427D 77          0198   	ld (hl),a
+04427E 23          0199   	inc hl
+04427F 10 FC       0200   	djnz @room_flags_loop
+044281             0201   
+044281             0202   ; load room file
+044281 CD 6D 09 04 0203   	call map_init
+044285 21 00 E0 B7 0204   	ld hl,cell_status ; pointer to map data
+044289 3E 01       0205   	ld a,1 ; map_id
+04428B CD 1B 40 04 0206   	call vdu_map_init
+04428F 3E 01       0207   	ld a,1 ; map_id
+044291 CD 44 40 04 0208   	call vdu_panel_init
+044295             0209   ; ; initialize sprite data
+044295             0210   ; 	call map_init_sprites
+044295             0211   ; ; initialize player position
+044295             0212   ; 	call plyr_init
+044295             0213   
+044295             0214   ; create camera
+044295 01 00 0F 00 0215       ld bc,15*256
+044299 11 00 0F 00 0216       ld de,15*256
+04429D 21 00 E0 FF 0217       ld hl,-32*256 ; -45 degrees
+0442A1 CD 6D 40 04 0218       call vdu_camera_init
+0442A5             0219   
+0442A5 C9          0220   	ret
+0442A6             0221   
+0442A6             0222   main:
+0442A6 CD 33 42 04 0223   	call new_game
+0442AA             0224   
+0442AA             0225   main_loop:
+0442AA             0226   ; update global timestamp
+0442AA CD BF 3A 04 0227       call timestamp_tick
+0442AE             0228   
+0442AE             0229   ; ; move enemies
+0442AE             0230   ; 	call sprites_see_plyr ; 220-285  prt ticks
+0442AE             0231   
+0442AE             0232   ; ; get player input and update sprite position
+0442AE             0233   ; 	; 0-1 prt ticks
+0442AE             0234   ; 	call plyr_input ; ix points to cell defs/status, a is target cell current obj_id
+0442AE             0235   
+0442AE             0236   ; ; render the updated scene
+0442AE             0237   ; 	call render_scene ; 6-12 prt ticks
+0442AE             0238   ; ; full loop 12-16 prt ticks
+0442AE             0239   
+0442AE             0240   ; ; flip the screen
+0442AE             0241   ; 	call vdu_flip
+0442AE             0242   
+0442AE             0243   @wait:
+0442AE FD 21 2D 42 0244   	ld iy,main_loop_tmr
        04          
-044290 CD 9C 3A 04 0260   	call tmr_get
-044294 CA A0 42 04 0261   	jp z,@continue
-044298 FA A0 42 04 0262   	jp m,@continue
-04429C C3 8B 42 04 0263   	jp @wait
-0442A0             0264   @continue:
-0442A0             0265   
-0442A0             0266   ; reset main loop timer
-0442A0 FD 21 1A 42 0267   	ld iy,main_loop_tmr
+0442B3 CD 9C 3A 04 0245   	call tmr_get
+0442B7 CA C3 42 04 0246   	jp z,@continue
+0442BB FA C3 42 04 0247   	jp m,@continue
+0442BF C3 AE 42 04 0248   	jp @wait
+0442C3             0249   @continue:
+0442C3             0250   
+0442C3             0251   ; reset main loop timer
+0442C3 FD 21 2D 42 0252   	ld iy,main_loop_tmr
        04          
-0442A5 21 04 00 00 0268   	ld hl,120/framerate
-0442A9 CD 8E 3A 04 0269   	call tmr_set
-0442AD             0270   
-0442AD             0271   ; check for escape key and quit if pressed
-0442AD             0272   	MOSCALL mos_getkbmap
-0442AD 3E 1E       0001M  			LD	A, function
-0442AF 5B CF       0002M  			RST.LIL	08h
-0442B1             0273   ; 113 Escape
-0442B1 DD CB 0E 46 0274       bit 0,(ix+14)
-0442B5 20 02       0275   	jr nz,main_end
-0442B7             0276   @Escape:
-0442B7 18 CE       0277   	jr main_loop
-0442B9             0278   
-0442B9             0279   main_end:
-0442B9             0280   	; call do_outro
-0442B9             0281   
-0442B9 CD 0D 2E 04 0282       call vdu_clear_all_buffers
-0442BD CD B4 00 04 0283   	call vdu_disable_channels
-0442C1             0284   
-0442C1             0285   ; restore screen to something normalish
-0442C1 AF          0286   	xor a
-0442C2 CD 9B 28 04 0287   	call vdu_set_screen_mode
-0442C6 CD 4C 2A 04 0288   	call cursor_on
-0442CA C9          0289   	ret
-0442CB             0290   
-0442CB             0291   ; files.inc must go here so that filedata doesn't stomp on program data
-0442CB             0292   	include "src/asm/files.inc"
-0442CB             0001*  
-0442CB             0002*  ; WARNING: this routine must be the last one loaded in the main program so that filedata doesn't stomp on any program code
-0442CB             0003*  ; inputs: hl = bufferId, ix = file size
-0442CB             0004*  vdu_load_buffer_from_file:
-0442CB             0005*      ; back up buffer id
-0442CB E5          0006*          push hl
-0442CC             0007*      ; load the file from disk into ram
-0442CC FD E5       0008*          push iy
-0442CE E1          0009*          pop hl ; pointer to filename
-0442CF 11 29 43 04 0010*          ld de,filedata
-0442D3 3E 01       0011*          ld a,mos_load
-0442D5 5B CF       0012*          RST.LIL 08h
-0442D7             0013*  	; load buffer ids
-0442D7 E1          0014*          pop hl
-0442D8 22 19 43 04 0015*  		ld (@id0),hl
-0442DC 22 1F 43 04 0016*  		ld (@id1),hl
-0442E0 22 24 43 04 0017*  		ld (@id2),hl
-0442E4             0018*  	; clean up bytes that got stomped on by the ID loads
-0442E4 3E 02       0019*  		ld a,2
-0442E6 32 1B 43 04 0020*  		ld (@id0+2),a
-0442EA 3E 17       0021*  		ld a,23
-0442EC 32 21 43 04 0022*  		ld (@id1+2),a
-0442F0 AF          0023*  		xor a
-0442F1 32 26 43 04 0024*  		ld (@id2+2),a
-0442F5             0025*  	; read size from ix
-0442F5 DD 7D       0026*  		ld a,ixl
-0442F7 32 27 43 04 0027*  		ld (@size),a
-0442FB DD 7C       0028*  		ld a,ixh
-0442FD 32 28 43 04 0029*  		ld (@size+1),a
-044301             0030*  	; get all the ducks in a row for the vdu call
-044301 01 13 00 00 0031*  		ld bc,filedata-@start
-044305 DD 09       0032*  		add ix,bc
-044307 DD 44       0033*  		ld b,ixh
-044309 DD 4D       0034*  		ld c,ixl
-04430B 21 16 43 04 0035*  		ld hl,@start
-04430F             0036*  	; push the button
-04430F 5B DF       0037*  		rst.lil $18
-044311             0038*      ; print a progress breadcrumb
-044311 3E 2E       0039*          ld a,'.'
-044313 5B D7       0040*          rst.lil 10h
-044315             0041*  	; back to caller
-044315 C9          0042*  		ret
-044316             0043*  ; vdp command string:
-044316 17 00 A0    0044*  @start: db 23,0,0xA0 ; Clear buffer
-044319 00 00       0045*  @id0:	dw 0x0000 ; bufferId
-04431B 02          0046*  		db 2
-04431C             0047*  	; select buffer VDU 23, 27, &20, bufferId;
-04431C 17 1B 20    0048*  		db 23,27,0x20
-04431F 00 00       0049*  @id1:	dw 0x0000 ; bufferId
-044321             0050*  	; Upload data :: VDU 23, 0 &A0, bufferId; 0, length; <buffer-data>
-044321 17 00 A0    0051*  		db 23,0,0xA0
-044324 00 00       0052*  @id2:	dw 0x0000 ; bufferId
-044326 00          0053*  		db 0
-044327             0054*  		; CAUTION: the size argument is a 16-bit value, so the max number of bytes we can load in one chunk is 64KiB!! This corresponds to an rgba2 image size of 320x204.
-044327 00 00       0055*  @size:	dw 0x0000 ; length of data in bytes
-044329             0056*  filedata: ; no need to allocate space here if this is the final include of the application
-044329             0057*  	; ds 65536 ; placeholder for file data	DEBUG
-044329             0058*  
-044329             0059*  ; ; TODO: MAKE PROGRESSIVE LOADING WORK
-044329             0060*  ; ; WARNING: this routine must be the last one loaded in the main program so that filedata doesn't stomp on any program code
-044329             0061*  ; ; inputs: hl = bufferId, ix = file size ; iy = pointer to filename
-044329             0062*  ; vdu_load_buffer_from_file:
-044329             0063*  ; ; load buffer ids
-044329             0064*  ;     ld (@id0),hl
-044329             0065*  ;     ld (@id1),hl
-044329             0066*  ; ; clean up bytes that got stomped on by the ID loads
-044329             0067*  ;     ld a,2
-044329             0068*  ;     ld (@id0+2),a
-044329             0069*  ;     xor a
-044329             0070*  ;     ld (@id1+2),a
-044329             0071*  ; ; load the file from disk into ram
-044329             0072*  ;     ld (@filesize),ix
-044329             0073*  ;     ld bc,(@filesize) ; for the mos_load call
-044329             0074*  ;     push iy
-044329             0075*  ; 	pop hl ; pointer to filename
-044329             0076*  ; 	ld de,filedata
-044329             0077*  ; 	ld a,mos_load
-044329             0078*  ; 	RST.LIL 08h
-044329             0079*  ; ; clear target buffer
-044329             0080*  ;     ld hl,@clear0
-044329             0081*  ;     ld bc,@clear1-@clear0
-044329             0082*  ;     rst.lil $18
-044329             0083*  ;     jp @clear1
-044329             0084*  ; @clear0: db 23,0,0xA0
-044329             0085*  ; @id0:	dw 0x0000 ; bufferId
-044329             0086*  ; 		db 2 ; clear buffer
-044329             0087*  ; @clear1:
-044329             0088*  ; ; load default chunk size of 256 bytes
-044329             0089*  ;     xor a
-044329             0090*  ;     ld (@chunksize),a
-044329             0091*  ;     ld a,1
-044329             0092*  ;     ld (@chunksize+1),a
-044329             0093*  ; ; point hl at the start of the file data
-044329             0094*  ;     ld hl,filedata
-044329             0095*  ;     ld (@chunkpointer),hl
-044329             0096*  ; @loop:
-044329             0097*  ;     ld hl,(@filesize) ; get the remaining bytes
-044329             0098*  ;     ld de,256
-044329             0099*  ;     xor a ; clear carry
-044329             0100*  ;     sbc hl,de
-044329             0101*  ;     ld (@filesize),hl ; store remaining bytes
-044329             0102*  ;     jp z,@loadchunk ; jp means will return to caller from there
-044329             0103*  ;     jp m,@lastchunk ; ditto
-044329             0104*  ;     call @loadchunk ; load the next chunk and return here to loop again
-044329             0105*  ;     jp @loop ; loop back to load the next chunk
-044329             0106*  ; @lastchunk:
-044329             0107*  ;     ld de,256
-044329             0108*  ;     add hl,de
-044329             0109*  ;     ld a,l
-044329             0110*  ;     ld (@chunksize),a ; store the remaining bytes
-044329             0111*  ;     ld a,h
-044329             0112*  ;     ld (@chunksize+1),a
-044329             0113*  ;     ; fall through to loadchunk
-044329             0114*  ; @loadchunk:
-044329             0115*  ;     ld hl,@chunk0
-044329             0116*  ;     ld bc,@chunk1-@chunk0
-044329             0117*  ;     rst.lil $18
-044329             0118*  ;     jp @chunk1
-044329             0119*  ; @chunk0:
-044329             0120*  ; ; Upload data :: VDU 23, 0 &A0, bufferId; 0, length; <buffer-data>
-044329             0121*  ; 		db 23,0,0xA0
-044329             0122*  ; @id1:	dw 0x0000 ; bufferId
-044329             0123*  ; 		db 0 ; load buffer
-044329             0124*  ; @chunksize:	dw 0x0000 ; length of data in bytes
-044329             0125*  ; @chunk1:
-044329             0126*  ;     ld hl,(@chunkpointer) ; get the file data pointer
-044329             0127*  ;     ld bc,0 ; make sure bcu is zero
-044329             0128*  ;     ld a,(@chunksize)
-044329             0129*  ;     ld c,a
-044329             0130*  ;     ld a,(@chunksize+1)
-044329             0131*  ;     ld b,a
-044329             0132*  ;     rst.lil $18
-044329             0133*  ;     ld hl,(@chunkpointer) ; get the file data pointer
-044329             0134*  ;     ld bc,256
-044329             0135*  ;     add hl,bc ; advance the file data pointer
-044329             0136*  ;     ld (@chunkpointer),hl ; store pointer to file data
-044329             0137*  ;     ld a,'.' ; print a progress breadcrumb
-044329             0138*  ;     rst.lil 10h
-044329             0139*  ;     ret
-044329             0140*  ; @filesize: dl 0 ; file size in bytes
-044329             0141*  ; @chunkpointer: dl 0 ; pointer to current chunk
-044329             0142*  ; filedata: ; no need to allocate space here if this is the final include of the application
-044329             0143*  ; 	; ds 65536 ; placeholder for file data	DEBUG
+0442C8 21 04 00 00 0253   	ld hl,120/framerate
+0442CC CD 8E 3A 04 0254   	call tmr_set
+0442D0             0255   
+0442D0             0256   ; check for escape key and quit if pressed
+0442D0             0257   	MOSCALL mos_getkbmap
+0442D0 3E 1E       0001M  			LD	A, function
+0442D2 5B CF       0002M  			RST.LIL	08h
+0442D4             0258   ; 113 Escape
+0442D4 DD CB 0E 46 0259       bit 0,(ix+14)
+0442D8 20 02       0260   	jr nz,main_end
+0442DA             0261   @Escape:
+0442DA 18 CE       0262   	jr main_loop
+0442DC             0263   
+0442DC             0264   main_end:
+0442DC             0265   	; call do_outro
+0442DC             0266   
+0442DC CD 0D 2E 04 0267       call vdu_clear_all_buffers
+0442E0 CD B4 00 04 0268   	call vdu_disable_channels
+0442E4             0269   
+0442E4             0270   ; restore screen to something normalish
+0442E4 AF          0271   	xor a
+0442E5 CD 9B 28 04 0272   	call vdu_set_screen_mode
+0442E9 CD 4C 2A 04 0273   	call cursor_on
+0442ED C9          0274   	ret
+0442EE             0275   
+0442EE             0276   init_display:
+0442EE             0277   ; set up the display
+0442EE 3E 88       0278       ld a,8+128 ; 320x240x64 double-buffered
+0442F0 CD 9B 28 04 0279       call vdu_set_screen_mode
+0442F4 AF          0280       xor a
+0442F5 CD CA 29 04 0281       call vdu_set_scaling
+0442F9             0282   
+0442F9             0283   ; set text background color
+0442F9 3E 84       0284   	ld a,4 + 128
+0442FB CD 27 28 04 0285   	call vdu_colour_text
+0442FF             0286   
+0442FF             0287   ; set text foreground color
+0442FF 3E 2F       0288   	ld a,47 ; aaaaff lavenderish
+044301 CD 27 28 04 0289   	call vdu_colour_text
+044305             0290   
+044305             0291   ; set gfx bg color
+044305 AF          0292   	xor a ; plotting mode 0
+044306 0E 04       0293   	ld c,4 ; dark blue
+044308 CD 4F 28 04 0294   	call vdu_gcol_bg
+04430C CD 22 28 04 0295   	call vdu_clg
+044310             0296   
+044310             0297   ; set the cursor off again since we changed screen modes
+044310 CD 5A 2A 04 0298   	call cursor_off
+044314             0299   
+044314             0300   ; files.inc must go here so that filedata doesn't stomp on program data
+044314             0301   	include "src/asm/files.inc"
+044314             0001*  
+044314             0002*  ; WARNING: this routine must be the last one loaded in the main program so that filedata doesn't stomp on any program code
+044314             0003*  ; inputs: hl = bufferId, ix = file size
+044314             0004*  vdu_load_buffer_from_file:
+044314             0005*      ; back up buffer id
+044314 E5          0006*          push hl
+044315             0007*      ; load the file from disk into ram
+044315 FD E5       0008*          push iy
+044317 E1          0009*          pop hl ; pointer to filename
+044318 11 72 43 04 0010*          ld de,filedata
+04431C 3E 01       0011*          ld a,mos_load
+04431E 5B CF       0012*          RST.LIL 08h
+044320             0013*  	; load buffer ids
+044320 E1          0014*          pop hl
+044321 22 62 43 04 0015*  		ld (@id0),hl
+044325 22 68 43 04 0016*  		ld (@id1),hl
+044329 22 6D 43 04 0017*  		ld (@id2),hl
+04432D             0018*  	; clean up bytes that got stomped on by the ID loads
+04432D 3E 02       0019*  		ld a,2
+04432F 32 64 43 04 0020*  		ld (@id0+2),a
+044333 3E 17       0021*  		ld a,23
+044335 32 6A 43 04 0022*  		ld (@id1+2),a
+044339 AF          0023*  		xor a
+04433A 32 6F 43 04 0024*  		ld (@id2+2),a
+04433E             0025*  	; read size from ix
+04433E DD 7D       0026*  		ld a,ixl
+044340 32 70 43 04 0027*  		ld (@size),a
+044344 DD 7C       0028*  		ld a,ixh
+044346 32 71 43 04 0029*  		ld (@size+1),a
+04434A             0030*  	; get all the ducks in a row for the vdu call
+04434A 01 13 00 00 0031*  		ld bc,filedata-@start
+04434E DD 09       0032*  		add ix,bc
+044350 DD 44       0033*  		ld b,ixh
+044352 DD 4D       0034*  		ld c,ixl
+044354 21 5F 43 04 0035*  		ld hl,@start
+044358             0036*  	; push the button
+044358 5B DF       0037*  		rst.lil $18
+04435A             0038*      ; print a progress breadcrumb
+04435A 3E 2E       0039*          ld a,'.'
+04435C 5B D7       0040*          rst.lil 10h
+04435E             0041*  	; back to caller
+04435E C9          0042*  		ret
+04435F             0043*  ; vdp command string:
+04435F 17 00 A0    0044*  @start: db 23,0,0xA0 ; Clear buffer
+044362 00 00       0045*  @id0:	dw 0x0000 ; bufferId
+044364 02          0046*  		db 2
+044365             0047*  	; select buffer VDU 23, 27, &20, bufferId;
+044365 17 1B 20    0048*  		db 23,27,0x20
+044368 00 00       0049*  @id1:	dw 0x0000 ; bufferId
+04436A             0050*  	; Upload data :: VDU 23, 0 &A0, bufferId; 0, length; <buffer-data>
+04436A 17 00 A0    0051*  		db 23,0,0xA0
+04436D 00 00       0052*  @id2:	dw 0x0000 ; bufferId
+04436F 00          0053*  		db 0
+044370             0054*  		; CAUTION: the size argument is a 16-bit value, so the max number of bytes we can load in one chunk is 64KiB!! This corresponds to an rgba2 image size of 320x204.
+044370 00 00       0055*  @size:	dw 0x0000 ; length of data in bytes
+044372             0056*  filedata: ; no need to allocate space here if this is the final include of the application
+044372             0057*  	; ds 65536 ; placeholder for file data	DEBUG
+044372             0058*  
+044372             0059*  ; ; TODO: MAKE PROGRESSIVE LOADING WORK
+044372             0060*  ; ; WARNING: this routine must be the last one loaded in the main program so that filedata doesn't stomp on any program code
+044372             0061*  ; ; inputs: hl = bufferId, ix = file size ; iy = pointer to filename
+044372             0062*  ; vdu_load_buffer_from_file:
+044372             0063*  ; ; load buffer ids
+044372             0064*  ;     ld (@id0),hl
+044372             0065*  ;     ld (@id1),hl
+044372             0066*  ; ; clean up bytes that got stomped on by the ID loads
+044372             0067*  ;     ld a,2
+044372             0068*  ;     ld (@id0+2),a
+044372             0069*  ;     xor a
+044372             0070*  ;     ld (@id1+2),a
+044372             0071*  ; ; load the file from disk into ram
+044372             0072*  ;     ld (@filesize),ix
+044372             0073*  ;     ld bc,(@filesize) ; for the mos_load call
+044372             0074*  ;     push iy
+044372             0075*  ; 	pop hl ; pointer to filename
+044372             0076*  ; 	ld de,filedata
+044372             0077*  ; 	ld a,mos_load
+044372             0078*  ; 	RST.LIL 08h
+044372             0079*  ; ; clear target buffer
+044372             0080*  ;     ld hl,@clear0
+044372             0081*  ;     ld bc,@clear1-@clear0
+044372             0082*  ;     rst.lil $18
+044372             0083*  ;     jp @clear1
+044372             0084*  ; @clear0: db 23,0,0xA0
+044372             0085*  ; @id0:	dw 0x0000 ; bufferId
+044372             0086*  ; 		db 2 ; clear buffer
+044372             0087*  ; @clear1:
+044372             0088*  ; ; load default chunk size of 256 bytes
+044372             0089*  ;     xor a
+044372             0090*  ;     ld (@chunksize),a
+044372             0091*  ;     ld a,1
+044372             0092*  ;     ld (@chunksize+1),a
+044372             0093*  ; ; point hl at the start of the file data
+044372             0094*  ;     ld hl,filedata
+044372             0095*  ;     ld (@chunkpointer),hl
+044372             0096*  ; @loop:
+044372             0097*  ;     ld hl,(@filesize) ; get the remaining bytes
+044372             0098*  ;     ld de,256
+044372             0099*  ;     xor a ; clear carry
+044372             0100*  ;     sbc hl,de
+044372             0101*  ;     ld (@filesize),hl ; store remaining bytes
+044372             0102*  ;     jp z,@loadchunk ; jp means will return to caller from there
+044372             0103*  ;     jp m,@lastchunk ; ditto
+044372             0104*  ;     call @loadchunk ; load the next chunk and return here to loop again
+044372             0105*  ;     jp @loop ; loop back to load the next chunk
+044372             0106*  ; @lastchunk:
+044372             0107*  ;     ld de,256
+044372             0108*  ;     add hl,de
+044372             0109*  ;     ld a,l
+044372             0110*  ;     ld (@chunksize),a ; store the remaining bytes
+044372             0111*  ;     ld a,h
+044372             0112*  ;     ld (@chunksize+1),a
+044372             0113*  ;     ; fall through to loadchunk
+044372             0114*  ; @loadchunk:
+044372             0115*  ;     ld hl,@chunk0
+044372             0116*  ;     ld bc,@chunk1-@chunk0
+044372             0117*  ;     rst.lil $18
+044372             0118*  ;     jp @chunk1
+044372             0119*  ; @chunk0:
+044372             0120*  ; ; Upload data :: VDU 23, 0 &A0, bufferId; 0, length; <buffer-data>
+044372             0121*  ; 		db 23,0,0xA0
+044372             0122*  ; @id1:	dw 0x0000 ; bufferId
+044372             0123*  ; 		db 0 ; load buffer
+044372             0124*  ; @chunksize:	dw 0x0000 ; length of data in bytes
+044372             0125*  ; @chunk1:
+044372             0126*  ;     ld hl,(@chunkpointer) ; get the file data pointer
+044372             0127*  ;     ld bc,0 ; make sure bcu is zero
+044372             0128*  ;     ld a,(@chunksize)
+044372             0129*  ;     ld c,a
+044372             0130*  ;     ld a,(@chunksize+1)
+044372             0131*  ;     ld b,a
+044372             0132*  ;     rst.lil $18
+044372             0133*  ;     ld hl,(@chunkpointer) ; get the file data pointer
+044372             0134*  ;     ld bc,256
+044372             0135*  ;     add hl,bc ; advance the file data pointer
+044372             0136*  ;     ld (@chunkpointer),hl ; store pointer to file data
+044372             0137*  ;     ld a,'.' ; print a progress breadcrumb
+044372             0138*  ;     rst.lil 10h
+044372             0139*  ;     ret
+044372             0140*  ; @filesize: dl 0 ; file size in bytes
+044372             0141*  ; @chunkpointer: dl 0 ; pointer to current chunk
+044372             0142*  ; filedata: ; no need to allocate space here if this is the final include of the application
+044372             0143*  ; 	; ds 65536 ; placeholder for file data	DEBUG
