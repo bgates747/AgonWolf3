@@ -15,7 +15,7 @@
 	include "src/asm/maps.inc"
 	; include "src/asm/render.inc"
 	include "src/asm/font_itc_honda.inc"
-	include "src/asm/font_retro_computer.inc"
+	; include "src/asm/font_retro_computer.inc"
 	include "src/asm/ui.inc"
 	include "src/asm/ui_img.inc"
 	include "src/asm/ui_img_bj.inc"
@@ -54,7 +54,7 @@ exit:
     ret 
 
 hello_world: defb "Welcome to Agon Wolf3D",0
-loading_ui: defb "Loading UI",0
+loading_ui: defb "Loading UI\r\nThis takes a few seconds.",0
 loading_time: defb "Loading time:",0
 loading_complete: defb "Press any key to continue.\r\n",0
 is_emulator: defb 0
@@ -81,13 +81,19 @@ init:
 ; set the cursor off
 	call cursor_off
 
+; print hello world message
+	ld hl,hello_world
+	call printString
+	call printNewLine
+
 ; print loading ui message
 	ld hl,loading_ui
 	call printString
+	call vdu_flip
 
 ; load fonts
 	call load_font_itc_honda
-	call load_font_retro_computer
+	; call load_font_retro_computer
 
 ; load UI images
 	call load_ui_images
@@ -121,13 +127,13 @@ init:
 	ld (cur_load_jump_table),hl
 	call img_load_main
 
-; load sound effects
-	ld bc,SFX_num_buffers
-	ld hl,SFX_buffer_id_lut
-	ld (cur_buffer_id_lut),hl
-	ld hl,SFX_load_routines_table
-	ld (cur_load_jump_table),hl
-	call sfx_load_main
+; ; load sound effects
+; 	ld bc,SFX_num_buffers
+; 	ld hl,SFX_buffer_id_lut
+; 	ld (cur_buffer_id_lut),hl
+; 	ld hl,SFX_load_routines_table
+; 	ld (cur_load_jump_table),hl
+; 	call sfx_load_main
 
 ; self modify vdu_play_sfx to enable sound
 	xor a
@@ -201,11 +207,8 @@ ctb:
 
 ; load room file
 	call map_init
-	ld hl,cell_status ; pointer to map data
-	ld a,1 ; map_id
 	call vdu_map_init
-	ld a,1 ; map_id
-	call vdu_panel_init
+	call vdu_load_tex_lut
 ; ; initialize sprite data
 ; 	call map_init_sprites
 ; ; initialize player position
@@ -214,8 +217,11 @@ ctb:
 ; create camera
     ld bc,15*256
     ld de,15*256
-    ld hl,-32*256 ; -45 degrees
+    ld hl,0*256 ; 0 degrees
     call vdu_camera_init
+
+; update zbuffer
+	call vdu_zbuffer_update
 
 	ret
 

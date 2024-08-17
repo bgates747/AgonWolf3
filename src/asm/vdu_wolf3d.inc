@@ -1,7 +1,9 @@
 ; global constants and variables
 sid: equ 0x1000 ; scene id is a 16-bit bufferID holding the wolf3d control structure
-mid: equ 1 ; model id is an 8-bit unsigned integer used by wolf3d internally
-oid: equ 1 ; object id is an 8-bit unsigned integer used by wolf3d internally
+mid: equ 1 ; model id is a 16-bit unsigned integer used by wolf3d internally
+oid: equ 1 ; object id is a 16-bit unsigned integer used by wolf3d internally
+vdu_map_id: equ 1 ; map id is a 16-bit unsigned integer used by wolf3d internally
+
 obj_scale: equ 256 * 10
 objbmid: equ 0x1001
 tgtbmid: equ 0x1002
@@ -778,11 +780,9 @@ move_camera_loc:
 @z:     dw 0
 @end:   db 0 ; padding
 
-; VDU 23, 0, &A0, sid; &49, 128, 0, map_id; width; height; <cells> :  Load Wolf3D Map Cells
-; inputs: a map_id, hl pointer to cells data
+; VDU 23, 0, &A0, sid; &49, 128, 0, vdu_map_id; width; height; <cells> :  Load Wolf3D Map Cells
+; inputs: map data loaded to cell_status
 vdu_map_init:
-    push hl ; back up pointer to map data
-    ld (@map_id),a ; high byte will always be zero because we'll never need more than 255 maps
     ld hl,@beg
     ld bc,@end-@beg
     rst.lil $18
@@ -790,21 +790,19 @@ vdu_map_init:
 @beg:
     db 23,0,$A0
     dw sid
-    db $49,128,0
-@map_id:    
-    dw 0 
+    db $49,128,0 
+    dw vdu_map_id
     dw 16 ; map_width
     dw 16 ; map_height
 @end:
-    pop hl ; restore pointer to map data
+    ld hl,cell_status
     ld bc,16*16*map_record_size ; 16x16 map
     rst.lil $18
     ret
 
 ; VDU 23, 0, &A0, sid; &49, 128, 1, map_id; num_panels; <texture_id; width; height;> :  Load Wolf3D Map Texture Panel Lookup Table
-; inputs: a map_id
-vdu_panel_init:
-    ld (@map_id),a ; high byte will always be zero because we'll never need more than 255 maps
+; inputs: none
+vdu_load_tex_lut:
     ld hl,@beg
     ld bc,@end-@beg
     rst.lil $18
@@ -813,8 +811,7 @@ vdu_panel_init:
     db 23,0,$A0
     dw sid
     db $49,128,1
-@map_id:
-    dw 0
+    dw vdu_map_id
     dw cube_num_tiles ; num_panels
 @end:
     ld hl,cube_tex_panel_lut
@@ -845,4 +842,18 @@ vdu_camera_init:
         dw 64*256 ; fov of 90 degrees in 8.8 fixed point deg256
         dw cstw, csth ; screen height, width
         dw 8*256 ; screen_dist of 8 ft in 8.8 fixed point
+@end:
+
+; VDU 23, 0, &A0, sid; &49, 130, 0, vdu_map_id; : Update Wolf3D ZBuffer
+; inputs: none
+vdu_zbuffer_update:
+    ld hl,@beg
+    ld bc,@end-@beg
+    rst.lil $18
+    ret 
+@beg:
+    db 23,0,$A0
+    dw sid
+    db $49,130,0
+    dw vdu_map_id
 @end:
